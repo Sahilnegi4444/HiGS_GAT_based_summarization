@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Data files (too large for git)
+*.parquet
+*.xlsx
+*.xls
+*.csv
+!results/benchmark_table.csv
+
+# Model checkpoints (too large for git)
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+wandb/
+runs/

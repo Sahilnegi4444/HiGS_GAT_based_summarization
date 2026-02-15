@@ -1,0 +1,36 @@
+# Core Dependencies
+torch>=2.0
+transformers>=4.36
+datasets
+accelerate
+
+# NLP
+spacy>=3.5
+
+# Processing
+pandas
+numpy
+scipy
+openpyxl
+
+# Evaluation
+rouge-score
+bert-score
+evaluate
+
+# Training / LoRA
+peft
+bitsandbytes
+trl
+
+# Graph
+torch-geometric
+
+# Visualization
+matplotlib
+seaborn
+tqdm
+
+# Misc
+absl-py
+pyyaml

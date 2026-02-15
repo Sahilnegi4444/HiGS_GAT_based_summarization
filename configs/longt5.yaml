@@ -1,0 +1,15 @@
+# LongT5 Baseline Configuration
+
+model_name: longt5
+run_name: longt5_baseline
+
+data_dir: data/processed
+max_input_length: 4096
+max_target_length: 128
+
+batch_size: 2
+learning_rate: 3e-5
+num_epochs: 3
+warmup_steps: 500
+max_grad_norm: 1.0
+seed: 42

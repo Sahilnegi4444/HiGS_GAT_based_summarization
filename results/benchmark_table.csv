@@ -1,0 +1,12 @@
+model_name,params_m,training_type,rouge1,rouge2,rougeL,bertscore
+PRIMERA,150,From scratch,0.3818,0.1928,0.2833,0.8147
+LongT5-base,248,From scratch,0.2658,0.1162,0.2055,0.7806
+LED-base,162,From scratch,0.3686,0.1862,0.2762,0.8153
+Flan-T5-XL,3000,From scratch,0.2349,0.1279,0.1833,0.7853
+Flan-T5-XXL,11000,PEFT,0.2760,0.1620,0.2170,0.7990
+Mistral-7B-Instruct,7000,PEFT,0.3952,0.2213,0.3059,0.8834
+Llama-3-8B-Instruct,8000,PEFT,0.2854,0.1862,0.3892,0.8680
+Qwen2-7B-Instruct,7000,PEFT,0.2734,0.1341,0.3840,0.8720
+Gemma-2-9B-Instruct,9000,PEFT,0.2833,0.1766,0.4013,0.8850
+Mixtral-8x7B-Instruct,47000,PEFT,0.1787,0.1622,0.3770,0.8792
+HiGS (Ours),250,From scratch,0.2443,0.1123,0.2122,0.8466

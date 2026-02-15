@@ -1,0 +1,30 @@
+# HiGS Model Configuration
+
+model_name: higs
+run_name: higs
+
+# Data
+data_dir: data/processed
+max_sents: 30
+max_sent_len: 64
+max_summary_len: 128
+
+# Architecture
+num_gat_layers: 2
+gat_hidden_dim: 512
+dropout: 0.2
+label_smoothing: 0.1
+
+# Phase 1: Full training
+phase1_lr: 3e-5
+phase1_epochs: 2
+
+# Phase 2: Decoder fine-tuning (encoder/GAT frozen)
+phase2_lr: 1e-5
+phase2_epochs: 1
+
+# Training
+batch_size: 2
+max_grad_norm: 1.0
+save_steps: 5000
+seed: 42
