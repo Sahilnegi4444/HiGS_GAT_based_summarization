@@ -56,7 +56,8 @@ The project includes:
 ├── results/
 │   └── benchmark_table.csv      # Final benchmark scores
 └── docs/
-    └── architecture.md          # HiGS architecture documentation
+    ├── architecture.md              # HiGS architecture documentation
+    └── higs_architecture.png        # Architecture pipeline diagram
 ```
 
 ---

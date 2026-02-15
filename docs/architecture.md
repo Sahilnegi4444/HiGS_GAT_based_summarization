@@ -12,58 +12,9 @@
 
 ## Architecture Diagram
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                         HiGS Architecture                          │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  Input Documents: [Doc₁, Doc₂, ..., Docₖ]                         │
-│       │                                                             │
-│       ▼                                                             │
-│  ┌──────────────────────────────────┐                               │
-│  │  Sentence Splitter (spaCy)       │                               │
-│  │  s₁, s₂, ..., sₙ  (n ≤ 30)     │                               │
-│  └──────────────────────────────────┘                               │
-│       │                                                             │
-│       ▼                                                             │
-│  ┌──────────────────────────────────┐                               │
-│  │  BERT Encoder (bert-base)        │  ← Processes each sentence   │
-│  │  [CLS] → h₁, h₂, ..., hₙ       │    independently (768-dim)    │
-│  │  h ∈ ℝⁿˣ⁷⁶⁸                    │                               │
-│  └──────────────────────────────────┘                               │
-│       │                                                             │
-│       ├──── Cosine Similarity ────┐                                 │
-│       ├──── NER Overlap ──────────┤                                 │
-│       ▼                           ▼                                 │
-│  ┌──────────────────────────────────┐                               │
-│  │  Adjacency Matrix A ∈ {0,1}ⁿˣⁿ │  ← Binary graph edges        │
-│  │  A[i,j] = 1 if:                 │    (cosine > 0.75 OR          │
-│  │    sim(hᵢ,hⱼ) > τ  OR          │     shared entities)          │
-│  │    entities(sᵢ) ∩ entities(sⱼ)  │                               │
-│  └──────────────────────────────────┘                               │
-│       │                                                             │
-│       ▼                                                             │
-│  ┌──────────────────────────────────┐                               │
-│  │  GAT Layer 1 (768 → 512)        │  ← Graph attention with       │
-│  │  GAT Layer 2 (512 → 512)        │    LeakyReLU activation       │
-│  │  g ∈ ℝⁿˣ⁵¹²                    │                               │
-│  └──────────────────────────────────┘                               │
-│       │                                                             │
-│       ▼                                                             │
-│  ┌──────────────────────────────────┐                               │
-│  │  Linear Projection (512 → 768)  │  ← Match BART's d_model      │
-│  │  ĥ ∈ ℝⁿˣ⁷⁶⁸                    │                               │
-│  └──────────────────────────────────┘                               │
-│       │                                                             │
-│       ▼                                                             │
-│  ┌──────────────────────────────────┐                               │
-│  │  BART Decoder (bart-base)        │  ← Conditioned on graph-     │
-│  │  encoder_outputs = ĥ             │    enriched representations   │
-│  │  → Generated Summary             │    (cross-attention to ĥ)     │
-│  └──────────────────────────────────┘                               │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
-```
+![HiGS Architecture Pipeline](higs_architecture.png)
+
+*Fig 1. HiGS Architecture Pipeline — 4-stage model with ~250M total parameters*
 
 ---
 
