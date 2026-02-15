@@ -105,15 +105,38 @@ python -m spacy download en_core_web_sm
 
 ---
 
-## 3. Dataset Setup
+## 3. Dataset & Model Downloads
 
-Place the NewsSumm dataset in the `data/` directory:
+### Cleaned Dataset (Parquet)
 
+Download the pre-cleaned dataset to skip the cleaning pipeline:
+
+📥 **[Download Cleaned Dataset (Parquet)](https://drive.google.com/drive/folders/1l_5WC5gacZAnCjZCgcSC6ZvNc4Sa2Igc?usp=sharing)**
+
+Place the downloaded `.parquet` file in:
+```
+data/processed/newssumm_cleaned.parquet
+```
+
+### Model Checkpoint
+
+Download the trained HiGS model checkpoint to evaluate or fine-tune:
+
+📥 **[Download HiGS Model Checkpoint](https://drive.google.com/drive/folders/1hqYPvjdl443WFcgfs9OA-73p0U5Nusbm?usp=sharing)**
+
+Place the downloaded `.pt` file in:
+```
+results/higs/best_checkpoint.pt
+```
+
+### Raw Dataset (Optional)
+
+If you want to run the full cleaning pipeline from scratch, place the raw Excel file in:
 ```
 data/NewsSumm_Dataset.xlsx
 ```
 
-> **Note:** The dataset is not included in this repository. Contact the dataset maintainers for access.
+> **Note:** The raw dataset is not included in this repository. Contact the dataset maintainers for access.
 
 ---
 
@@ -307,11 +330,14 @@ source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 
-# Step 3: Place dataset
-# Copy NewsSumm_Dataset.xlsx to data/
+# Step 3: Download data & model
+# Download cleaned dataset from: https://drive.google.com/drive/folders/1l_5WC5gacZAnCjZCgcSC6ZvNc4Sa2Igc
+# Place in: data/processed/newssumm_cleaned.parquet
+#
+# Download model checkpoint from: https://drive.google.com/drive/folders/1hqYPvjdl443WFcgfs9OA-73p0U5Nusbm
+# Place in: results/higs/best_checkpoint.pt
 
-# Step 4: Run pipeline
-python scripts/clean_dataset.py
+# Step 4: Preprocess (splits)
 python scripts/preprocess.py --input data/processed/newssumm_cleaned.parquet --output data/processed
 
 # Step 5: Train any model

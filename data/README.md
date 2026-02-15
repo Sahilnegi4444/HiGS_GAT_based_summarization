@@ -1,7 +1,24 @@
 # Data Directory
 
-Place the NewsSumm dataset file here:
+## Quick Start — Download Pre-Cleaned Data
 
+📥 **[Download Cleaned Dataset (Parquet)](https://drive.google.com/drive/folders/1l_5WC5gacZAnCjZCgcSC6ZvNc4Sa2Igc?usp=sharing)**
+
+Place the downloaded file at:
+```
+data/processed/newssumm_cleaned.parquet
+```
+
+📥 **[Download HiGS Model Checkpoint](https://drive.google.com/drive/folders/1hqYPvjdl443WFcgfs9OA-73p0U5Nusbm?usp=sharing)**
+
+Place the downloaded `.pt` file at:
+```
+results/higs/best_checkpoint.pt
+```
+
+## Raw Dataset (Optional)
+
+To run the full cleaning pipeline from scratch, place the raw Excel file here:
 ```
 data/NewsSumm_Dataset.xlsx
 ```
