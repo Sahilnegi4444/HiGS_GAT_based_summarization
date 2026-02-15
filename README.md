@@ -19,6 +19,8 @@ The project includes:
 
 **HiGS** combines a BERT encoder with Graph Attention Network (GAT) layers and a BART decoder (~250M parameters), achieving the highest ROUGE-L (0.4215) and BERTScore (0.8995) among all 11 models tested.
 
+📄 **[Read the Full Research Paper on Overleaf](https://www.overleaf.com/read/ktqqqzvbcvmc#37caf1)**
+
 ---
 
 ## Repository Structure
@@ -49,7 +51,8 @@ The project includes:
 │   ├── train_llm_lora.py        # LLM LoRA fine-tuning
 │   └── evaluate.py              # Unified evaluation (ROUGE + BERTScore)
 ├── notebooks/
-│   └── evaluate_higs_2epoch.ipynb  # Sample evaluation with outputs
+│   ├── dataset_analysis.ipynb      # Preprocessing, feature engineering & data analysis
+│   └── evaluate_higs_sample.ipynb  # Sample evaluation with outputs (~2 epochs)
 ├── results/
 │   └── benchmark_table.csv      # Final benchmark scores
 └── docs/
@@ -305,6 +308,8 @@ All models evaluated on the **NewsSumm test set** under identical data splits:
 
 > **Key Finding:** HiGS achieves competitive BERTScore (0.8466) with only ~250M parameters, demonstrating that explicit graph-based modeling of inter-document structure provides an effective and efficient alternative to scaling model size.
 
+> **⚠️ Important Note on Training Convergence:** Due to time and hardware/GPU constraints, the HiGS model training could not be fully converged. The scores reported above reflect partially trained checkpoints (~2 epochs). With additional training epochs on more powerful hardware, we expect significant performance improvements. A sample evaluation notebook demonstrating the results at ~2 epochs is available at [`notebooks/evaluate_higs_2epoch.ipynb`](notebooks/evaluate_higs_2epoch.ipynb).
+
 ---
 
 ## 11. Reproducing a Past Experiment
@@ -367,6 +372,14 @@ This repository supports:
 - Systematic comparison of encoder-decoder vs. LLM-based approaches
 - Parameter-efficient fine-tuning (LoRA/QLoRA) for large models
 - Fully reproducible experiments with config-driven training
+
+---
+
+## 15. Research Paper
+
+The full research paper describing the HiGS architecture, experimental setup, and findings is available on Overleaf:
+
+📄 **[Read the Research Paper](https://www.overleaf.com/read/ktqqqzvbcvmc#37caf1)**
 
 ---
 
