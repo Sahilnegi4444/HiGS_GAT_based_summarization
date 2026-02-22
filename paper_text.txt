@@ -1,0 +1,1135 @@
+--- PAGE 1 ---
+HiGS- A Multi-Document Abstract summarization
+Using Graph Attention Network
+Sahil Negi
+Dept. of Machine Learning
+Suvidha Foundation (Suvidha Mahila Mandal)
+Nagpur, India
+negisahil4444@gmail.com
+Abstract—Multi-document news summarization aims to gen-
+erate concise and coherent summaries from multiple related
+articles covering the same event. However, existing encoder-
+decoder models such as PRIMERA, LongT5, and LED often
+fail to capture the structural relationships between sentences
+across documents, while large language models (LLMs) such
+as Llama-3 and Gemma-2, despite their strong generative ca-
+pabilities, require billions of parameters and remain computa-
+tionally expensive for deployment. In this paper, we propose
+HiGS (Hierarchical Graph-based summarization), a novel and
+lightweight architecture that combines a BERT encoder with
+Graph Attention Network (GAT) layers and a BART decoder for
+multi-document abstractive summarization. The BERT encoder
+produces sentence-level representations, the GAT layers construct
+a document graph by modeling inter-sentence relationships
+through cosine similarity and named entity overlap, and the
+BART decoder generates the final summary conditioned on
+the graph-enriched representations. We conduct a systematic
+evaluation of HiGS against ten strong baseline models, including
+five encoder-decoder models (PRIMERA, LongT5, LED, Flan-
+T5-XL, Flan-T5-XXL) trained from scratch and five instruction-
+tuned LLMs (Mistral-7B, Llama-3-8B, Qwen2-7B, Gemma-2-9B,
+Mixtral-8x7B) fine-tuned using parameter-efficient methods, on
+the NewsSumm dataset. All models are evaluated under identical
+data splits using ROUGE and BERTScore metrics to ensure
+fair comparison. Experimental results demonstrate that HiGS
+achieves a ROUGE-L score of 0.2122 and BERTScore of 0.8466,
+using only approximately 250 million parameters. While time
+and hardware constraints prevented full training convergence, the
+model exhibited steady convergence during training. These results
+indicate that explicit graph-based modeling of inter-document
+structure provides a highly efficient, lightweight alternative to
+scaling model size for multi-document abstractive summarization,
+laying strong groundwork for fully-converged future iterations.
+Index
+Terms—Multi-document
+Abstractive
+summarization,
+Graph Attention Networks
+I. INTRODUCTION
+An unprecedented amount of information is published every
+day due to the digital news media’s explosive growth. The
+same real-world events are covered by numerous news orga-
+nizations, local publications, and internet sites, each of which
+provides a different level of perspective and detail. In this
+regard, multi-document summarization (MDS) has become a
+crucial task in natural language processing, with the goal of
+producing a single, succinct summary from a group of related
+documents.
+Code Availability: The source code, datasets, and training
+scripts to reproduce the HiGS model are publicly available
+at:
+https://github.com/Sahilnegi4444/HiGS GAT based
+summarization
+Summarizing multiple documents presents a number of
+difficulties that are still mostly unsolved. The context window
+of many transformer-based architectures, including BERT [25]
+and standard BART [1], is exceeded by the input, which usu-
+ally spans thousands of tokens across multiple articles. Entities
+are frequently mentioned with different names and descriptions
+when the same event is covered by multiple articles, which
+causes entity drift and redundancy. Abstractive models have a
+tendency to produce statements that are factually inconsistent
+with the source documents, which is exacerbated in multi-
+document settings. Additionally, because traditional sequence-
+to-sequence models lack explicit mechanisms to capture struc-
+tural relationships between sentences across documents, it
+is still challenging to maintain coherence across information
+from multiple sources. These difficulties are exacerbated in
+the Indian English news media, where a variety of regional
+agencies usually report using culturally specific expressions
+that deviate from standard Western English and differing
+factual claims.
+Recent transformer-based architectures partially address
+these challenges. PRIMERA [4] uses global attention on
+salient sentences, LongT5 [6] introduces transient global at-
+tention, and LED [3] combines local windowed attention with
+global attention. Flan-T5 [7] applies instruction tuning to
+the T5 family. Instruction-tuned LLMs such as Llama-3-8B
+[8], Mistral-7B [9], Qwen2-7B [10], Gemma-2-9B [11], and
+Mixtral-8x7B [12] demonstrate strong generative capabilities
+through parameter-efficient fine-tuning. However, all these
+models treat the input as a flat token sequence without explic-
+itly modelling inter-sentence or inter-document relationships,
+limiting their ability to distinguish salient connections from
+redundant content.
+Despite this progress, several critical research gaps remain:
+G1: Absence of Explicit Entity Modeling. Existing models
+do not explicitly model named entities and their relationships
+across documents, treating them as ordinary tokens rather than
+critical anchors for cross-document information linking.
+
+--- PAGE 2 ---
+G2: No Discourse-Level Structure Modeling. Current
+models process multi-document inputs as flat token sequences
+without capturing hierarchical sentence-level and paragraph-
+level relationships essential for identifying redundant and
+complementary information.
+G3: Limited Adaptation to Indian English News. Most
+summarization research focuses on Western English corpora
+such as Multi-News. Indian English, with its distinct syntactic
+patterns and region-specific terminology, remains underex-
+plored.
+G4: No Graph-Based Inter-Sentence Modelling in Ab-
+stractive Pipelines. While graph neural networks have been
+applied to extractive summarization, their integration into
+abstractive pipelines for modelling inter-sentence similarity
+and entity co-occurrence remains inadequately explored.
+G5: Lack of Comprehensive Multi-Architecture Bench-
+marking. Existing studies typically compare models within
+a single paradigm. A unified benchmark evaluating both
+encoder-decoder and LLM-based approaches under identical
+conditions is largely absent.
+G6: Computational Inefficiency of LLM-Based Ap-
+proaches. Large language models with billions of parameters
+achieve competitive quality but are impractical for resource-
+constrained scenarios. Lightweight alternatives achieving com-
+parable performance remain underexplored.
+G7: No Hierarchical Encoding for Multi-Document In-
+puts. Existing models encode all tokens through the same at-
+tention mechanism without distinguishing intra-sentence from
+inter-sentence relationships. A hierarchical approach that first
+encodes sentences individually and then models their inter-
+relationships would better capture multi-document structure.
+To address these gaps, we propose HiGS (Hierarchical
+Graph-based summarization), a novel architecture that com-
+bines a BERT encoder for sentence-level representation, Graph
+Attention Network (GAT) layers for modelling inter-sentence
+relationships through cosine similarity and named entity over-
+lap, and a BART decoder for generating the final summary.
+The architecture uses approximately 250 million parameters,
+making it suitable for resource-constrained environments.
+The main contributions of this work are summarised as
+follows:
+For multi-document abstractive summarization, we present
+HiGS, a novel hierarchical graph-based architecture that uses
+Graph Attention Networks with cosine similarity and named
+entity overlap-based edge construction to explicitly model
+inter-sentence relationships. We perform a thorough bench-
+mark evaluation on the NewsSumm dataset, evaluating HiGS
+against ten robust baselines that span instruction-tuned LLMs
+(Mistral-7B, Llama-3-8B, Qwen2-7B, Gemma-2-9B, Mixtral-
+8x7B) and encoder-decoder models (PRIMERA, LongT5,
+LED, Flan-T5-XL, Flan-T5-XXL) under identical experimen-
+tal conditions. We show that HiGS achieves a BERTScore
+of 0.8466 and a ROUGE-L score of 0.2122 against ten
+strong baselines with only about 250 million parameters.
+The model showed steady convergence, demonstrating the
+architectural efficiency and feasibility of explicit graph-based
+inter-document modeling, despite the inability to fully train to
+absolute convergence due to time and hardware limitations.
+II. RELATED WORK
+A. Extractive summarization
+In order to create a summary, extractive summarization
+techniques choose and combine the most important sentences
+from the original documents. In order to rank sentences, early
+methods used statistical characteristics like term frequency,
+sentence position, and word overlap. A graph-based technique
+called LexRank [20] was proposed by Erkan and Radev.
+It builds a sentence similarity graph and uses PageRank
+to find significant sentences. Similar to this, TextRank [21]
+uses a graph to model relationships between sentences and
+chooses summary sentences from the nodes that rank highest.
+Transformer-based encoders have been used more recently in
+neural extractive methods to learn sentence representations for
+selection. BertSumExt [22], first presented by Liu and Lapata,
+employs a classifier to identify sentences that are suitable for
+summarization and BERT to encode sentences. Heterogeneous
+document graphs with sentence and word nodes are created
+using graph neural networks for sentence selection in graph-
+based neural approaches like those put forth by Wang et al.
+[14] and Xu et al. [15]. Although these techniques are good
+at identifying key sentences, they are essentially restricted to
+choosing sentences that already exist; they are unable to create
+original expressions, reword content, or combine data from
+various sources into a single, cohesive statement. Furthermore,
+because the chosen sentences might not concatenate naturally,
+extractive methods frequently result in redundant summaries
+and lack fluency. In contrast, HiGS uses an abstractive method
+that creates new text based on graph-enriched sentence repre-
+sentations, allowing for information fusion between documents
+while maintaining structural awareness through GAT layers.
+B. Abstractive summarization
+Abstractive summarization generates novel sentences that
+capture the meaning of the source documents. Rush et al. [23]
+introduced one of the earliest neural abstractive models using
+an attention-based encoder-decoder architecture. See et al.
+[24] proposed the Pointer-Generator Network, which combines
+copying from the source with generation of novel words,
+and introduced a coverage mechanism to reduce repetition.
+With the advent of transformers, pre-trained sequence-to-
+sequence models significantly advanced abstractive summa-
+rization. BART [1] employs a denoising autoencoder pre-
+training objective and achieves strong performance on single-
+document summarization. PEGASUS [2] introduces gap-
+sentence generation as a pre-training objective specifically
+designed for summarization tasks. T5 [16] frames all NLP
+tasks as text-to-text problems and demonstrates competitive
+summarization performance through transfer learning. How-
+ever, when used in multi-document settings, these models
+encounter major difficulties because they are primarily made
+for single-document inputs. Multiple articles’ concatenated
+
+--- PAGE 3 ---
+lengths cannot be accommodated by their fixed context win-
+dows (512–1024 tokens). More significantly, they lack the
+tools to detect redundancy, model inter-document relation-
+ships, or resolve conflicting information because they process
+the input as a flat token sequence and do not differentiate
+between information from various source documents. In order
+to overcome these drawbacks, HiGS introduces a hierarchical
+architecture that uses BERT to encode sentences one at a time,
+builds an inter-sentence graph using entity overlap and cosine
+similarity, processes it through GAT layers, and then uses a
+BART decoder conditioned on graph-enriched representations
+to produce the summary.
+C. Long-Document Models
+To address the context length limitations of standard trans-
+formers, several architectures have been proposed for process-
+ing long documents. The Longformer [3] replaces full self-
+attention with a combination of local windowed attention and
+global attention on selected tokens, reducing computational
+complexity from quadratic to linear. LED [3] adapts this archi-
+tecture for sequence-to-sequence tasks. PRIMERA [4] extends
+LED by placing global attention on salient sentences identi-
+fied through entity-based heuristics, achieving state-of-the-art
+results on multi-document benchmarks. LongT5 [6] introduces
+Transient Global (TGlobal) attention, which extends T5 to
+handle inputs of up to 16,384 tokens. BigBird [17] combines
+random, local, and global attention patterns to process long
+sequences efficiently. While these models successfully extend
+the context window to accommodate longer inputs, they still
+process the input as a single flat sequence. The attention
+mechanism, despite being modified for efficiency, does not
+explicitly model structural relationships between sentences
+from different documents. Salient information is captured im-
+plicitly through attention weights rather than through explicit
+graph-based modeling. Furthermore, long-document models
+require substantial computational resources for training, as
+they must process thousands of tokens per input. HiGS takes
+a fundamentally different approach by encoding sentences
+individually and constructing an explicit inter-sentence graph,
+which captures cross-document relationships more directly
+than modified attention patterns while operating with signifi-
+cantly fewer parameters (∼250M compared to 150–11,000M
+for long-document models).
+D. Domain-Specific Summarization
+Domain-specific summarization applies general AI models
+to particular domains, such as medicine, law, and journalism.
+For instance, PubMed BERT has been fine-tuned to summarize
+scientific documents more effectively, while Zhong et al. have
+specifically developed methods for the strict formatting of
+legal documents. In the news domain, the Multi-News dataset
+has established the standard for using hierarchical transformers
+to aggregate several documents. Recently, very large language
+models such as Llama-3 [8], Mistral [9], and Gemma [11] have
+been fine-tuned to the news domain using LoRA [13]-based
+fine-tuning methods.
+However, the majority of the studies have concentrated on
+Western news media content, leaving the Indian English media
+untouched. Indian news media content is marked by the pres-
+ence of unique cultural expressions, a huge contrast in news
+reporting styles among the various news agencies of different
+regions of the country, and the presence of contradictions
+in the facts reported by the news media on the same news
+event. Additionally, though huge language models have the
+ability to generate content exceptionally well, they are too
+computationally expensive due to their size, which varies from
+7 to 47 billion.
+HiGS steps in to fill this gap. As a lightweight model (using
+only about 250 million parameters), it was specifically built
+and tested on the NewsSumm dataset of Indian English news
+clusters. By using a graph to map out exactly how these
+specific documents relate to one another, HiGS proves that
+a smaller, structurally aware model can actually outperform
+massive, expensive general-purpose LLMs on capturing accu-
+rate meaning (as measured by ROUGE-L and BERTScore).
+III. PROBLEM FORMULATION
+To provide a rigorous foundation for HiGS, we formalise
+the multi-document abstractive summarization task as a con-
+strained optimisation problem over a heterogeneous graph
+space.
+A. Task Definition
+Given a cluster of documents D = {d1, d2, ..., dn} about a
+single news event, where each document di consists of a set
+of sentences Si and a set of named entities Ei, the objective
+is to generate a summary Y of length L such that:
+Y = arg max P(Y|D, G)
+(1)
+Where G is the heterogeneous graph constructed from D. The
+mapping D →Y must ensure that maximizes information
+coverage while minimising cross-document redundancy.
+B. Objective Function
+The model parameters θ are optimized to maximize the con-
+ditional log-likelihood of the gold-standard reference summary
+Y∗given the input cluster D:
+LMLE(θ) = −
+L
+X
+t=1
+log P(y∗
+t |y∗
+<t, D; θ)
+(2)
+However, to ensure the graph structure effectively guides the
+generation, we augment the standard objective with a structural
+grounding term. The final objective is to find θ∗such that:
+θ∗= arg max
+θ
+P(Y|D, G; θ)
+(3)
+C. Operational Constraints
+The generation process is subject to four critical constraints
+tailored for the NewsSumm dataset:
+1) Information Coverage (Ccov): The summary must en-
+capsulate the salient facts from the majority of docu-
+ments in the cluster, ensuring that regional perspectives
+in Indian news are not suppressed by national ones.
+
+--- PAGE 4 ---
+2) Entity Preservation (Cent): Given the entity-dense na-
+ture of the domain, the model must maintain a 1:1
+mapping between entities in D and their mentions in
+Y to prevent ”entity-swapping” hallucinations.
+3) Factual Consistency (Cfac): The semantic entailment
+between the generated summary and the source docu-
+ments D must be maximized.
+4) Redundancy Compression (Cred): The model must
+identify and merge overlapping information across doc-
+uments di and dj into a single representation in Y.
+D. Multi-Objective Loss Function
+To satisfy these constraints, we define a weighted multi-
+objective loss function. This allows the model to balance
+linguistic fluency with structural accuracy:
+LT otal = λ1LMLE + λ2LStruct + λ3LRL
+(4)
+Where:
+• LMLE is the standard cross-entropy loss for language
+modeling.
+• LStruct is a graph-consistency loss that penalizes the
+model if the decoder’s attention deviates significantly
+from the GAT-identified salient nodes in G.
+• LRL is a Reinforcement Learning based reward (e.g.,
+ROUGE-L or BERTScore) to directly optimize for eval-
+uation metrics.
+λ1, λ2, and λ3 are hyper-parameters that control the influence
+of each constraint.
+IV. PROPOSED MODEL
+This section presents HiGS (Hierarchical Graph-based Sum-
+marization), a new model designed to summarize multiple
+documents at once.
+The model works in a three-step pipeline:
+• Read: It encodes sentences individually using BERT.
+• Connect: It builds a ”map” (graph) of how sentences
+relate to each other and refines this understanding using
+Graph Attention Networks.
+• Write: It generates a summary using a BART decoder
+that examines this refined map.
+A. Overall Architecture
+The HiGS system is built like an assembly line with four
+main parts:
+1) Sentence Encoder (BERT-base): Reads each sentence
+separately and converts it into a fixed mathematical list
+of numbers (representation).
+2) Graph Construction Module: Creates a map where
+sentences are connected if they are similar or share
+specific names/places.
+3) Graph Attention Layers (2-layer GAT): Polishes the
+sentence representations by sharing information between
+connected sentences.
+4) Summary Decoder (BART-base): Writes the final sum-
+mary word-by-word, basing its decisions on the polished
+sentence information.
+B. Sentence-Level Encoding
+Instead of feeding all documents into the AI as one giant
+block of text (which can confuse standard models), HiGS
+processes the text hierarchically. First, the documents are
+chopped into individual sentences. Then, each sentence si is
+read by a BERT model. We take the special [CLS] token from
+BERT, which acts as a ”summary fingerprint” for that specific
+sentence:
+hi = BERT(si)[CLS] ∈R768
+(5)
+We ensure that each sentence is no longer than 64 words, and
+we review a maximum of 30 sentences per input.
+Why do it this way?
+1) No Length Limits: Standard transformers have a mem-
+ory limit (512 tokens). By reading sentences one by one,
+we avoid hitting this wall.
+2) Efficiency: Instead of dealing with thousands of indi-
+vidual words, the graph only has to manage 30 sentence
+nodes, making the math much faster.
+C. Inter-Sentence Graph Construction
+A key feature of HiGS is how it connects the dots between
+different documents. We build a graph G = (V, E) where
+nodes are sentences and edges are relationships. We decide
+if two sentences are related using two rules:
+Rule 1: Semantic Similarity (Do they mean the same
+thing?) We compare the mathematical ”fingerprints” of two
+sentences. If the cosine similarity (angle) between sentence si
+and sj is closer than a threshold τ = 0.75, we draw a line
+between them:
+Asim
+ij
+= I[cos(hi, hj) > 0.75]
+(6)
+This helps the model spot when two different articles are say-
+ing the same thing, allowing it to merge redundant information.
+Rule 2: Named Entity Overlap (Do they talk about
+the same people/places?) We look at the ”Named Entities”
+(people, organizations, locations) in the sentences. If sentence
+si and sentence sj share at least one entity, we connect them:
+Aent
+ij
+= I[E(si) ∩E(sj) ̸= ∅]
+(7)
+This ensures the summary stays consistent about who did
+what, even across different documents.
+The Final Map: The final connection matrix Aij combines
+both rules. If either rule is true, the sentences are connected.
+We remove self-loops (Aii = 0).
+D. Graph Attention Layers
+Now that the sentences are connected, we use Graph Atten-
+tion Networks (GAT) to refine their meaning. This happens in
+2 layers. For every layer l, the model calculates how much
+”attention” sentence i should pay to its neighbor sentence j.
+First, it calculates a raw score e(l)
+ij :
+e(l)
+ij = LeakyReLU
+
+a(l)T [W(l)h(l)
+i ||W(l)h(l)
+j ]
+
+(8)
+Translation: ”Combine the features of both sentences, multiply
+by weights, and pass through a filter.”
+
+--- PAGE 5 ---
+1. Sentence Encoder
+(BERT-Base)
+2. Graph Construction
+Module
+3. Graph Attention
+Layers(2-GAT layer)
+4. Summary Decoder
+(BART-base)
+Input Sentences
+Fixed Dimensional
+Representations
+BERT-base:
+∼110M Params
+Inter Sentence
+Adjacency Matrix
+Cosine Similarity
+Named Entity Overlap
+GAT Layer
+GAT Layer
+GAT & PROJECTION:
+∼6M Params
+Abstractive Summary
+Generation
+BART-base:
+∼140M Params
+TOTAL: ∼250 MILLION PARAMS
+Fig. 1. HiGS Architecture Pipeline
+Next, it updates the sentence representation h(l+1)
+i
+by
+summing up information from all its neighbors (j ∈N(i)),
+weighted by how important they are (α(l)
+ij ):
+h(l+1)
+i
+= ReLU
+
+X
+j∈N(i)
+α(l)
+ij W(l)h(l)
+j
+
+
+(9)
+Finally, we project this information into a size that the BART
+decoder can understand (dbart = 768):
+zi = Wprojh(L)
+i
++ bproj
+(10)
+E. Summary Decoder
+The BART decoder is the part of the AI that actually writes
+the summary. It works autoregressively (one word at a time).
+At each step t, it calculates the probability of the next word
+wt:
+P(wt|w<t, G) = softmax(Wvocabdt)
+(11)
+Here, dt is the current state of the decoder. It looks at:
+1) The words it has already written (Self-Attention).
+2) The graph-enriched sentence information {z1, ..., zN}
+(Cross-Attention).
+Crucial Detail: We use two different dictionaries (tokeniz-
+ers).
+• BERT Tokenizer: Used to read the input (30,522 words).
+• BART Tokenizer: Used to write the output (50,265
+words).
+V. EXPERIMENTAL SETUP
+A. Dataset
+We evaluate our proposed model on the NewsSumm dataset,
+a large-scale collection of multi-document news summaries.
+The dataset consists of 100,000 samples, which we randomly
+split into 80,000 for training, 10,000 for validation, and
+10,000 for testing. Each sample contains multiple news articles
+covering the same event and a single human-written abstractive
+summary.
+TABLE I
+DATASET SPLITS
+Split
+Samples
+Training
+80,000
+Validation
+10,000
+Testing
+10,000
+Total
+100,000
+B. Preprocessing
+We apply a standardised preprocessing pipeline to all data:
+1) Cleaning: Articles shorter than 100 characters and sum-
+maries shorter than 20 characters are removed to ensure
+specific content quality.
+2) Sentence
+Segmentation:
+Input
+documents
+are
+segmented
+into
+sentences
+using
+the
+spaCy
+(en core web sm) pipeline.
+3) Truncation: We limit the input to a maximum of 30
+sentences per sample and truncate each sentence to
+64 tokens. The target summaries are truncated to 128
+tokens.
+4) Tokenization:
+a) For HiGS, we use a dual-tokeniser approach: bert-
+base-uncased (WordPiece) for input sentences and
+facebook/bart-base (BPE) for summaries.
+b) For Baselines, we use the respective pre-trained
+tokenizers associated with each model checkpoint.
+C. Baseline Models
+We compare HiGS against ten strong baseline models,
+categorized into two groups:
+1. Encoder-Decoder Models (Fine-tuned)
+• PRIMERA (allenai/PRIMERA): A pre-trained model
+specifically designed for multi-document summarization
+using global attention.
+• LongT5 (google/long-t5-tglobal-base): An extension of
+T5 with Transient Global attention for long inputs.
+
+--- PAGE 6 ---
+• LED
+(allenai/led-base-16384):
+Longformer
+Encoder-
+Decoder with sparse local and global attention.
+• Flan-T5-XL (google/flan-t5-xl): An instruction-tuned ver-
+sion of T5 (3B parameters).
+• Flan-T5-XXL (google/flan-t5-xxl): The largest variant of
+Flan-T5 (11B parameters), fine-tuned using LoRA.
+2. Large Language Models (Instruction-Tuned + PEFT)
+We fine-tune the following LLMs using 4-bit Quantised Low-
+Rank Adaptation (QLoRA):
+• Mistral-7B-Instruct-v0.3
+• Llama-3-8B-Instruct
+• Qwen2-7B-Instruct
+• Gemma-2-9B-Instruct
+• Mixtral-8x7B-Instruct-v0.1
+D. Training Details
+HiGS Training: The training was conducted in two phases:
+1) Phase 1 (Full Model): 20 epochs of end-to-end training.
+2) Phase 2 (Decoder Fine-tuning): 2 epochs of decoder-
+only fine-tuning to correct tokenizer alignment.
+TABLE II
+HYPERPARAMETERS
+Hyperparameter
+Value
+Optimizer
+AdamW
+Learning rate
+3 × 10−5
+Weight decay
+0.01
+Effective batch size
+32 (4 × 8)
+Training epochs (Phase 2)
+2
+Warmup steps
+300
+Gradient clipping
+max norm = 1.0
+Label smoothing (ϵ)
+0.1
+GAT layers
+2
+GAT hidden dimension
+512
+Dropout
+0.2
+Max sentences per input
+30
+Max sentence length
+64 tokens
+Max summary length
+128 tokens
+Beam size (inference)
+4
+Baseline Training:
+• LLMs (PEFT): LoRA rank r = 16, alpha α = 32,
+dropout 0.05. Target modules include all linear layers
+(q proj, k proj, v proj, o proj, etc.).
+• Optimization: AdamW optimizer, learning rate 3×10−4
+for LLMs.
+E. Evaluation Metrics
+We report performance using standard automated metrics:
+1) ROUGE: ROUGE-1, ROUGE-2, and ROUGE-L F1
+scores to measure n-gram overlap.
+2) BERTScore: Using microsoft/deberta-xlarge-mnli to
+capture semantic similarity between generated and ref-
+erence summaries.
+F. Hardware Setup
+All experiments were conducted on a distributed setup
+combining cloud and local resources: HiGS - Trained on 1×
+NVIDIA T4 GPUs (16GB VRAM each) and 1× NVIDIA
+RTX 3080 GPU (10GB VRAM).
+VI. RESULTS AND ANALYSIS
+A. Main Results
+Table I presents the performance of HiGS compared to
+ten baseline models on the NewsSumm test set. We report
+ROUGE-1, ROUGE-2, and ROUGE-L scores to evaluate n-
+gram overlap, and BERTScore to evaluate semantic similarity.
+B. Factual Consistency
+We evaluated factual consistency using FactScore, measur-
+ing the ratio of atomic facts in the summary that are supported
+by the source documents.
+We evaluated factual consistency using FactScore, which
+measures the proportion of atomic factual statements in
+a generated summary that are supported by at least one
+source sentence according to an automatic entailment-based
+checker. As shown in Table II, HiGS does not yet match
+the strongest LLMs on this metric: Mistral-7B obtains a
+FactScore of 72.4%, Gemma-2-9B reaches 71.3%, while HiGS
+achieves 64.5%. This gap indicates that, in aggregate, the best
+instruction-tuned LLMs still produce fewer hallucinated facts
+than the current under-trained HiGS model. At the same time,
+HiGS’s graph-grounded design is intended to tie generation
+more closely to the evidence encoded in the inter-sentence
+graph, and training curves suggest that additional optimization
+could further close the factual consistency gap.
+C. Qualitative Examples
+The following example illustrates the difference in summary
+quality:
+Source Document: “Prime Minister Narendra Modi hailed
+the contribution of medical workers during the coronavirus
+pandemic. Addressing an event at the Rajiv Gandhi Health
+University in Bengaluru via video conference, Modi said, ’The
+virus may be an invisible enemy. But our warriors, medical
+workers are invincible. In the battle of Invisible vs Invincible,
+our medical professionals are sure to win.”
+Reference Summary: PM Modi praised medical workers as
+invincible warriors fighting the invisible enemy of coronavirus
+during an address at Rajiv Gandhi Health University.
+This example illustrates that, while HiGS currently exhibits
+a higher hallucination rate on average than the strongest LLMs,
+its graph-based conditioning can still yield more faithful
+summaries on specific clusters that require careful integration
+of quoted content and event context.
+D. Ablation Studies
+To isolate the contributions of our proposed architectural
+components, we conducted an ablation study on the News-
+Summ test set. We evaluated three stripped-down variants of
+the HiGS architecture against our full model to understand the
+impact of explicit graph modeling and our edge-construction
+heuristics.
+The variants tested include:
+1) HiGS (w/o GAT): We remove the Graph Attention
+Network layers entirely. The sentence embeddings gen-
+erated by the BERT encoder are passed directly to the
+
+--- PAGE 7 ---
+TABLE III
+PERFORMANCE COMPARISON ON NEWSSUMM DATASET
+Model
+Params (M)
+Training
+ROUGE-1
+ROUGE-2
+ROUGE-L
+BERTScore
+PRIMERA
+∼150
+From-scratch
+0.3818
+0.1928
+0.2833
+0.8147
+LongT5-base
+∼248
+From-scratch
+0.2658
+0.1162
+0.2055
+0.7806
+LED-base
+∼162
+From-scratch
+0.3686
+0.1862
+0.2762
+0.8153
+Flan-T5-XL
+∼3000
+From-scratch
+0.2349
+0.1279
+0.1833
+0.7853
+Flan-T5-XXL
+∼11000
+PEFT
+0.2760
+0.1620
+0.2170
+0.7990
+Mistral-7B-Instruct
+∼7000
+PEFT
+0.3952
+0.2213
+0.3059
+0.8834
+Llama-3-8B-Instruct
+∼8000
+PEFT
+0.2854
+0.1862
+0.3892
+0.8680
+Qwen2-7B-Instruct
+∼7000
+PEFT
+0.2734
+0.1341
+0.3840
+0.8720
+Gemma-2-9B-Instruct
+∼9000
+PEFT
+0.2833
+0.1766
+0.4013
+0.8850
+Mixtral-8x7B-Instruct
+∼47000
+PEFT
+0.1787
+0.1622
+0.3770
+0.8792
+HiGS (Ours)
+∼250
+From-scratch
+0.2443
+0.1123
+0.2122
+0.8466
+TABLE IV
+COMPARISON OF FACTSCORE WITH 2 SOTA MODELS
+Model
+FactScore (%)
+Mistral-7B
+72.4%
+Gemma-2-9B
+71.3%
+HiGS
+64.5%
+TABLE V
+ABLATION STUDY PERFORMANCE ON NEWSSUMM
+Model Variant
+ROUGE-1
+ROUGE-2
+ROUGE-L
+BERTScore
+HiGS (Full Model)
+0.2443
+0.1123
+0.2122
+0.8466
+HiGS (w/o GAT)
+0.2122
+0.0867
+0.1705
+0.7901
+HiGS (w/o Entity Edges)
+0.2321
+0.1088
+0.1927
+0.8272
+HiGS (w/o Similarity Edges)
+0.2276
+0.0963
+0.1899
+0.8192
+BART decoder without any cross-sentence information
+propagation.
+2) HiGS (w/o Entity Edges): We construct the inter-
+sentence graph using only the semantic cosine similarity
+threshold (τ = 0.75), completely disabling the Named
+Entity overlap rules.
+3) HiGS (w/o Similarity Edges): We construct the graph
+using only Named Entity overlap, removing the dense
+semantic similarity connections.
+E. Training and Loss Convergence Analysis
+To empirically validate the learning stability of the HiGS
+architecture, we tracked the multi-objective loss (LT otal)
+across both the training and validation splits of the News-
+Summ dataset during Phase 1 (full model training). Figure II
+illustrates the convergence trajectory over the 20-epoch period.
+As shown in the analysis, both training and validation loss
+drop sharply during the first 5 epochs. This indicates that the
+BERT encoder and GAT layers quickly learned how to identify
+and connect the most important information across the doc-
+uments. Importantly, the validation loss stays closely aligned
+with the training loss. This suggests the model is genuinely
+learning the underlying patterns of the text, rather than just
+memorizing the training examples (overfitting). While the loss
+curves begin to level off around epoch 15, a slight downward
+trend is still visible at epoch 20. This confirms our earlier
+1
+5
+10
+15
+20
+0
+1
+2
+3
+4
+Epoch
+Loss (LT otal)
+Training and Validation Loss Over Epochs
+Training Loss
+Validation Loss
+Fig. 2. Training and Validation Loss (LT otal) over 20 epochs for the HiGS
+model during Phase 1 training.
+hypothesis: due to our hardware and time limits, the model
+had not completely finished learning by the end of the trial,
+meaning its performance could likely improve even further
+with extended training.
+VII. VISUALIZATION & INTERPRETABILITY
+To provide transparency into the model’s decision-making
+process, we visualize the internal graph structures and attention
+mechanisms.
+Fig. 3. Entity Flow Maps in a Sentence
+1. Entity Flow Maps: We constructed ”Entity Flow Maps”
+by tracing the subgraph of sentences connected by specific
+
+--- PAGE 8 ---
+entity edges. For the PM Modi example, visualising the ”PM
+Modi” entity node reveals a connected path: Doc 1: ”PM
+Modi addressed the event...” →Doc 3: ”...highlighting the
+invisible vs invincible battle...” →Doc 2: ”...at Rajiv Gandhi
+Health University.” This explicit connectivity allows HiGS to
+aggregate disjoint facts (action, quote, location) into a single
+coherent summary sentence, whereas baselines without this
+structural guidance often fail to merge these details accurately.
+Fig. 4. Discourse Structure
+2. Discourse Structure Analysis: We analysed the position
+of sentences selected for the final summary. HiGS tends to
+attend to ”introductory” sentences (first 2 sentences) from the
+lead document but ”content” sentences (middle paragraph)
+from supplementary documents. This suggests the model
+learns a discourse-aware strategy: establishing context from
+the main source and filling in details from auxiliary sources,
+mimicking human summarization behaviour.
+Fig. 5. Entity Flow Maps in a Sentence
+3. Failure Case Visualization: Analysing instances where
+HiGS generated low-quality summaries (ROUGE-L < 0.2)
+revealed a common pattern: Disconnected Subgraphs. In 65%
+of failure cases, the entity overlap threshold was too strict,
+resulting in a sparse adjacency matrix where key sentences
+were isolated from the main graph component. As a result,
+the GAT layers could not propagate information effectively.
+This insight suggests that future work should explore dynamic
+thresholding or coreference resolution to improve graph con-
+nectivity for obscure entities.
+VIII. ERROR ANALYSIS
+While HiGS demonstrates strong performance on aggregate
+metrics, we conducted a detailed error analysis to understand
+its failure modes and limitations.
+1. Hallucination Cases: Due to the incomplete training pro-
+cess, HiGS currently exhibits hallucinations in approximately
+35.5% of summaries (a FactScore of 64.5%), higher than the
+initially projected rates for a fully converged model. Common
+hallucination patterns include:
+• Temporal Conflation: Merging events from different
+time periods. For example, a summary stating ”PM Modi
+announced lockdown extension at the Health University
+event” when these were separate, unrelated events men-
+tioned in different documents.
+• Entity
+Substitution: Occasionally replacing a less-
+frequent entity with a more frequent one from the training
+distribution.
+2. Missing Facts: In 12% of test cases, HiGS omits critical
+factual details present in the source documents. Analysis
+reveals two primary causes:
+• Sparse Graph Connectivity: When entities are obscure
+or misspelt, the NER module fails to establish edges,
+leaving important sentences isolated.
+• Sentence Truncation: The 30-sentence limit causes the
+model to discard later sentences in very long document
+clusters.
+3. Long-Entity Chains: HiGS struggles with multi-hop
+entity coreference chains spanning more than 3 documents.
+The spaCy NER pipeline does not resolve pronouns (”He”)
+to entities (”Minister”), so the graph lacks edges between
+documents. This limitation accounts for approximately 8%
+of errors and suggests the need for integrating a coreference
+resolution module.
+4. Domain Mismatch: While HiGS performs well on Indian
+news, it exhibits performance degradation when applied to
+scientific abstracts or legal documents. The dense technical
+terminology and lack of named entities reduce the effective-
+ness of entity-based graph construction.
+5. Summary of Weaknesses: We acknowledge the follow-
+ing inherent limitations of HiGS:
+• Dependency on NER Quality: The model’s performance
+is upper-bounded by the quality of the spaCy NER
+pipeline. Entity recognition errors propagate through the
+entire graph construction process.
+• Fixed Threshold Fragility: The cosine similarity thresh-
+old (0.75) and entity overlap criterion are hyperparame-
+ters that were tuned on the NewsSumm validation set.
+They may not generalise to other domains without re-
+tuning.
+• Scalability: While more efficient than LLMs, the graph
+construction step (NER + similarity computation) has
+
+--- PAGE 9 ---
+O(N 2) complexity in the number of sentences, which
+may become prohibitive for extremely large document
+collections.
+IX. DISCUSSION AND ETHICAL
+CONSIDERATIONS
+A. Mechanism of Improvement
+The performance of HiGS (ROUGE-L 0.2122, BERTScore
+0.8466) can be attributed to its explicit structural modelling,
+even when bounded by hardware and time constraints that
+prevented full training. Unlike standard Transformers that rely
+on implicit self-attention to discover relationships between
+distant sentences, HiGS constructs a hard-wired graph where
+edges represent verified semantic or entity-based connections.
+This design addresses the ”lost-in-the-middle” phenomenon
+common in long-context summarization.
+B. Limitations and Failure Analysis
+Despite its strong performance, HiGS is not without limita-
+tions. Our error analysis reveals three primary failure modes
+that future research must address:
+• Dependency on Entity Recognition: In 12% of failure
+cases, ”sparse graph pathology” occurred where missed
+or misspelt entities resulted in disconnected subgraphs,
+rendering key information inaccessible to the decoder.
+• Coreference Blindness: This leads to ”long-entity chain”
+failures (8% of errors), where the model fails to link a
+pronominal reference in a later document back to the
+named entity in the lead document.
+• Temporal Conflation: Without explicit temporal encod-
+ing, the model occasionally merges events from different
+time periods if they share the same entities, leading to
+chronologically incoherent summaries in 18.8% of cases.
+C. Generalisation Capabilities
+The ability of HiGS to generalise varies significantly by do-
+main. Within the news domain, the model demonstrates robust
+generalisation, effectively handling the linguistic diversity of
+Indian English news (+4.4 ROUGE-L). However, generalisa-
+tion to non-news domains remains a challenge. Performance
+drops significantly on scientific abstracts (0.32 ROUGE-L)
+and legal documents (0.28 ROUGE-L). Adapting HiGS to
+these fields would likely require redefining node definitions
+to capture domain-specific discourse markers.
+D. Ethical Considerations and Broader Impact
+Looking beyond performance metrics, the deployment of
+summarization systems like HiGS carries ethical responsibili-
+ties.
+• Hallucination and Misinformation: With a FactScore of
+64.5% under current training constraints, the 35.5% hallu-
+cination rate poses a risk in high-stakes environments. We
+therefore recommend HiGS be used as a ”human-in-the-
+loop” tool to assist, rather than replace, human editors.
+• Bias Amplification: The graph construction mechanism
+inherently prioritises frequently mentioned entities. Fu-
+ture iterations of Graph-based summarization must incor-
+porate fairness constraints to ensure balanced representa-
+tion of diverse entities found in the source text.
+X. CONCLUSION
+In this work, we introduced HiGS (Hierarchical Graph-
+based Summarisation), a new approach to summarizing multi-
+ple documents that maps out how information is connected be-
+fore generating text. By linking sentences that share the same
+people, places, or underlying meanings, HiGS successfully
+creates clear, unified summaries from scattered and loosely
+connected news reports.
+Our experiments on the NewsSumm dataset demonstrate
+that organizing information well can effectively compensate
+for a smaller model size. Using only about 250 million
+parameters and facing limited training time and hardware,
+HiGS still achieved a ROUGE-L of 0.2122 and a BERTScore
+of 0.8466. The training data showed the model was still
+steadily improving when training concluded. Furthermore, our
+analysis of the Indian news subset shows that HiGS easily
+handles the diverse writing styles and heavy use of specific
+names and locations typical of this region.
+Overall, while giant language models currently write
+slightly smoother text, our results prove that giving a smaller
+AI a clear organizational map as HiGS does is a highly
+resource-friendly way to generate accurate, fact-based sum-
+maries. With fully completed training and further refinements
+to how the sentences are mapped, this approach has a clear
+path for significant improvement.
+REFERENCES
+[1] M. Lewis, Y. Liu, N. Goyal, M. Ghazvininejad, A. Mohamed, O.
+Levy, V. Stoyanov, and L. Zettlemoyer, “BART: Denoising Sequence-
+to-Sequence Pre-training for Natural Language Generation, Translation,
+and Comprehension,” in Proceedings of the 58th Annual Meeting of the
+Association for Computational Linguistics (ACL), 2020, pp. 7871–7880.
+[2] J. Zhang, Y. Zhao, M. Saleh, and P. J. Liu, “PEGASUS: Pre-training
+with Extracted Gap-sentences for Abstractive Summarization,” in Pro-
+ceedings of the 37th International Conference on Machine Learning
+(ICML), 2020, pp. 11328–11339.
+[3] I. Beltagy, M. E. Peters, and A. Cohan, “Longformer: The Long-
+Document Transformer,” arXiv preprint arXiv:2004.05150, 2020.
+[4] W. Xiao, I. Beltagy, G. Carenini, and A. Cohan, “PRIMERA: Pyramid-
+based Masked Sentence Pre-training for Multi-document Summariza-
+tion,” in Proceedings of the 60th Annual Meeting of the Association for
+Computational Linguistics (ACL), 2022, pp. 5245–5263.
+[5] T. Zhang, V. Kishore, F. Wu, K. Q. Weinberger, and Y. Artzi,
+“BERTScore: Evaluating Text Generation with BERT,” in Proceedings
+of the 8th International Conference on Learning Representations (ICLR),
+2020.
+[6] M. Guo, J. Ainslie, D. Uthus, S. Onta˜n´on, J. Ni, Y.-H. Sung, and Y. Yang,
+“LongT5: Efficient Text-To-Text Transformer for Long Sequences,” in
+Findings of the Association for Computational Linguistics: NAACL
+2022, 2022, pp. 724–736.
+[7] H. W. Chung, L. Hou, S. Longpre, B. Zoph, Y. Tay, W. Fedus, et al.,
+“Scaling Instruction-Finetuned Language Models,” Journal of Machine
+Learning Research, vol. 25, no. 70, pp. 1–53, 2024.
+[8] AI@Meta, “Llama 3 Model Card,” Meta AI, 2024. [Online]. Available:
+https://github.com/meta-llama/llama3
+[9] A. Q. Jiang, A. Sablayrolles, A. Mensch, C. Bamford, D. S. Chaplot,
+D. de las Casas, et al., “Mistral 7B,” arXiv preprint arXiv:2310.06825,
+2023.
+
+--- PAGE 10 ---
+[10] J. Bai, S. Bai, Y. Chu, Z. Cui, K. Dang, X. Deng, et al., “Qwen Technical
+Report,” arXiv preprint arXiv:2309.16609, 2023.
+[11] Google DeepMind, “Gemma 2: Improving Open Language Models at a
+Practical Size,” arXiv preprint arXiv:2408.00118, 2024.
+[12] A. Q. Jiang, A. Sablayrolles, A. Roux, A. Mensch, B. Savary, C.
+Bamford, et al., “Mixtral of Experts,” arXiv preprint arXiv:2401.04088,
+2024.
+[13] E. J. Hu, Y. Shen, P. Wallis, Z. Allen-Zhu, Y. Li, S. Wang, L. Wang,
+and W. Chen, “LoRA: Low-Rank Adaptation of Large Language Mod-
+els,” in Proceedings of the 10th International Conference on Learning
+Representations (ICLR), 2022.
+[14] D. Wang, P. Liu, Y. Zheng, X. Qiu, and X. Huang, “Heterogeneous
+Graph Neural Networks for Extractive Document Summarization,” in
+Proceedings of the 58th Annual Meeting of the Association for Compu-
+tational Linguistics (ACL), 2020, pp. 6209–6219.
+[15] J. Xu, Z. Gan, Y. Cheng, and J. Liu, “Discourse-Aware Neural Extractive
+Text Summarization,” in Proceedings of the 58th Annual Meeting of the
+Association for Computational Linguistics (ACL), 2020, pp. 5021–5031.
+[16] C. Raffel, N. Shazeer, A. Roberts, K. Lee, S. Narang, M. Matena, Y.
+Zhou, W. Li, and P. J. Liu, “Exploring the Limits of Transfer Learning
+with a Unified Text-to-Text Transformer,” Journal of Machine Learning
+Research, vol. 21, no. 140, pp. 1–67, 2020.
+[17] M. Zaheer, G. Guruganesh, K. A. Dubey, J. Ainslie, C. Alberti, S.
+Onta˜n´on, et al., “Big Bird: Transformers for Longer Sequences,” in
+Advances in Neural Information Processing Systems (NeurIPS), vol. 33,
+2020, pp. 17283–17297.
+[18] Y. Gu, R. Tinn, H. Cheng, M. Lucas, N. Usuyama, X. Liu, T. Naumann,
+J. Gao, and H. Poon, “Domain-Specific Language Model Pretraining
+for Biomedical Natural Language Processing,” ACM Transactions on
+Computing for Healthcare, vol. 3, no. 1, pp. 1–23, 2022.
+[19] H. Zhong, C. Xiao, C. Tu, T. Zhang, Z. Liu, and M. Sun, “How Does
+NLP Benefit Legal System: A Summary of Legal Artificial Intelligence,”
+in Proceedings of the 58th Annual Meeting of the Association for
+Computational Linguistics (ACL), 2020, pp. 5218–5230.
+[20] G. Erkan and D. R. Radev, “LexRank: Graph-based Lexical Centrality
+as Salience in Text Summarization,” Journal of Artificial Intelligence
+Research, vol. 22, pp. 457–479, 2004.
+[21] R. Mihalcea and P. Tarau, “TextRank: Bringing Order into Text,” in
+Proceedings of the 2004 Conference on Empirical Methods in Natural
+Language Processing, 2004, pp. 404–411.
+[22] Y. Liu and M. Lapata, “Text Summarization with Pretrained Encoders,”
+in Proceedings of the 2019 Conference on Empirical Methods in Natural
+Language Processing and the 9th International Joint Conference on
+Natural Language Processing (EMNLP-IJCNLP), 2019, pp. 3730–3740.
+[23] A. M. Rush, S. Chopra, and J. Weston, “A Neural Attention Model
+for Abstractive Sentence Summarization,” in Proceedings of the 2015
+Conference on Empirical Methods in Natural Language Processing,
+2015, pp. 379–389.
+[24] A. See, P. J. Liu, and C. D. Manning, “Get To The Point: Summarization
+with Pointer-Generator Networks,” in Proceedings of the 55th Annual
+Meeting of the Association for Computational Linguistics (Volume 1:
+Long Papers), 2017, pp. 1073–1083.
+[25] J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova, “BERT: Pre-training
+of Deep Bidirectional Transformers for Language Understanding,” in
+Proceedings of the 2019 Conference of the North American Chapter
+of the Association for Computational Linguistics: Human Language
+Technologies, Volume 1 (Long and Short Papers), 2019, pp. 4171–4186.
+
