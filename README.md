@@ -17,7 +17,9 @@ The project includes:
 - Unified evaluation pipeline (ROUGE + BERTScore)
 - Complete benchmark results
 
-**HiGS** combines a BERT encoder with Graph Attention Network (GAT) layers and a BART decoder (~250M parameters), achieving the highest ROUGE-L (0.4215) and BERTScore (0.8995) among all 11 models tested.
+**HiGS** combines a BERT encoder with Graph Attention Network (GAT) layers and a BART decoder (~250M parameters), achieving a ROUGE-L of **0.2122** and BERTScore of **0.8466** with only ~250M parameters — demonstrating that explicit graph-based structural modeling provides a lightweight, efficient alternative to billion-parameter LLMs for multi-document summarization.
+
+> **Note:** Due to time and hardware constraints, HiGS training was not fully converged. The model exhibited steady convergence and scores are expected to improve significantly with extended training.
 
 📄 **[Read the Full Research Paper on Overleaf](https://www.overleaf.com/read/ktqqqzvbcvmc#37caf1)**
 
@@ -282,8 +284,8 @@ python scripts/evaluate.py \
 ```
 
 Metrics computed:
-- **ROUGE-1, ROUGE-2, ROUGE-L** (F1 scores, with stemming)
-- **BERTScore** (F1, using `roberta-large`)
+- **ROUGE-1, ROUGE-2, ROUGE-L** (F1 scores)
+- **BERTScore** (F1, using `microsoft/deberta-xlarge-mnli`)
 
 Results stored in `results/<model_name>/evaluation.json`.
 
@@ -307,9 +309,9 @@ All models evaluated on the **NewsSumm test set** under identical data splits:
 | Mixtral-8x7B-Instruct | ~47000 | PEFT | 0.1787 | 0.1622 | 0.3770 | 0.8792 |
 | **HiGS (Ours)** | **~250** | **From scratch** | **0.2443** | **0.1123** | **0.2122** | **0.8466** |
 
-> **Key Finding:** HiGS achieves competitive BERTScore (0.8466) with only ~250M parameters, demonstrating that explicit graph-based modeling of inter-document structure provides an effective and efficient alternative to scaling model size.
+> **Key Finding:** Despite training under significant hardware and time constraints, HiGS achieves a BERTScore of 0.8466 and ROUGE-L of 0.2122 with only ~250M parameters. While larger instruction-tuned LLMs (Gemma-2-9B, Mistral-7B) achieve higher absolute scores, HiGS demonstrates that explicit graph-based modeling of inter-document structure provides a highly parameter-efficient alternative — using **28–188× fewer parameters** than the LLM baselines.
 
-> **⚠️ Important Note on Training Convergence:** Due to time and hardware/GPU constraints, the HiGS model training could not be fully converged. The scores reported above reflect partially trained checkpoints (~2 epochs). With additional training epochs on more powerful hardware, we expect significant performance improvements. A sample evaluation notebook demonstrating the results at ~2 epochs is available at [`notebooks/evaluate_higs_2epoch.ipynb`](notebooks/evaluate_higs_2epoch.ipynb).
+> **⚠️ Important Note on Training Convergence:** Due to time and hardware/GPU constraints (1× NVIDIA T4 16GB + 1× RTX 3080 10GB), HiGS training could not be fully converged. Phase 1 training ran for 20 epochs with loss still trending downward, and Phase 2 decoder fine-tuning ran for 2 epochs. With additional training on more powerful hardware, we expect significant performance improvements. A sample evaluation notebook is available at [`notebooks/evaluate_higs_sample.ipynb`](notebooks/evaluate_higs_sample.ipynb).
 
 ---
 
@@ -389,9 +391,11 @@ The full research paper describing the HiGS architecture, experimental setup, an
 If you use this work, please cite:
 
 ```bibtex
-@article{higs2026,
-  title={HiGS: Hierarchical Graph-Based Summarization for Multi-Document Abstractive Summarization in Indian English},
-  year={2026}
+@article{negi2026higs,
+  title={HiGS: A Multi-Document Abstract Summarization Using Graph Attention Network},
+  author={Negi, Sahil},
+  year={2026},
+  institution={Suvidha Foundation (Suvidha Mahila Mandal), Nagpur, India}
 }
 ```
 
