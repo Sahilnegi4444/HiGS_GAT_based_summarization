@@ -339,11 +339,11 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 
 # Step 3: Download data & model
-# Download cleaned dataset from: https://drive.google.com/drive/folders/1l_5WC5gacZAnCjZCgcSC6ZvNc4Sa2Igc
-# Place in: data/processed/newssumm_cleaned.parquet
-#
-# Download model checkpoint from: https://drive.google.com/drive/folders/1hqYPvjdl443WFcgfs9OA-73p0U5Nusbm
-# Place in: results/higs/best_checkpoint.pt
+Download cleaned dataset from: https://drive.google.com/drive/folders/1l_5WC5gacZAnCjZCgcSC6ZvNc4Sa2Igc
+Place in: data/processed/newssumm_cleaned.parquet
+
+Download model checkpoint from: https://drive.google.com/drive/folders/1hqYPvjdl443WFcgfs9OA-73p0U5Nusbm
+Place in: results/higs/best_checkpoint.pt
 
 # Step 4: Preprocess (splits)
 python scripts/preprocess.py --input data/processed/newssumm_cleaned.parquet --output data/processed
