@@ -329,7 +329,7 @@ This ensures same hyperparameters, seed, and deterministic pipeline behavior.
 
 ```bash
 # Step 1: Clone
-git clone <repo_url>
+git clone https://github.com/Sahilnegi4444/HiGS_GAT_based_summarization.git
 cd HiGS_Multi_document_abstract_summarization_in_Indian_English
 
 # Step 2: Setup environment
