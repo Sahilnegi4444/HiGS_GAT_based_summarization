@@ -19,6 +19,8 @@ The project includes:
 
 **HiGS** combines a BERT encoder with Graph Attention Network (GAT) layers and a BART decoder (~250M parameters), achieving a ROUGE-L of **0.2122** and BERTScore of **0.8466** with only ~250M parameters — demonstrating that explicit graph-based structural modeling provides a lightweight, efficient alternative to billion-parameter LLMs for multi-document summarization.
 
+**Why HiGS?** Unlike 7B+ LLM baselines that require expensive cloud GPUs, HiGS runs inference on **standard 8GB RAM desktops/PCs** at ~45 tokens/sec — making it a practical, low-latency alternative for resource-constrained environments where deploying massive LLMs is infeasible.
+
 > **Note:** Due to time and hardware constraints, HiGS training was not fully converged. The model exhibited steady convergence and scores are expected to improve significantly with extended training.
 
 📄 **[Read the Full Research Paper on Overleaf](https://www.overleaf.com/read/ktqqqzvbcvmc#37caf1)**
@@ -226,7 +228,7 @@ Fine-tune instruction-tuned LLMs with parameter-efficient methods:
 
 ```bash
 # Mistral-7B-Instruct
-python scripts/train_llm_lora.py --config configs/llm_lora.yaml --model mistralai/Mistral-7B-Instruct-v0.2
+python scripts/train_llm_lora.py --config configs/llm_lora.yaml --model mistralai/Mistral-7B-Instruct-v0.3
 
 # LLaMA-3-8B-Instruct
 python scripts/train_llm_lora.py --config configs/llm_lora.yaml --model meta-llama/Meta-Llama-3-8B-Instruct
@@ -383,6 +385,12 @@ This repository supports:
 The full research paper describing the HiGS architecture, experimental setup, and findings is available on Overleaf:
 
 📄 **[Read the Research Paper](https://www.overleaf.com/read/ktqqqzvbcvmc#37caf1)**
+
+---
+
+## Acknowledgment
+
+This research was conducted under the Internship Program at **Suvidha Foundation (Suvidha Mahila Mandal)**, Nagpur, India. The author gratefully acknowledges the Research Mentorship Support provided throughout the development of this project.
 
 ---
 
