@@ -4,7 +4,7 @@ LLM LoRA/QLoRA Fine-tuning Script
 Usage:
     python scripts/train_llm_lora.py \
         --config configs/llm_lora.yaml \
-        --model mistralai/Mistral-7B-Instruct-v0.2
+        --model mistralai/Mistral-7B-Instruct-v0.3
 """
 
 import argparse
@@ -86,7 +86,7 @@ def main():
         logging_steps=50,
         eval_steps=config.get("eval_steps", 500),
         save_steps=config.get("save_steps", 500),
-        evaluation_strategy="steps",
+        eval_strategy="steps",
         save_strategy="steps",
         fp16=True,
         report_to="none",

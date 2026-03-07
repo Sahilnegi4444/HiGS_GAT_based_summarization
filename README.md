@@ -380,7 +380,14 @@ This repository supports:
 
 ---
 
-## 15. Research Paper
+## 15. Known Limitations & Notes
+
+- **HiGS Training — No Learning Rate Scheduler:** The HiGS training script (`train_higs.py`) uses a fixed learning rate without warmup or decay, unlike the baseline models which use `get_linear_schedule_with_warmup`. Adding a scheduler may improve convergence.
+- **Token Counts:** Dataset statistics (`compute_stats.py`, `clean_dataset.py`) report whitespace-delimited token counts as an approximation. Actual subword token counts (BERT/BART) will differ.
+- **LLM Validation Cap:** The LLM LoRA training script caps the validation set to 1,000 samples for efficiency.
+- **Flan-T5-XXL Config:** No separate config file is provided for Flan-T5-XXL; it was run using a modified version of `configs/flan_t5_xl.yaml` with LoRA/PEFT settings from `configs/llm_lora.yaml`.
+
+## 16. Research Paper
 
 The full research paper describing the HiGS architecture, experimental setup, and findings is available on Overleaf:
 

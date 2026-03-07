@@ -22,8 +22,8 @@ def main():
     parser = argparse.ArgumentParser(description="Evaluate summarization outputs")
     parser.add_argument("--predictions", required=True, help="CSV with generated/reference columns")
     parser.add_argument("--output", required=True, help="Output JSON path")
-    parser.add_argument("--bertscore-model", default="roberta-large",
-                        help="Model for BERTScore (default: roberta-large)")
+    parser.add_argument("--bertscore-model", default="microsoft/deberta-xlarge-mnli",
+                        help="Model for BERTScore (default: microsoft/deberta-xlarge-mnli)")
     parser.add_argument("--no-bertscore", action="store_true",
                         help="Skip BERTScore computation")
     args = parser.parse_args()
