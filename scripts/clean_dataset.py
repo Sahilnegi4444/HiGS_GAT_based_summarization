@@ -80,6 +80,13 @@ def main():
         if col in df.columns:
             df[f"{col}_clean"] = df[col].apply(clean_text)
 
+    # Parse date column
+    if "date" in df.columns:
+        print("📅 Parsing date column...")
+        df["date"] = pd.to_datetime(df["date"], errors="coerce")
+        df["year"] = df["date"].dt.year.astype("Int64")
+        print(f"   ✓ Parsed dates, extracted year column")
+
     # Remove empty rows
     before = len(df)
     if "articles_clean" in df.columns:
@@ -110,9 +117,9 @@ def main():
     # Save
     cols = [
         c for c in [
-            "source", "headline", "articles_clean", "summary_clean",
-            "category", "article_token_count", "summary_token_count",
-            "compression_ratio",
+            "source", "date", "year", "headline", "articles_clean",
+            "summary_clean", "category", "article_token_count",
+            "summary_token_count", "compression_ratio",
         ] if c in df.columns
     ]
     df_save = df[cols].copy()
