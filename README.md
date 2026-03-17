@@ -23,8 +23,6 @@ The project includes:
 
 > **Note:** Due to time and hardware constraints, HiGS training was not fully converged. The model exhibited steady convergence and scores are expected to improve significantly with extended training.
 
-📄 **[Read the Full Research Paper on Overleaf](https://www.overleaf.com/read/ktqqqzvbcvmc#37caf1)**
-
 ---
 
 ## Repository Structure
@@ -386,14 +384,6 @@ This repository supports:
 - **Token Counts:** Dataset statistics (`compute_stats.py`, `clean_dataset.py`) report whitespace-delimited token counts as an approximation. Actual subword token counts (BERT/BART) will differ.
 - **LLM Validation Cap:** The LLM LoRA training script caps the validation set to 1,000 samples for efficiency.
 - **Flan-T5-XXL Config:** No separate config file is provided for Flan-T5-XXL; it was run using a modified version of `configs/flan_t5_xl.yaml` with LoRA/PEFT settings from `configs/llm_lora.yaml`.
-
-## 16. Research Paper
-
-The full research paper describing the HiGS architecture, experimental setup, and findings is available on Overleaf:
-
-📄 **[Read the Research Paper](https://www.overleaf.com/read/ktqqqzvbcvmc#37caf1)**
-
----
 
 ## Acknowledgment
 
