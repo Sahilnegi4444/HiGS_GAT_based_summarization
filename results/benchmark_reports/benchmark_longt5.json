@@ -1,0 +1,20 @@
+{
+  "model": "longt5",
+  "params_total": 296936064,
+  "params_m": 248,
+  "model_type": "seq2seq",
+  "inference": {
+    "num_samples": 30,
+    "mean_latency_sec": 2.5833,
+    "median_latency_sec": 2.8683,
+    "p95_latency_sec": 3.7187,
+    "throughput_samples_per_sec": 0.3871,
+    "tokens_per_sec": 39.2,
+    "avg_output_tokens": 101.2
+  },
+  "system": {
+    "gpu": "Tesla T4",
+    "peak_vram_gb": 3.71,
+    "ram_gb": 12.7
+  }
+}

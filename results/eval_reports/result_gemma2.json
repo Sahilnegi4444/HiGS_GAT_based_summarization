@@ -1,0 +1,121 @@
+{
+  "model": "gemma2",
+  "hf_id": "google/gemma-2-9b-it",
+  "architecture": "causal_lm",
+  "training_strategy": "lora",
+  "total_params": 5097799168,
+  "trainable_params": 17891328,
+  "training": {
+    "train_samples": 1000,
+    "epochs": 1,
+    "batch_size": 1,
+    "grad_accum": 4,
+    "learning_rate": 0.0002,
+    "total_steps": 250,
+    "training_time_sec": 7274.5,
+    "training_time_min": 121.2,
+    "loss_log": [
+      {
+        "step": 200,
+        "loss": 1.5929
+      },
+      {
+        "step": 212,
+        "loss": 1.4877
+      },
+      {
+        "step": 225,
+        "loss": 1.667
+      },
+      {
+        "step": 237,
+        "loss": 1.5585
+      },
+      {
+        "step": 250,
+        "loss": 1.6107
+      }
+    ]
+  },
+  "evaluation": {
+    "eval_samples": 100,
+    "rouge1": 0.3418,
+    "rouge2": 0.129,
+    "rougeL": 0.2308,
+    "bertscore_f1": 0.8832
+  },
+  "inference": {
+    "mean_latency_sec": 16.4383,
+    "median_latency_sec": 16.674,
+    "throughput_samples_per_sec": 0.0608
+  },
+  "system": {
+    "gpu": "Tesla T4",
+    "gpu_vram_gb": 14.6,
+    "peak_vram_train_gb": 9.27,
+    "peak_vram_infer_gb": 5.56,
+    "ram_gb": 31.4
+  },
+  "sample_outputs": [
+    {
+      "index": 0,
+      "reference": "Mufti Shehzad, a member of the Popular Front of India (PFI) and a key figure in the anti-CAA protests in Meerut on December 20, 2023, was arrested by the Anti-Terrorist Squad (ATS) at his residence in Muradnagar. Shehzad, who had been on the run since an FIR was filed against him and his accomplice Parvez, was taken into custody following violent protests that resulted in six deaths and over sixty injuries. Shehzad and Parvez had reportedly operated a PFI office in Meerut's Shastri Nagar, where police found inflammatory materials during a raid. Shehzad has been handed over to the Nauchandi police for further interrogation. Authorities are now searching for Parvez, who remains at large. **Category:** Crime",
+      "generated": "A prominent figure associated with the controversial Citizenship Amendment Act (CAA) demonstrations that erupted across various parts of Uttar Pradesh is apprehended amidst ongoing investigations into alleged inciting activities related to communal tensions surrounding the legislation's implementation.",
+      "bertscore_f1": 0.8421
+    },
+    {
+      "index": 1,
+      "reference": "The Trinamool Congress (TMC) has emerged victorious in the West Bengal assembly polls, securing 214 out of 292 seats. Despite an aggressive campaign by the Bharatiya Janata Party (BJP), led by Prime Minister Narendra Modi, the TMC retained its stronghold in the state. However, Mamata Banerjee, the chief minister of West Bengal and TMC leader, lost her seat in Nandigram to her former aide-turned-BJP leader Suvendu Adhikari. The BJP, while making significant gains compared to the 2016 elections, fell short of its projected claim of winning 200 seats. The Left parties and the Congress failed to win a single seat.",
+      "generated": "In the 2021 West Bengal Assembly Elections, the ruling Trinamool Congress (TMC), under Chief Minister Mamata Banerjee's leadership, secured a resounding victory, capturing or leading in 214 out of the 292 contested seats. Despite losing her personal bid in Nandigram to ex-aide turned BJP candidate Suvendu Adhikari, she remains poised to retain power pending re-election within six months. Her party attributed this triumph to robust governance, appeals to Bengali identity, widespread support from minorities, and resilience amidst challenges posed by COVID-19 and alleged partisan actions by central authorities.",
+      "bertscore_f1": 0.8953
+    },
+    {
+      "index": 2,
+      "reference": "The Times Food and Nightlife Awards 2010 at Hotel Westin promises an unforgettable extravaganza, known as the Oscars of food. Pune's diverse restaurant scene will be honored in categories like Best North Indian, Best Coffee Bar, and Best Ambience. Celebrities like Randhir Kapoor and Mugdha Godse will grace the event, with Siddhartha Kanan as emcee. Sponsored by Seagrams Blenders Pride, supported by Kingfisher and Fantasie fine chocolates, and hosted by The Westin, Koregaon Park, the awards celebrate the culinary excellence of dim sums, kebabs, dosas, and more. To get the Times Food Guide 2010, SMS TGBOOKS to 58888.",
+      "generated": "Tonight's event promises a spectacular culinary experience for all attendees. Held at the Hotel Westin, it marks the third annual Times Food & Nightlife Awards in the city, considered prestigious within the industry. Winners were selected through extensive research across numerous categories reflecting Pune's vibrant cuisine scene—from regional specialties (North Indian, South Indian) to international flavors (Chinese, Italian). Unique categories include \"Best Coffee Bar\" and \"Best Mithai Shop,\" catering to specific tastes. A special recognition goes to establishments offering exceptional ambiance (\"Best Ambiance\") while also honoring those excelling in both daytime and evening service (\"Best All Day Dining\").",
+      "bertscore_f1": 0.8448
+    },
+    {
+      "index": 3,
+      "reference": "US President Joe Biden has said that he is convinced that one of the reasons why Hamas launched a terrorist attack on Israel was because of the recent announcement during the G-20 Summit in New Delhi on the ambitious India-Middle East-Europe Economic Corridor that integrates the entire region with a network of railroad. Israel has launched a massive counter-offensive against Hamas after unprecedented attacks by the militant group on October 7 killed more than 1,400 people. We can’t leave that work behind,” Biden said. This is the second time in less than a week that Biden has mentioned the India-Middle East-Europe Economic Corridor (IMEEC) as a potential reason for the terrorist attack by Hamas. The corridor comprises an eastern corridor connecting India to the Gulf region and a northern corridor connecting the Gulf region to Europe.",
+      "generated": "Israeli airstrikes targeted sites in Gaza, including an alleged militant mosque in the West Bank, amid escalating tensions over Hamas attacks. The U.S. deployed military assets like THAAD missile defense systems to bolster regional defenses amidst Iranian threats. In India, protests erupted after authorities ordered civil servants to highlight BJP accomplishments during their tenure.",
+      "bertscore_f1": 0.8269
+    },
+    {
+      "index": 4,
+      "reference": "In 2022, volatile international oil prices led to the reinstatement of indirect fuel subsidies in India, marking a setback to ongoing reforms. Despite global fluctuations, India strategically continued to procure oil from the most cost-effective sources, resisting external pressures. The nation, heavily reliant on oil imports, faced challenges such as inflationary pressures and disruptions to economic recovery. State-owned fuel retailers, recognizing the impact on consumers, froze petrol and diesel prices for an extended period, marking a departure from their usual daily price revisions. This move aimed to mitigate the effects of soaring oil prices on inflation and economic stability, reflecting the delicate balance between economic interests and global energy dynamics",
+      "generated": "In 2022, volatile global oil prices led to renewed indirect fuel subsidies in India despite ongoing reform efforts. The surge was triggered by geopolitical tensions like the Russian invasion of Ukraine, pushing prices to record highs. This impacted domestic consumers with rising costs amid fragile post-pandemic economic recovery. State-run fuel companies halted daily price revisions since late 2021, freezing pump rates even though they were historically elevated due to earlier tax hikes aimed at offsetting lower import bills during COVID lockdowns.",
+      "bertscore_f1": 0.8837
+    },
+    {
+      "index": 5,
+      "reference": "Bairagarh police have arrested accused who raped a minor girl, accused was nabbed near Bairagarh bus stand while trying to flee to village. A case was registered against him on Friday under the POCSO Act, including rape and obscene acts. On Saturday, the accused youth was produced in the court and",
+      "generated": "Police apprehended an individual named Ravi Maran after accusations surfaced regarding sexual assault involving a minor student from Bairagarh. Authorities initiated legal proceedings under the Protection of Children from Sexual Offences (POCSO) Act, encompassing charges related to rape and indecent behavior towards the young victim. Following due process, Mr. Maran appeared before the judicial system where he received custody pending further investigations into alleged criminal activities",
+      "bertscore_f1": 0.8722
+    },
+    {
+      "index": 6,
+      "reference": "In Lucknow, the 43rd batch of the School of Nursing at Command Hospital, Central Command, saw 10 nursing cadets commissioned by Maj Gen AK Bakshi. Lt Neelam Mahar and Lt Annu Gaharwar received academic honors, while Lt PR Krishna Kala was recognized as the best cadet. Additionally, a polyclinic was inaugurated at the Base Hospital's OPD by Maj Gen KC Vig.",
+      "generated": "The School of Nursing at Command Hospital, Central Command, celebrated its 43rd graduation with ten new Lieutenants joining the Military Nursing Service (MNS). Major General A K Bakshi presided over the event, emphasizing the crucial role these nurses play in caring for patients both domestically and abroad. Lieutenant Neelam Mahar received the Gold Medal for academic excellence while Lieutenant Annu Gaharwar earned Silver. Additionally, Lieutenant P R Krishna Kala secured the Silver Medal for overall outstanding performance within her cohort. Separately, Major General K C Vig opened a Poly Clinic within the Outpatient Department (OPD) of the Cantonment's Base Hospital to",
+      "bertscore_f1": 0.8981
+    },
+    {
+      "index": 7,
+      "reference": "A devastating classroom ceiling collapse at a government upper primary school in Piplodi village, Jhalawar district, claimed the lives of seven children and injured over 20 others on Friday morning. The tragedy occurred despite prior warnings from students about falling debris, which were reportedly ignored by teachers. Eyewitnesses described scenes of panic, with villagers rushing in to rescue children from the rubble. The absence of timely medical assistance worsened the situation, as injured students were transported on motorcycles due to a 45-minute delay in ambulance arrival. Officials blamed recent rainfall for weakening the structure, but locals allege long-standing neglect of the 30-year-old building. The incident has exposed critical gaps in rural school infrastructure and emergency preparedness. Five staff members, including the principal, have been suspended, and a high-level investigation has been ordered.",
+      "generated": "A tragic event unfolded in Kota's Piplodi village when a classroom ceiling collapse claimed seven young lives and left over 20 injured during a regular school session. Students recounted reporting concerns about crumbling bricks before the disaster struck while teachers reportedly dismissed them. Villagers expressed anger towards authorities who allegedly neglected safety warnings despite repeated complaints by locals. Rescue efforts involved using personal vehicles due to an absent ambulance, highlighting inadequate emergency response systems.",
+      "bertscore_f1": 0.8932
+    },
+    {
+      "index": 8,
+      "reference": "The Aam Aadmi Party (AAP) has demanded that the Delhi Police Commissioner investigate allegations that Union Minister Smriti Irani has a fake degree, in the wake of criticism over AAP's former law minister Jitender Singh Tomar's alleged fake law degree. AAP leader Sanjay Singh said the party will probe Tomar's case through an internal Lokpal, but also urged the police to investigate charges against Irani and another minister, Ram Shankar Katheria. Singh warned of an all-India campaign against Irani and Katheria, saying the party is collecting legal evidence. He argued the law cannot be applied selectively and that action is needed against questionable appointments in the Modi government. Singh claimed AAP set an example by having Tomar resign before the police inquiry concluded, and the same principle should apply to others. However, he denied reports that AAP planned to expel Tomar from the party, saying internal investigations will be done by a Lokpal committee. Meanwhile, Delhi Police took Tomar to Bihar, from where he claimed to have his law degree.",
+      "generated": "Aam Aadmi Party (AAP) demanded investigation into 'fake' educational qualifications of union HRD minister Smriti Irani & other leaders",
+      "bertscore_f1": 0.8676
+    },
+    {
+      "index": 9,
+      "reference": "Delhi Chief Minister Arvind Kejriwal, Deputy CM Manish Sisodia, Prashant Bhushan, and former AAP member Shazia Ilmi appeared in court on Saturday over a criminal defamation case filed by Amit Sibal, son of former union minister Kapil Sibal. The case concerns remarks made against Amit Sibal during a press conference. Metropolitan Magistrate Sunil Kumar Sharma recorded Sibal’s statement as part of the ongoing trial involving all four accused.",
+      "generated": "Delhi's chief minister, Arvind Kejriwal, along with deputy CM Manish Sisodia, faced a courtroom appearance regarding a criminal defamation case brought forth by lawyer Amit Sibal (son of ex-union minister Kapil Sibal). The proceedings took place at a metropolitan magistrate's court where statements were recorded from both sides. Notably present alongside Kejriwal and Sisodia was prominent legal figure Prashant Bhushan and AAP member Shazia Ilmi, now an independent candidate after leaving the party.",
+      "bertscore_f1": 0.9154
+    }
+  ]
+}

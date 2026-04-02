@@ -1,0 +1,556 @@
+[
+  {
+    "id": 0,
+    "source_excerpt": "The country’s largest sugar maker Bajaj Hindusthan today approved a modification in the draft merger scheme as per which only Bajaj Eco-Tec Products will be merged with it.The proposed amalgamation excludes Bajaj Aviation.Mutual Funds Check for top fundsIn a BSE filing,Bajaj Hindusthan said the board has “approved modification in the draft scheme of amalgamation by excluding the proposed amalgamation of Bajaj Aviation Pvt Ltd with the company from the scope of the scheme of amalgamation as appro",
+    "reference": "Bajaj Hindusthan, India's largest sugar manufacturer, has modified its draft merger scheme to merge only Bajaj Eco-Tec Products with itself, excluding Bajaj Aviation. This decision was announced in a BSE filing, where the company did not provide a reason for the exclusion of Bajaj Aviation, which is a wholly-owned subsidiary of Bajaj Eco-Tec. The original merger plan, discussed on March 13, 2012, aimed to consolidate operations and reduce costs. Bajaj Eco-Tec Products produces particle boards for the construction industry, while Bajaj Aviation operates one leased aircraft. Following the announcement, Bajaj Hindusthan's shares fell by 3.15% to Rs 30.70. The company operates 14 sugar mills with a cane crushing capacity of 136,000 tonnes per day.",
+    "generated": "Bajaj Hindusthan, the country's largest sugar maker, has approved a modification in the draft merger scheme, excluding Bajaj Eco-Tec Products from the proposed amalgamation scheme. The proposed merger excludes Bajj Aviation from the scheme. Last month, the board had announced amalgamation of Baju Eco-tec Products (a wholly-owned subsidiary of the company) and Baj",
+    "entity_precision": 0.5,
+    "hallucinated_entities": [
+      "bajj aviation",
+      "baju eco-tec",
+      "baj"
+    ],
+    "entailment": 0.9806493520736694,
+    "topic_overlap": 0.6785714285714286
+  },
+  {
+    "id": 1,
+    "source_excerpt": "Jammu/Srinagar : At least 12 civilians and a soldier were killed and another 42 people injured in Jammu and Kashmir’s Poonch district as the Pakistan army resorted to intense artillery shelling along the Line of Control (LoC) early on Wednesday, triggering panic among local residents and distress evacuations from border villages and hamlets. The shelling came hours after Indian forces carried out precision strikes on nine terror targets in Pakistan and Pakistan-occupied Kashmir, in retaliation f",
+    "reference": "Tensions between India and Pakistan escalated sharply on Wednesday as intense Pakistani artillery shelling along the Line of Control (LoC) in Jammu and Kashmir’s Poonch district killed at least 12 civilians and one Indian soldier, while 42 others were injured. The shelling followed India’s Operation Sindoor, a series of precision strikes on nine terrorist targets in Pakistan and Pakistan-occupied Kashmir (PoK) in response to the April 22 Pahalgam terror attack, which killed 26 civilians. The deceased include four children and members of the Sikh and Muslim communities. Several villages such as Mendhar, Balakot, and Krishna Ghati were hit, leading to mass panic and evacuation. Underground bunkers were used, and dozens of homes were damaged. Similar shelling incidents and injuries were reported from Uri, Kupwara, and Tangdhar in north Kashmir. Indian authorities, including Lieutenant Governor Manoj Sinha and Chief Minister Omar Abdullah, condemned the attacks and assured full state support. The Indian Army confirmed it is responding “appropriately” and “calibratedly” to the ceasefire violations. This marks the most serious LoC escalation since the 2021 ceasefire agreement. Analysts see it as a deliberate Pakistani move to retaliate and provoke after India's air and ground operations against terror camps, further destabilizing border security.",
+    "generated": "At least 12 civilians and a soldier were killed and another 42 people injured in Jammu and Kashmir’s Poonch district as the Pakistan army resorted to intense artillery shelling along the Line of Control (LoC) early on Wednesday, triggering panic among local residents and distress evacuations from border villages and hamlets. The shelling came hours after Indian forces carried out precision strikes on nine terror targets in Pakistan and Pakistan-occupied Kashmir, in retaliation for the Pahalgam terror attack that killed 26 people two weeks ago. The Indian Army said it was responding in an effective and appropriate manner. The indiscriminate shelling created panic",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.0008104197331704199,
+    "topic_overlap": 1.0
+  },
+  {
+    "id": 2,
+    "source_excerpt": "US-based iGate Corporation today said it will offer Rs 520 per share to shareholders of Patni Computer Systems to get its Indian arm delisted from stock exchanges.The company accepted the discovered price of Rs 520 determined through a reverse book building process using the electronic facility at the BSE,in accordance with the SEBI regulations,iGATE officials announced at a press conference here.Mutual Funds Check for top fundsThe public shareholders holding equity shares of the company were in",
+    "reference": "iGate Corporation has announced an offer of Rs 520 per share to shareholders of Patni Computer Systems as part of its plan to delist the Indian company from stock exchanges. This price, determined through a reverse book building process, was accepted in accordance with SEBI regulations. The offer opened on March 28 and closed on March 30. iGate CEO Phaneesh Murthy stated that the price offers a reasonable premium for Patni shareholders while remaining beneficial for iGate. Following a successful acquisition of a majority stake in Patni for USD 1.2 billion, iGate aims to complete the delisting by mid-2012. Current shareholders will have the opportunity to sell their shares at the discovered price for one year after delisting. iGate holds approximately 82% of Patni and is looking to streamline operations and reduce compliance costs through this move.",
+    "generated": "US-based iGate Corporation today said it will offer Rs 520 per share to shareholders of Patni Computer Systems to get its Indian arm delisted from stock exchanges. The company accepted the discovered price of Rs 520 determined through a reverse book building process using the electronic facility at the BSE,in accordance with the SEBI regulations,iGATE officials announced at a press conference here. Mutual Funds Check for top fundsThe public shareholders holding equity shares of the company were invited to submit bids via an offer that opened on March 28 and closed on March 30.",
+    "entity_precision": 0.8571428571428571,
+    "hallucinated_entities": [
+      "march 30"
+    ],
+    "entailment": 0.9931495785713196,
+    "topic_overlap": 0.9423076923076923
+  },
+  {
+    "id": 3,
+    "source_excerpt": "The four day long event Coolex 2012 showcasing airconditioners and refrigerators organised by the CII,Northern Region concluded here at the Himachal Bhawan today recording a record 30,000 visitors. The event held every year offers cool deals and attractive financing options for buyers.The products included all weather air conditioners from Mitsubishi Electric and Voltas. All Samsung split ACs had stabiliser free operations. The prices of air conditioners range from Rs 16,000 to Rs 38,000 in the ",
+    "reference": "Coolex 2012, a four-day exhibition organized by the CII Northern Region, concluded at Himachal Bhawan, attracting a record 30,000 visitors. The event showcased a variety of air conditioners and refrigerators, featuring brands like Mitsubishi Electric, Voltas, and Samsung. Domestic air conditioner prices ranged from Rs 16,000 to Rs 38,000, while commercial units started at Rs 45,000. Notable products included the Tornado cooler, which was launched at the event, and Usha's new cooler range developed in collaboration with Honeywell. Samsung and Godrej introduced 5-star rated refrigerators, while LG presented its high-capacity \"Door-in-Door\" model. The exhibition offered attractive financing options for buyers, reinforcing its reputation as a key marketplace for cooling solutions.",
+    "generated": "Coolex 2012, a four-day event showcasing airconditioners and refrigerators organized by the CII,Northern Region, concluded in Himachal Bhawan with a record 30,000 visitors. The event, held every year, offers cool deals and attractive financing options for buyers. The products included all weather air conditioners from Mitsubishi Electric and Voltas. All Samsung split ACs had stabiliser free operations. The prices range from Rs 16,000 to Rs 38,000 in the domestic segment. Air Conditioners for the commercial market from 6 10 tonnes were also on display. Among coolers on display",
+    "entity_precision": 0.7,
+    "hallucinated_entities": [
+      "four-day",
+      "himachal bhawan",
+      "coolex 2012"
+    ],
+    "entailment": 0.995823860168457,
+    "topic_overlap": 0.8679245283018868
+  },
+  {
+    "id": 4,
+    "source_excerpt": "The rupee today recovered most of its early losses but still ended 3 paise down at 51.14/15 against the US currency due to late dollar selling by exporters.The rupee resumed sharply lower at 51.37/38 a dollar at the Interbank Foreign Exchange (Forex) market from last close of 51.11/12. It immediately touched a low of 51.45.Dealers attributed early steep weakness in the rupee to sluggish equities amid heavy dollar demand from importers.However,late dollar selling by exporters helped the rupee rec",
+    "reference": "The Indian rupee experienced fluctuations in today's trading, ultimately closing 3 paise lower at 51.14/15 against the US dollar. It began the day significantly weaker at 51.37/38, hitting a low of 51.45 due to high dollar demand from importers amid sluggish equity markets. However, late selling of dollars by exporters helped the rupee recover some losses. The BSE Sensex fell nearly 264 points, or 1.51 percent. Analysts noted that the dollar index, which had been strong, lost some ground, contributing to the rupee's recovery. The rupee's forward premium increased, with six-month contracts rising to 172-174 paise. The Reserve Bank of India set the reference rate for the US dollar at 51.2765, while the rupee improved against the euro but weakened against the Japanese yen.",
+    "generated": "The Indian rupee recovered most of its early losses but still ended 3 paise down at 51.14/15 against the US currency due to late dollar selling by exporters. Last Wednesday,it had fallen by 39 paise or 0.77 per cent. “The dollar index which was trading at day high pared some of its gains towards mid-session which aided the rupee to recover some of the lost grounds,” Pramit Brahmbhatt,CEO,Alpari Financial Services (India) said.",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.10181388258934021,
+    "topic_overlap": 0.9047619047619048
+  },
+  {
+    "id": 5,
+    "source_excerpt": "The government securities (G-Sec) improved further on sustained demand from banks and corporates while call rates reversed its downtrend and closed higher at the Overnight call money market today on lack of supply in the banking system.The 9.15 per cent (G-Sec) maturing in 2024 hardened to Rs 103.4850 from Rs 102.98 last Wednesday,while its yield dipped further to 8.69 per cent from 8.75 per cent.The 8.79 per cent (G-Sec) maturing in 2021 also rose to 101.0350 from Rs 100.6350,while its yield dr",
+    "reference": "Government securities (G-Sec) saw an increase in demand from banks and corporates, leading to higher prices and lower yields across various maturities. The 9.15% G-Sec maturing in 2024 rose to Rs 103.4850, with its yield decreasing to 8.69%. Similarly, the 8.79% G-Sec maturing in 2021 went up to Rs 101.0350, yielding 8.63%. Other G-Secs also experienced price increases and yield declines. In contrast, the overnight call rate rose to 8.80% from 7.50% due to a lack of supply in the banking system, fluctuating between 9.05% and 8.80%. The Reserve Bank of India conducted transactions under the Liquidity Adjustment Facility, purchasing securities worth Rs 1,06,585 crore at an 8.50% repo rate and selling Rs 10 crore at a 7.50% reverse repo rate.",
+    "generated": "The government securities (G-Sec) in India improved further on sustained demand from banks and corporates while call rates reversed its downtrend and closed higher at the Overnight call money market today on lack of supply in the banking system. The 9.15% G-Sec maturing in 2024 strengthened to Rs 103.4850 from Rs 102.98 last Wednesday,while its yield dipped further to 8.69 per cent from 8.75 per cent. The 8.79% (G",
+    "entity_precision": 0.8571428571428571,
+    "hallucinated_entities": [
+      "india"
+    ],
+    "entailment": 0.9627835750579834,
+    "topic_overlap": 0.8780487804878049
+  },
+  {
+    "id": 6,
+    "source_excerpt": "In order to absorb excess liquidity,the Reserve Bank has pegged the quantum of intervention through Market Stabilisation Scheme (MSS) at Rs 50,000 crore.Under the MSS,RBI,on behalf of government,absorbs liquidity by issuing Treasury Bills and/ or dated securities.“The ceiling for outstanding balance under the MSS for the fiscal year 2012-13 has been fixed at Rs 50,000 crore,” the RBI said in a statement.The MSS ceiling is the same as was fixed for last fiscal. “This ceiling will be reviewed when",
+    "reference": "The Reserve Bank of India (RBI) has set the Market Stabilisation Scheme (MSS) intervention limit at Rs 50,000 crore for the fiscal year 2012-13, the same as the previous year. The MSS allows the RBI to absorb excess liquidity by issuing Treasury Bills or dated securities on behalf of the government. The ceiling will be reassessed when the outstanding balance reaches Rs 35,000 crore. The MSS was established in 2004 to manage liquidity resulting from significant foreign exchange inflows. For the current fiscal year, the government's borrowing requirement is pegged at Rs 5.13 lakh crore, with approximately 65% expected to be borrowed in the first half of the year. In the previous fiscal year, government borrowing exceeded its target due to high subsidy expenditures.",
+    "generated": "The Reserve Bank of India (RBI) has set the quantum of intervention through the Market Stabilisation Scheme (MSS) at Rs 50,000 crore. Under the MSS, the government absorbs excess liquidity by issuing Treasury Bills and/or dated securities. The MSS ceiling is the same as was fixed for the previous fiscal year, and will be reviewed when the outstanding balance reaches the threshold limit of Rs 35,000 crores. The government launched MSS in consultation with RBI in 2004 with the objective to absorb excess liquidity,arising out of significant foreign exchange inflows,by issuing treasury bills or dated securities",
+    "entity_precision": 0.5714285714285714,
+    "hallucinated_entities": [
+      "the market stabilisation scheme",
+      "the previous fiscal year",
+      "the reserve bank of india"
+    ],
+    "entailment": 0.9947184324264526,
+    "topic_overlap": 0.8269230769230769
+  },
+  {
+    "id": 7,
+    "source_excerpt": "Gold prices recovered moderately at the domestic bullion market here today on renewed demand from stockists and investors amidst good jewellery offtake.In contrast,silver fell on mild speculative selling coupled with reduced industrial demand.Standard gold of 99.5 per cent purity climbed by Rs 90 to finish at Rs 27,985 per 10 grams from last Saturday’s closing level of Rs 27,895.Pure gold of 99.9 per cent purity also went up by Rs 95 per 10 grams to close at Rs 28,115 from Rs 28,020.However,silv",
+    "reference": "Gold prices in the domestic bullion market increased due to renewed demand from stockists and investors, alongside strong jewellery sales. Standard gold (99.5% purity) rose by Rs 90 to Rs 27,985 per 10 grams, while pure gold (99.9% purity) increased by Rs 95 to Rs 28,115. Conversely, silver prices fell by Rs 45 per kg, closing at Rs 56,230, attributed to mild speculative selling and decreased industrial demand. Additionally, the recently passed \"Big, Beautiful bill\" by Congress, which received praise from President Donald Trump, is expected to have varying effects across different sectors, benefiting major business groups and high-income individuals while negatively impacting low-income Americans, hospitals, and clean energy industries.",
+    "generated": "In the domestic bullion market, gold prices recovered moderately due to renewed demand from stockists and investors amidst good jewellery offtake. In contrast, silver prices fell due to speculative selling and reduced industrial demand. Standard gold of 99.5% purity climbed by Rs 90 to finish at Rs 27,985 per 10 grams from last Saturday’s closing level of INR 27,895.Pure gold, 99.9% purity, also rose by Rs 95 to close at INR 28,115.Silver ready (.999 fineness) dropped by Rs 45 per kg to end at Rs 56,230 as against",
+    "entity_precision": 0.3333333333333333,
+    "hallucinated_entities": [
+      "inr",
+      "inr 28,115.silver"
+    ],
+    "entailment": 0.9962641596794128,
+    "topic_overlap": 0.75
+  },
+  {
+    "id": 8,
+    "source_excerpt": "Women who use methamphetamine during pregnancy may be placing their unborn children at risk of developing behavioural problems during childhood,a new study has claimed.Studies of children exposed to the cocaine-like stimulant drug in their mothers’ womb have already linked the exposure to stunting foetal growth,increasing newborns’ stress level and affecting their motor development.Now,a team at the Brown University in the US who looked at babies of meth-using mothers since birth found that the ",
+    "reference": "A new study from Brown University indicates that prenatal methamphetamine exposure may lead to behavioral problems in children. Previous research has linked meth use during pregnancy to issues such as stunted fetal growth and increased stress levels in newborns. The recent study found that children exposed to meth in utero are more likely to exhibit anxiety and depression by age three and display behavioral issues, including symptoms of attention-deficit/hyperactivity disorder (ADHD), by age five. Researcher Linda LaGasse emphasized the long-term implications of these early behaviors, suggesting they could set the stage for future challenges unless addressed. The study analyzed data from mothers who reported meth use during pregnancy and assessed their children’s behaviors through follow-up interviews. The findings raise concerns about the potential lasting effects of meth exposure on child development.",
+    "generated": "Women who use methamphetamine during pregnancy may be placing their unborn children at risk of developing behavioural problems during childhood,a new study has claimed. Studies of children exposed to the cocaine-like stimulant drug in their mothers’ womb have already linked the exposure to stunting foetal growth,increasing newborns’ stress level and affecting their motor development. Now,a team at the Brown University in the US who looked at babies of meth-using mothers since birth found that the drug’s exposure could also take a toll on a child”s mood and behaviour. They are more likely to suffer from anxious and",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.8934781551361084,
+    "topic_overlap": 0.9137931034482759
+  },
+  {
+    "id": 9,
+    "source_excerpt": "An Iranian music band today approached the Bombay High Court seeking a stay on the release of actor Saif Ali Khan-starrer spy thriller ‘Agent Vinod’ for alleged copyright violation.The movie starring Saif and Kareena Kapoor is slated for release on Friday.The music band Barobax Corp had on March 16 served a legal notice through law firm Vidhii Partners to music director Pritam Chakraborty,Eros International Media,Illuminati Films Private Ltd and Super Cassettes Ltd claiming that the song “Pungi ",
+    "reference": "An Iranian music band, Barobax Corp, has filed a lawsuit in the Bombay High Court seeking to halt the release of the upcoming spy thriller 'Agent Vinod,' starring Saif Ali Khan and Kareena Kapoor, due to alleged copyright infringement. The band claims that the song \"Pungi bajaa de\" from the film is copied from their 2010 composition, \"Soosan Khanoom.\" After sending a legal notice to the film's music director and distributors on March 16 with no response, Barobax is now requesting the court to prevent the movie's release and the use of the disputed song. The high court is expected to hear the case soon. Barobax, founded in 2003 by three Iranian nationals, registered the copyright for their song in Canada in June 2022.",
+    "generated": "An Iranian music band has approached the Bombay High Court seeking a stay on the release of actor Saif Ali Khan-starrer spy thriller \"Agent Vinod\" for alleged copyright violation. The band has filed a legal notice through law firm Vidhii Partners to music director Pritam Chakraborty,Eros International Media,Illuminati Films Private Ltd and Super Cassettes Ltd claiming that the song “Pungi bajaa de” from the movie was copied from a song composed by them in 2010. Barobax Corp was founded in 2003 by three Iranian nationals Kashayar Haghgoo,",
+    "entity_precision": 0.9,
+    "hallucinated_entities": [
+      "2010"
+    ],
+    "entailment": 0.9961608648300171,
+    "topic_overlap": 0.9038461538461539
+  },
+  {
+    "id": 10,
+    "source_excerpt": "New Delhi : Prime Minister Narendra Modi picked the evocative term “Operation Sindoor” as the codename for the Indian forces’ strikes on nine terror sites in Pakistan and PoK and tracked the progress of the operation through the night, people aware of developments said on Wednesday. At a cabinet meeting, Modi said the country’s armed forces deserve credit for carrying out Operation Sindoor. According to the people cited above, the PM was addressing his cabinet colleagues soon after India targete",
+    "reference": "Prime Minister Narendra Modi personally tracked Operation Sindoor, the codename for India’s precision strikes on nine terror targets in Pakistan and Pakistan-occupied Kashmir, throughout the night from his official residence, according to sources. Modi not only monitored the mission's execution but also chose the name “Sindoor” for the operation, which was launched in response to the April 22 Pahalgam terror attack that killed 26 civilians. Addressing a cabinet meeting after the strikes, Modi praised the Indian armed forces for their execution of the operation, emphasizing their role in upholding national security and delivering a strong message to adversaries.",
+    "generated": "Prime Minister Narendra Modi used the term \"Operation Sindoor\" as the codename for the Indian forces' strikes on nine terror sites in Pakistan and PoK. He tracked the progress of the operation through the night. At a cabinet meeting, Modi said the country’s armed forces deserve credit for carrying out Operation Sindoor. According to the people cited above, the PM was addressing his cabinet colleagues soon after India targeted terror hubs in retaliation for the Pahalgam attack. “The Prime Minister was tracking the operation as it was underway from his official residence, and it was his decision to name it Sindoor,",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9979153275489807,
+    "topic_overlap": 0.8703703703703703
+  },
+  {
+    "id": 11,
+    "source_excerpt": "Telecom major Vodafone today said the government’s move to retrospectively amend income tax laws does not augur well for investors but asserted that it has no plan to exit India.“As a practising businessman in India,this will not augur well for foreign direct investment and the country at large,” Vodafone India’s non-executive Chairman Analjit Singh said in response to a query on the proposal to amend tax laws.Earlier in the day,a Finance Ministry official said: “They (Vodafone) will have to aut",
+    "reference": "Vodafone has expressed concerns regarding the Indian government's proposal to retrospectively amend income tax laws, stating that it could deter foreign direct investment. Analjit Singh, Vodafone India’s non-executive Chairman, emphasized that such changes are detrimental to the business environment and investor confidence. The proposed amendment, which aims to tax overseas deals involving domestic assets from 1962, directly affects Vodafone following a Supreme Court ruling in its favor regarding an ₹11,000 crore tax claim related to its 2007 acquisition of Hutchison Essar. Despite these challenges, Singh affirmed that Vodafone has no plans to exit the Indian market, highlighting the company's commitment to the opportunities in India. The proposal has drawn criticism from various corporate leaders, including the US-India Business Council President, who noted the negative implications for investor sentiment.",
+    "generated": "Telecom major Vodafone today said the government’s move to retrospectively amend income tax laws does not augur well for investors but asserted that it has no plan to exit India.",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.007228154689073563,
+    "topic_overlap": 0.9473684210526315
+  },
+  {
+    "id": 12,
+    "source_excerpt": "CBI CHIEF Praveen Sood gets one-year extension The government has extended the tenure of CBI director Praveen Sood by a year, an order from the appointments committee of cabinet (ACC) said on Wednesday. The decision was taken after a panel, comprising PM Narendra Modi, CJI Sanjiv Khanna, and LoP in the Lok Sabha Rahul Gandhi failed to reach a consensus on the next CBI chief. The extension is a departure from norm, as the Central Vigilance Commission (CVC) Act mandates a tenure of two years for C",
+    "reference": "🔹 CBI Chief Praveen Sood Gets 1-Year Extension The Appointments Committee of the Cabinet (ACC) extended CBI Director Praveen Sood’s tenure by one year, due to lack of consensus among the selection panel comprising PM Modi, CJI Sanjiv Khanna, and LoP Rahul Gandhi. This deviates from the CVC Act, which prescribes a two-year term for CBI and ED chiefs. (Pg 11) 🔹 Punjab Restrained from Hindering Bhakra Dam The Punjab and Haryana High Court directed the Punjab government to not interfere in Bhakra Dam operations and comply with the BBMB's order to release 4,500 cusecs of water to Haryana. The bench emphasized BBMB’s central authority over water regulation.",
+    "generated": "The government has extended the tenure of CBI director Praveen Sood by a year, according to an order from the appointments committee of cabinet. The decision was taken after a panel, comprising PM Narendra Modi, CJI Sanjiv Khanna, and LoP in the Lok Sabha Rahul Gandhi failed to reach a consensus on the next CBI chief. The extension is a departure from norm, as the Central Vigilance Commission (CVC) Act mandates a tenure of two years for CBI and ED chief. P11 Hc: punjab can’t hinder bhakra dam functioning The Punjab and Haryana high",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9865489602088928,
+    "topic_overlap": 0.9777777777777777
+  },
+  {
+    "id": 13,
+    "source_excerpt": "Twenty-five Pakistani nationals were today apprehended by the Coast Guard and State Marine Police 50 nautical miles off Dwarka,Gujarat.Dwarka Marine Police station received a tip-off that a Pakistani boat carrying some people had been spotted off the temple city’s coast.Marine police informed the Coast Guard and other agencies,following which the boat was intercepted.Security agencies would be verifying if the arrested Pakistani nationals were fishermen or anything else,police said.You May LikeT",
+    "reference": "The Coast Guard and State Marine Police apprehended 25 Pakistani nationals approximately 50 nautical miles off the coast of Dwarka, Gujarat. The operation was initiated following a tip-off about a Pakistani boat in the area. The Marine Police alerted the Coast Guard and other relevant agencies, leading to the interception of the vessel. Authorities are currently investigating whether the detained individuals were fishermen or involved in other activities.",
+    "generated": "Twenty-five Pakistani nationals were apprehended by the Coast Guard and State Marine Police 50 nautical miles off Dwarka,Gujarat. The police received a tip-off that a Pakistani boat carrying some people had been spotted off the temple city’s coast. Security agencies would be verifying if the arrested Pakistani nationals are fishermen or anything else,police said. You May LikeThe \"Big, Beautiful bill\" passed by Congress and praised by President Donald Trump will have mixed effects on different industries, income levels, and regions. Major business groups, manufacturers, small businesses, and high-income Americans will see gains, while",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9962903261184692,
+    "topic_overlap": 0.9322033898305084
+  },
+  {
+    "id": 14,
+    "source_excerpt": "After more than 21 years,the Gujarat Congress today wrested the Mansa Assembly constituency from the ruling BJP. The victory assumes significance as the constituency is considered a BJP bastion and its campaign was closely planned and monitored by Chief Minister Narendra Modi,who also held one of his Sadbhavana Mission fasts here. Besides,it was the last crucial before the Assembly elections at the end of this year.At least 75 per cent of the voters had exercised their franchise and the Congress",
+    "reference": "The Gujarat Congress has won the Mansa Assembly constituency, ending over 21 years of BJP dominance in the area. This victory is significant as Mansa is considered a BJP stronghold and was closely monitored by Chief Minister Narendra Modi. The by-election was called following the death of former speaker Mangaldas Patel, with Congress candidate Babusinh Thakor defeating BJP's Dashrath Patel by 8,182 votes. The turnout was around 75%. This loss marks a second setback for the BJP in north Gujarat, following a previous defeat in the Gandhinagar Municipal Corporation. BJP officials attributed the loss to a lack of a multi-party contest, while Congress leaders, including Shankersinh Vaghela, celebrated the win as a pivotal moment ahead of upcoming Assembly elections. The Nationalist Congress Party also expressed its desire for collaboration with Congress to strengthen efforts against the BJP.",
+    "generated": "After more than 21 years,the Gujarat Congress today wrested the Mansa Assembly constituency from the ruling BJP. The victory assumes significance as the constituency is considered a BJP bastion and its campaign was closely planned and monitored by Chief Minister Narendra Modi,who also held one of his Sadbhavana Mission fasts here. Besides,it was the last crucial before the Assembly elections at the end of this year. At least 75 per cent of the voters had exercised their franchise and the Congresss Babusinh Thakor defeated the BJPs Dashrath Patel by a comfortable margin of 8,182 votes. The loss",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9933360815048218,
+    "topic_overlap": 0.9642857142857143
+  },
+  {
+    "id": 15,
+    "source_excerpt": "New Delhi : Pakistan Prime Minister Shehbaz Sharif on Wednesday said his country will retaliate after Indian armed forces dismantled nine terror camps in Pakistan and Pakistan-occupied Kashmir (PoK). “We will avenge these martyrs for every drop of their blood spilled... Pakistan knows how to give a befitting reply. The entire nation salutes its brave armed forces,” he said. The government has authorised Pakistan’s armed forces to “undertake corresponding actions in this regard,” an official stat",
+    "reference": "Pakistan Prime Minister Shehbaz Sharif vowed retaliation after India conducted precision strikes on nine terror camps in Pakistan and Pakistan-occupied Kashmir under Operation Sindoor, in response to the Pahalgam terror attack. Calling it an “act of war,” Sharif said Pakistan would respond at a time and place of its choosing. The Pakistani military has been officially authorised to take corresponding action.",
+    "generated": "Pakistan Prime Minister Shehbaz Sharif announced that his country will retaliate after Indian armed forces dismantled nine terror camps in Pakistan and Pakistan-occupied Kashmir (PoK). Sharif emphasized that Pakistan has the right to respond to any aggression and will respond at a time, place, and means of its own choice. The government has authorized Pakistan's armed forces to take corresponding actions in this regard.",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9942954182624817,
+    "topic_overlap": 0.7714285714285715
+  },
+  {
+    "id": 16,
+    "source_excerpt": "A day after the fight between the Norway-based Indian couplewhose childrens custody became a diplomatic issue between the two countriescame out in the open,an embarrassed government tried to extricate itself from what it called a new situation and even said that it would not interfere in the family matter.Minister of State (External Affairs) Preneet Kaur today said,The government has tried its best to bring the children home so that they have a future in the country. But a new situation has deve",
+    "reference": "The Indian government is facing a diplomatic challenge regarding the custody of two children, Abhigyan (3) and Aishwarya (1), currently under the care of Norway's Child Welfare Services. The situation arose after Anurup Bhattacharya, the children's father, filed for legal separation from his wife, Sagarika, citing domestic abuse. Following the public fallout, Minister of State for External Affairs Preneet Kaur stated that the government would not interfere in the family matter, despite previously taking a strong stance by issuing multiple official statements and engaging with the Norwegian government. The visit of a Joint Secretary to Norway has been postponed as the government reassesses the situation, emphasizing the need for caution and a focus on family dynamics rather than diplomatic interventions.",
+    "generated": "A day after the fight between the Norway-based Indian couple whose childrens custody became a diplomatic issue between the two countriescame out in the open,an embarrassed government tried to extricate itself from what it called a new situation and even said that it would not interfere in the family matter. Minister of State (External Affairs) Preneet Kaur today said,The government has tried its best to bring the children home so that they have a future in the country. The visit of a Joint Secretary (to Norway) has been postponed. Anurup Bhattacharya,father of the two childrenAbhig",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9977251887321472,
+    "topic_overlap": 0.9019607843137255
+  },
+  {
+    "id": 17,
+    "source_excerpt": "n a fresh bid to end the stalemate over Lokpal Bill,Prime Minister Manmohan Singh has called an all-party meeting on Friday aimed at evolving consensus on the crucial legislation to which 97 amendments have been moved by Opposition members in Rajya Sabha.The meeting will be held at Singh’s residence at noon on Friday. Parliament will not meet on that day due to festivals like Gudi Padwa and Ugadi.Highly-placed sources told PTI that the Opposition parties have moved 97 Amendments to the Bill in R",
+    "reference": "Prime Minister Manmohan Singh has convened an all-party meeting on Friday to address the ongoing stalemate over the Lokpal Bill, which has received 97 amendments from Opposition members in the Rajya Sabha. The meeting, scheduled for noon at Singh's residence, aims to build consensus on the contentious amendments, including proposals to bring the Prime Minister’s Office under Lokpal, exclude Lokayukta from the bill, and include the Leader of Opposition in the selection committee. The government is eager to pass the Lokpal Bill in the Rajya Sabha, especially as social activist Anna Hazare plans to fast from March 25 if it is not enacted. The Lok Sabha has already approved the bill, and the government is considering dropping certain clauses to facilitate its passage before the budget session concludes on March 30.",
+    "generated": "Prime Minister Manmohan Singh has called an all-party meeting to discuss the Lokpal Bill, which has 97 amendments moved by Opposition members in the Rajya Sabha. The meeting will be held at Singh's residence at noon on Friday. The Opposition parties have moved 97 Amendments to the Bill, some of which were contentious, and the meeting would discuss ways to evolve consesus on them. Some of the amendments,the sources said,are for bringing the Prime Minister’s Office entirely under Lokpal,seeks exclusion of Lokayukta from the bill,abolition of minority quota and inclusion of Leader of",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9982126951217651,
+    "topic_overlap": 0.8936170212765957
+  },
+  {
+    "id": 18,
+    "source_excerpt": "After pressing the BJP leadership for more than eight months on the issue,B S Yeddyurappa may finally return as Karnataka chief minister.The belligerent leader was summoned here this evening amidst hints that a meeting of the BJPs core committee tomorrow would announce the decision. Yeddyurappa will be holding talks with BJP president Nitin Gadkari,L K Advani,Arun Jaitley and Sushma Swaraj.The move significantly came the day the BJP lost the Udupi-Chikmagalur Lok Sabha bypoll by over 40,000 vote",
+    "reference": "B.S. Yeddyurappa is poised to return as Chief Minister of Karnataka after months of pressure on BJP leadership. He was summoned for discussions with key BJP figures, including Nitin Gadkari, L.K. Advani, and Arun Jaitley, amid expectations that a core committee meeting would confirm his reinstatement. This development follows the BJP's significant loss in the Udupi-Chikmagalur Lok Sabha bypoll, highlighting Yeddyurappa's continued importance to the party, particularly among the Lingayat community, which constitutes 18% of the electorate. Positive signals regarding his return were reportedly communicated to Yeddyurappa by Gadkari and Jaitley, leading him to end his boycott of the Karnataka Assembly budget session. Jaitley has been tasked with reviewing pending legal issues involving Yeddyurappa and his family, with indications that the charges may not be substantial.",
+    "generated": "B S Yeddyurappa may return as Karnataka Chief Minister after eight months of pressure from the BJP leadership. He is expected to hold talks with BJP president Nitin Gadkari, L K Advani, Arun Jaitley, and Sushma Swaraj. The move comes on the day the BJP lost the Udupi-Chikmagalur Lok Sabha bypoll by over 40,000 votes. It was a seat vacated by Chief Minister D V Sadananda Gowda,and the defeat reiterated",
+    "entity_precision": 0.8888888888888888,
+    "hallucinated_entities": [
+      "eight months"
+    ],
+    "entailment": 0.9967976212501526,
+    "topic_overlap": 0.7222222222222222
+  },
+  {
+    "id": 19,
+    "source_excerpt": "Plans are afoot for felicitating Sachin Tendulkar in Parliament over his feat of completing a century of centuries.Lok Sabha Speaker Meira Kumar has written a letter to him on the issue but the details are yet to be worked out,Parliament sources said.Just two days back,both the Lok Sabha and Rajya Sabha had lauded the cricketer for becoming the first cricketer to score a hundred centuries in international cricket.The Speaker had said the outstanding batsman achieved this incredible feat during t",
+    "reference": "Plans are underway to honor cricket legend Sachin Tendulkar in Parliament for achieving a milestone of 100 international centuries. Lok Sabha Speaker Meira Kumar has reached out to Tendulkar regarding the recognition, although specific details are still being finalized. This acknowledgment follows recent praise from both the Lok Sabha and Rajya Sabha, celebrating Tendulkar's historic accomplishment during a one-day international match against Bangladesh on March 16, 2012. The article also briefly mentions a separate legislative bill that has garnered mixed reactions across various sectors, with benefits for some groups while negatively impacting others, particularly low-income Americans and certain industries.",
+    "generated": "Plans are underway for felicitating Sachin Tendulkar in Parliament over his feat of completing a century of centuries. Lok Sabha Speaker Meira Kumar has written a letter to him on the issue but the details are yet to be worked out,Parliament sources said. Just two days back,both the Lok Sabha and Rajya Sabha had lauded the cricketer for becoming the first cricketers to score a hundred centuries in international cricket. The Speaker had said the outstanding batsman achieved this incredible feat during the one day international match against Bangladesh at Mirpur on March 16,2012.",
+    "entity_precision": 0.8333333333333334,
+    "hallucinated_entities": [
+      "mirpur",
+      "march 16,2012"
+    ],
+    "entailment": 0.9963033199310303,
+    "topic_overlap": 0.8571428571428571
+  },
+  {
+    "id": 20,
+    "source_excerpt": "Steps to strengthen nuclear security and measures to prevent terrorists getting access to atomic weapons will top the agenda of 58 world leaders,including Prime Minister Manmohan Singh,in Seoul next week.Singh will embark on a four-day visit to South Korea on Saturday to participate in the second Nuclear Security Summit (NSS) and strengthen ties with the Asian economic partner.“The main objective of the Summit has been high-level attention on the global threat posed by nuclear terrorism and the ",
+    "reference": "Next week, 58 world leaders, including Indian Prime Minister Manmohan Singh, will convene in Seoul for the second Nuclear Security Summit (NSS), focusing on enhancing nuclear security and preventing terrorist access to atomic weapons. Singh's four-day visit aims to strengthen ties with South Korea, highlighted by his participation in the summit. Foreign Secretary Ranjan Mathai emphasized the summit's objective of addressing the global threat of nuclear terrorism and reviewing progress since the first NSS in Washington in 2010. Countries will present national progress reports on nuclear security measures implemented since then. Singh's attendance underscores India's commitment to the summit's goals, marking the first visit by an Indian Prime Minister to South Korea since 1993.",
+    "generated": "Indian Prime Minister Manmohan Singh is set to visit South Korea to participate in the second Nuclear Security Summit (NSS) and strengthen ties with the Asian economic partner. The summit aims to address the global threat posed by nuclear terrorism and the measures required to prevent terrorists and non-state actors from gaining access to sensitive nuclear materials and technologies. The NSS is intended to assess progress in implementing the Communique and Work Plan of the first Summit held in Washington in 2010, as well as agree on new measures that would be reflected in the Summit Communique”,Mathai said.",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9972770810127258,
+    "topic_overlap": 0.8490566037735849
+  },
+  {
+    "id": 21,
+    "source_excerpt": "Leading business conglomerate Sahara India Pariwar today felicitated the Indian hockey team and its support staff by bestowing them with cash award worth Rs one crore and 16 lakhs for their brilliant performance in FIH Olympic qualifiers.India had won the tournament to qualify for the London Olympics.The players and support staff members were honoured with the award and gifts by Sahara India chief Subrata Roy in a glittering ceremony here.For their outstanding display,Sardar Singh and Sandeep Si",
+    "reference": "Sahara India Pariwar honored the Indian hockey team and its support staff with a cash award of Rs 1.16 crore for their success in the FIH Olympic qualifiers, which secured their qualification for the London Olympics. The ceremony, led by Sahara India chief Subrata Roy, recognized standout players Sardar Singh and Sandeep Singh with Rs 11 lakh each, while other team members and chief coach Michael Nobbs received Rs 5 lakh each. Support staff members were awarded Rs 1 lakh each. Roy expressed pride in the team's spirit and commitment, while Hockey India Secretary General Narendra Batra emphasized that this recognition would inspire the team to maintain their dedication and performance.",
+    "generated": "Sahara India Pariwar has honored the Indian hockey team and its support staff with a cash award worth Rs one crore and 16 lakhs for their outstanding performance in the FIH Olympic qualifiers. The players and support staff members were honored with the award and gifts by Sahara India chief Subrata Roy in a glittering ceremony here. For their outstanding display,Sardar Singh and Sandeep Singh were awarded Rs. 11 lakhs each,while the rest of the team members along with the chief coach Michael Nobbs were given Rs. 5 lakh each for their performance.",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.02025887742638588,
+    "topic_overlap": 0.926829268292683
+  },
+  {
+    "id": 22,
+    "source_excerpt": "The Karnataka High Court’s verdict,quashing the FIR registered by the state Lok Ayukta against former Chief Minister B S Yeddyurappa was today challenged before the Supreme Court.The appeal against the high court’s order was filed by original complainant Srijan Basha,who had earlier approached the state Lok Ayukta for registration of the case against Yeddyurappa.In his Special Leave Petition (SLP),filed through counsel Prashant Kumar,Basha submitted that he was not made a party to the Yeddyurapa",
+    "reference": "The Karnataka High Court's decision to quash an FIR against former Chief Minister B.S. Yeddyurappa has been challenged in the Supreme Court by the original complainant, Srijan Basha. Basha filed a Special Leave Petition (SLP), asserting that he was not included in the high court proceedings and that the ruling, made on March 7, was issued without his input. He contends that the court's quashing of the Governor's sanction for Yeddyurappa's prosecution is legally flawed and contradicts established legal precedents. The high court had previously deemed a section of the Lokayukta report that implicated Yeddyurappa in illegal mining as \"bad in law,\" which contributed to his resignation as chief minister.",
+    "generated": "The Karnataka High Court's verdict quashing the FIR registered by the state Lok Ayukta against former Chief Minister B S Yeddyurappa was challenged before the Supreme Court. The appeal against the high court’s order was filed by original complainant Srijan Basha,who had earlier approached the state Supreme Court for the case. In his Special Leave Petition (SLP),filed through counsel Prashant Kumar,Basha submitted that he was not made a party to the Yeddyuapa’S plea to the High court against the Lok AyUKta decision and the high Court passed its judgement on",
+    "entity_precision": 0.6666666666666666,
+    "hallucinated_entities": [
+      "yeddyuapa",
+      "supreme court",
+      "court",
+      "lok"
+    ],
+    "entailment": 0.9917470216751099,
+    "topic_overlap": 0.8888888888888888
+  },
+  {
+    "id": 23,
+    "source_excerpt": "The CBI has requested the Interpol to issue look out notices against four Iranian nationals suspected to be behind the bomb attack on an Israeli embassy car here.On the basis of request made by Delhi Police,the CBI has requested the Interpol to issue Red Corner Notice against Houshang Afshar Irani,Syed Ali Mahdiansadr,Mohammadreza Abolghasemi and Masoud Sedaghatzadeh,who was arrested by the Malaysian police from Kaula Lumpur airport,as they are believed to be behind the attack,sources said.An In",
+    "reference": "The Central Bureau of Investigation (CBI) has requested Interpol to issue look-out notices for four Iranian nationals linked to a bomb attack on an Israeli embassy car in New Delhi. The individuals, Houshang Afshar Irani, Syed Ali Mahdiansadr, Mohammadreza Abolghasemi, and Masoud Sedaghatzadeh, are suspected of conducting reconnaissance on the embassy prior to the attack, which occurred on February 13 and injured four people. Sedaghatzadeh was arrested in Malaysia, and investigators believe he had connections with an Indian journalist, Syed Ahemed Kazmi, who was also arrested. The CBI, acting as India's nodal agency for Interpol, aims to secure a Red Corner Notice, which functions similarly to an international arrest warrant, to facilitate the extradition of the suspects.",
+    "generated": "The CBI has requested the Interpol to issue look out notices against four Iranian nationals suspected to be behind the bomb attack on an Israeli embassy car in Delhi. On the basis of request made by Delhi Police,the CBI has asked the InterPol to issue Red Corner Notice against Houshang Afshar Irani,Syed Ali Mahdiansadr,Mohammadreza Abolghasemi and Masoud Sedaghatzadeh,who was arrested by the Malaysian police from Kaula Lumpur airport,as they are believed to be involved. An Interpol Red Notice is the closest instrument to an international arrest",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9896577000617981,
+    "topic_overlap": 0.9318181818181818
+  },
+  {
+    "id": 24,
+    "source_excerpt": "A Bangladesh court today ordered authorities to shut down five Facebook pages and a website for blaspheming the Prophet Mohammed,the Quran and other religious subjects,a lawyer said.Judges at the high court in Dhaka ordered the telecommunications regulator,home ministry officials and police to block the offending pages immediately.“These pages contain disparaging remarks and cartoons about Prophet Mohammed,the Holy book,Jesus,Lord Buddha and Hindu gods,” Nawshad Zamir,a lawyer of the petitioner ",
+    "reference": "A court in Dhaka, Bangladesh, has ordered the shutdown of five Facebook pages and a website for blaspheming the Prophet Mohammed, the Quran, and other religious figures. The ruling came after a joint petition from a Dhaka University teacher and a law school head, citing that the pages contained offensive remarks and cartoons that hurt the sentiments of the majority Muslim population and followers of other religions. The court instructed telecommunications regulators, home ministry officials, and police to block the pages immediately. This marks the first instance of a Bangladesh court taking action against Facebook pages for religious offense. The move is part of a broader crackdown on internet use in the country, following previous incidents involving arrests for online comments about government officials.",
+    "generated": "A Bangladesh court has ordered authorities to shut down five Facebook pages and a website for blaspheming the Prophet Mohammed,the Quran, and other religious subjects,a lawyer said. Judges at the high court in Dhaka ordered the telecommunications regulator, home ministry officials, and police to block the offending pages immediately. The court's decision follows a joint petition by a Dhaka University teacher and the head of a law school. This marks the first time a Bangladesh court had taken action against Facebook pages on charges of hurting religious sentiment. Bangladesh authorities appear to be cracking down on Internet use,with a student arrested in a remote village in January",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.17968115210533142,
+    "topic_overlap": 0.7241379310344828
+  },
+  {
+    "id": 25,
+    "source_excerpt": "Assets under management of the New Pension System are likely to touch Rs 20,000 crore by the end of 2012 from Rs 14,000 crore at present,a top official said today.“AUM (Assets Under Management) of the NPS (New Pension System) are likely to move up from Rs 14,000 crore now to Rs 20,000 crore by the year-end,” NPS Trust Managing Trustee and Chief Executive Officer N R Rayalu said.The NPS trust was set up in 2008 by the Pension Fund Regulatory and Development Authority (PFRDA) for taking care of th",
+    "reference": "The New Pension System (NPS) is projected to increase its assets under management (AUM) from Rs 14,000 crore to Rs 20,000 crore by the end of 2012, according to NPS Trust Managing Trustee N R Rayalu. Established in 2008 by the Pension Fund Regulatory and Development Authority (PFRDA), the NPS aims to manage pension assets for subscribers. Rayalu emphasized the potential of pension funds to significantly contribute to infrastructure development, as India plans to invest Rs 50 lakh crore during the 12th Five Year Plan (2012-2017). Currently, only 13% of the workforce is covered by pension schemes, highlighting the need for increased financial education and inclusion of the unorganized sector in social security.",
+    "generated": "Assets under management of the New Pension System (NPS) are expected to reach Rs 20,000 crore by the end of 2012 from Rs 14,000 crores at present, according to NPS Trust Managing Trustee and Chief Executive Officer N R Rayalu. The NPS trust was set up in 2008 by the Pension Fund Regulatory and Development Authority (PFRDA) for taking care of the assets and funds under the NPS in the interest of the subscribers. NPS is a crucial component of reforms in the Indian pension fund market whose valuation is estimated at Rs 13.72 lakh crore,he said at",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.03197130560874939,
+    "topic_overlap": 0.8222222222222222
+  },
+  {
+    "id": 26,
+    "source_excerpt": "NEW DELHI : Twenty-seven airports across northern India were closed for commercial flights until Saturday morning, following India’s targeted strikes in Pakistan and Pakistan-occupied Jammu & Kashmir early on Wednesday. India also shut 25 international flight routes that allow aircraft to enter Indian airspace and overfly Pakistan.",
+    "reference": "In the aftermath of India's Operation Sindoor—precision strikes on terror camps in Pakistan and Pakistan-occupied Kashmir—authorities closed 27 airports in northern India to commercial flights until Saturday morning. Additionally, 25 international air routes that involve entry into Indian airspace and overflight through Pakistan were suspended as a precautionary security measure.",
+    "generated": "Twenty-seven airports across northern India were closed for commercial flights until Saturday morning, following India’s targeted strikes in Pakistan and Pakistan-occupied Jammu & Kashmir early on Wednesday. India also shut 25 international flight routes that allow aircraft to enter Indian airspace and overfly Pakistan.",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9969262480735779,
+    "topic_overlap": 1.0
+  },
+  {
+    "id": 27,
+    "source_excerpt": "Tata Motors-owned Jaguar Land Rover today said it has finalised Chery Automobile Company as partner to form an equal joint venture in China that will produce both JLR and the JV-branded vehicles.The new JV entity will also manufacture engines and set up a research and development centre in China.“Jaguar Land Rover (JLR) and Chery Automobile Company Ltd have reached agreement on a proposed joint venture in China.The agreement follows extensive talks between JLR and Chery on establishing an equal ",
+    "reference": "Jaguar Land Rover (JLR) has finalized an equal joint venture with Chery Automobile Company in China to produce vehicles under both JLR and a new JV brand. The partnership will also involve engine manufacturing and the establishment of a research and development center in China. JLR CEO Ralf Speth and Chery Chairman Yin Tongyao expressed optimism about the collaboration, highlighting the growing demand for JLR vehicles in China, the world's largest car market. The joint venture aims to leverage both companies' strengths in R&D and manufacturing to meet local consumer needs. Although specific terms of the agreement remain undisclosed, the venture is projected to require regulatory approvals for an investment of 17.5 billion yuan (approximately USD 2.78 billion) and could initially produce 50,000 vehicles, employing around 5,000 people in Wuhu, Anhui Province.",
+    "generated": "Jaguar Land Rover (JLR) and Chery Automobile Company Ltd have reached agreement on a proposed joint venture in China. The scope of the proposed JV will include the manufacture of JLR and JV-branded vehicles, establishment of a R&D facility,engine manufacturing and sale of vehicles produced by the JV company,it added. The statement further said JLR will now follow the official process to establish a JV in China in the coming months.",
+    "entity_precision": 0.8,
+    "hallucinated_entities": [
+      "the coming months"
+    ],
+    "entailment": 0.00037857252755202353,
+    "topic_overlap": 0.8378378378378378
+  },
+  {
+    "id": 28,
+    "source_excerpt": "New Delhi : The exchange of fire between India and Pakistan led to calls for restraint from around the world on Wednesday. “We call on both India and Pakistan to prioritise peace and stability, remain calm and restrained and avoid taking actions that further complicate the situation,” China’s foreign ministry said.",
+    "reference": "Following the exchange of fire between India and Pakistan after India's precision strikes in Operation Sindoor, global powers called for restraint. China’s foreign ministry urged both nations to prioritise peace and stability, remain calm and restrained, and avoid actions that could escalate tensions further.",
+    "generated": "The exchange of fire between India and Pakistan led to calls for restraint from around the world on Wednesday. China’s foreign ministry said that",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9936414361000061,
+    "topic_overlap": 0.9285714285714286
+  },
+  {
+    "id": 29,
+    "source_excerpt": "Outlining six norms for investment in capital market by Muslims,Islamic seminary Darul Uloom Deoband has said followers can invest in the equity of a company which is not involved in production of liquor and interest-based businesses.Mufti Fakhrul Islam while issuing a fatwa said Muslims can invest in those companies which have movable as well as immovable properties.The seminary said that a part of the profit should be distributed among the poor. Besides,it has also advocated for taking informe",
+    "reference": "Darul Uloom Deoband, an Islamic seminary, has outlined six guidelines for Muslim investment in the capital market, emphasizing that investments should not involve companies associated with liquor or interest-based businesses. Mufti Fakhrul Islam stated that Muslims can invest in companies with both movable and immovable assets, provided a portion of the profits is shared with the poor. Investors are encouraged to make informed decisions and to voice concerns at shareholder meetings if they discover that a company engages in interest-related activities. The seminary also warned against investing in companies focused solely on profit maximization. This guidance comes amid ongoing discussions about the potential for Islamic banking practices in India, which could attract significant investments from the Middle East, despite some judicial resistance to such institutions in the country.",
+    "generated": "Islamic seminary Darul Uloom Deoband has announced six norms for investment in the capital market by Muslims. Mufti Fakhrul Islam emphasized the need for movable and immovable properties to be distributed among the poor. The seminary also advocated for informed decisions before making investments in the equity market. An investor is required to register protest in the shareholders meeting if they come to know that the company earns or pay interests for doing its business,Mufti said. It has also cautioned that people should not invest in those companies whose sole objective is profit-maximisation.",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9782150983810425,
+    "topic_overlap": 0.8392857142857143
+  },
+  {
+    "id": 30,
+    "source_excerpt": "Jammu/New Delhi : India on Thursday night repelled multiple Pakistani strikes in Jammu & Kashmir, Punjab, Rajasthan and Gujarat, and clamped a blackout across a wide swathe of the western border, as Islamabad stepped up hostilities hours after New Delhi issued a stern warning against any escalation. There were unconfirmed reports of Pakistani aircraft, including at least one F-16, being downed and at least one pilot being captured by Indian forces. There were also unconfirmed reports late in the",
+    "reference": "On Thursday night, India repelled multiple Pakistani drone and missile attacks across Jammu & Kashmir, Punjab, Rajasthan, and Gujarat, marking the most serious military face-off with Pakistan since the 1971 war. The attacks came in retaliation to India’s Operation Sindoor, which had targeted nine terror camps in Pakistan and PoK in response to the April 22 Pahalgam terror attack that killed 26 civilians. India intercepted several Pakistani missiles using its S-400 and Akash defence systems, and neutralised drones in Jammu, Udhampur, Pathankot, and Jalandhar, with no reported Indian casualties. Blackouts and air raid sirens were triggered in border cities. India reportedly struck back using kamikaze drones and targeted Pakistani military installations in Sialkot, Lahore, and Islamabad, though these reports remain unconfirmed. National Security Advisor Ajit Doval and senior military leaders held emergency meetings. External Affairs Minister S. Jaishankar consulted global leaders including US Secretary of State Marco Rubio. Pakistan claimed a contact between NSAs, but India denied it. This escalating exchange follows the Pahalgam attack allegedly carried out by Lashkar-e-Taiba proxies and represents the worst escalation in over a decade, with fears mounting of a larger conflict if tensions are not restrained.",
+    "generated": "On Thursday night, India repelled multiple Pakistani strikes in Jammu & Kashmir, Punjab, Rajasthan, and Gujarat, and clamped a blackout across a wide swathe of the western border, as Islamabad stepped up hostilities hours after New Delhi issued a stern warning against any escalation. The shower of drone and missile strikes on military sites seen on Thursday – India had thwarted Pakistani attacks on 15 places the night before – represented the worst face-off between the two nuclear-armed neighbours in decades and ratcheted up fears of a full-blown conflict. It came a day after India’s Operation Sindoor struck nine",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.985198438167572,
+    "topic_overlap": 0.9655172413793104
+  },
+  {
+    "id": 31,
+    "source_excerpt": "Heeding to an appeal by BJP President Nitin Gadkari,independent candidate Anshuman Mishra today said he would withdraw his nomination papers tomorrow for the Rajya Sabha polls from Jharkhand.“Abiding by the appeal by Nitin Gadkari,I will withdraw my nomination tomorrow,” Mishra,a non-resident businessman,told reporters here.He had earlier said he had no intention to withdraw from the race unless the party leadership directed him.BJP leader Yashwant Sinha had objected to the party backing Mishra ",
+    "reference": "Independent candidate Anshuman Mishra announced he would withdraw his nomination for the Rajya Sabha polls from Jharkhand, following an appeal from BJP President Nitin Gadkari. Mishra, a non-resident businessman, confirmed his decision to reporters, stating he would formally withdraw his nomination papers tomorrow, the final day for withdrawals. This decision comes after BJP leader Yashwant Sinha raised concerns about the party's support for Mishra, suggesting that the seat was being \"auctioned.\" Mishra had previously indicated he would not withdraw unless directed by party leadership.",
+    "generated": "Anshuman Mishra, a non-resident businessman, announced his intention to withdraw his nomination papers for the Rajya Sabha polls from Jharkhand. He had earlier stated that he had no intention of withdrawing from the race unless the party leadership directed him. BJP leader Yashwant Sinha objected to the party backing Mishra saying the seat was being auctioned. Tomorrow is the last date for withdrawal of nomination.",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9981619715690613,
+    "topic_overlap": 0.7567567567567568
+  },
+  {
+    "id": 32,
+    "source_excerpt": "Foreign fund house Copthall Mauritius Investments today bought 1.6 crore shares of LIC Housing Finance from the open market for about Rs 410 crore.Foreign investor CLSA (Mauritius Ltd),one of the shareholders of LIC Housing Finance,offloaded 16,039,061 shares of the housing finance to Copthall Mauritius Investments,according to block deal data available on the stock exchanges.Copthall Mauritius Investments purchased 16,039,061 shares of LIC Housing Finance for Rs 255.35 a piece,valuing the trans",
+    "reference": "Copthall Mauritius Investments acquired 1.6 crore shares of LIC Housing Finance for approximately Rs 410 crore from the open market. The shares were sold by CLSA (Mauritius) Ltd, which offloaded 16,039,061 shares at Rs 255.35 each. This transaction increased Copthall's stake in LIC Housing Finance to 2.32 crore shares, representing 4.91% ownership. As of December 31, 2011, CLSA held a 4.70% stake with 2.23 crore shares. LIC remains the largest shareholder with a 36.54% stake in the company. Following the transaction, LIC Housing Finance shares rose by 5.37%, closing at Rs 268.95 on the BSE.",
+    "generated": "Foreign fund house Copthall Mauritius Investments today bought 1.6 crore shares of LIC Housing Finance from the open market for about Rs 410 crore. Foreign investor CLSA (Mauritius Ltd),one of the shareholders of LIC housing Finance,offloaded 16,039,061 shares of the housing finance to Copanthall Mauritios Investments,according to block deal data available on the stock exchanges. Copthalls Mauritius is the largest shareholder in LIC Housing finance with 36.54 per cent stake. Shares of",
+    "entity_precision": 0.7777777777777778,
+    "hallucinated_entities": [
+      "copanthall mauritios investments",
+      "copthalls mauritius"
+    ],
+    "entailment": 0.975797712802887,
+    "topic_overlap": 0.8421052631578947
+  },
+  {
+    "id": 33,
+    "source_excerpt": "A day after the 14th Dalai Lama ended speculations on his successor, India Thursday said that the next leader would be “chosen only by the present one and with the established conventions”. On Wednesday, the 14th Dalai Lama had said that the centuries-old institution of the Dalai Lama would continue, and the Gaden Phodrang Trust – a non-profit organisation that his office set up in 2011 — would have the “sole authority” to recognise his reincarnation. New Delhi also said that Union Ministers Kir",
+    "reference": "A day after the 14th Dalai Lama ended speculations on his successor, India Thursday said that the next leader would be “chosen only by the present one and with the established conventions”. On Wednesday, the 14th Dalai Lama had said that the centuries-old institution of the Dalai Lama would continue, and the Gaden Phodrang Trust – a non-profit organisation that his office set up in 2011 — would have the “sole authority” to recognise his reincarnation. India makes it clear that a successor to the 14th Dalai Lama could be chosen only by the present one and with the established conventions @IndianExpress — Liz Mathew July 3, 2025 The Centre’s statement also comes a day after China rejected the succession plan and reiterated that any future heir must receive its seal of approval. No one else has any such authority to interfere in this matter.” Reacting to the news, Sikyong Penpa Tsering, leader of the Central Tibetan Administration headquartered in McLeodganj, had said: “There are three registered institutions that are related to His Holiness: the Gaden Phodrang Trust, which is a registered body in India and operates from the office of His Holiness; the Dalai Lama Trust, which is a non-profit organisation; and the Gaden Phodrang Foundation, which is registered in Zurich. Stay updated with the latest - Click here to follow us on Instagram You May Like The Quad, made up of India, Australia, Japan, and the United States, has launched the Quad Critical Minerals Initiative to address concerns about China's dominance over the production of critical minerals.",
+    "generated": "India has announced that the 14th Dalai Lama's successor, the Gaden Phodrang Trust, will have the sole authority to recognize his reincarnation. This comes a day after China rejected the succession plan and reiterated that any future heir must receive its seal of approval. The Dalai Lama had previously said that the centuries-old institution of the Dalai Lama would continue, and the Gaden Phhodrang Trust – a non-profit organisation that his office set up in 2011 — would have the “sole authority” to recognise him. The move follows China's rejection of the succession plans and China's approval of the",
+    "entity_precision": 0.8571428571428571,
+    "hallucinated_entities": [
+      "the gaden phhodrang trust"
+    ],
+    "entailment": 0.9725354909896851,
+    "topic_overlap": 0.78
+  },
+  {
+    "id": 34,
+    "source_excerpt": "New Delhi : Chief Justice of India (CJI) Sanjiv Khanna on Thursday initiated the process for the removal of sitting high court judge, justice Yashwant Varma, by writing to the President of India Droupadi Murmu and Prime Minister Narendra Modi stating that the allegations of recovery of cash at the judge’s residence is serious and warrants initiation of proceedings for his removal under the Constitution. If Varma is removed, he will the first judge of a constitutional court to be. On May 5, a thr",
+    "reference": "Chief Justice of India (CJI) Sanjiv Khanna has initiated the process to remove sitting High Court judge Justice Yashwant Varma following serious allegations of cash recovery from his residence. An in-house committee confirmed the presence of cash found after a fire at Varma’s Delhi residence. Despite the evidence, Justice Varma denies the charges and refuses to resign. The CJI has written to the President and Prime Minister of India to begin proceedings under the Constitution for the judge’s removal — a first for a constitutional court judge. Justice Varma is currently not assigned any judicial work. Removal requires a parliamentary process with a two-thirds majority vote after the President seeks the CJI’s opinion. This move follows the Supreme Court’s established in-house procedure for complaints against judges, reflecting the seriousness of the allegations and the CJI’s adherence to due process.",
+    "generated": "Chief Justice of India (CJI) Sanjiv Khanna initiated the process for the removal of sitting high court judge, justice Yashwant Varma, by writing to the President of India Droupadi Murmu and Prime Minister Narendra Modi stating that the allegations of recovery of cash at the judge’s residence is serious and warrants initiation of proceedings for his removal under the Constitution. If Varma is removed, he will the first judge of a constitutional court to be removed. On May 5, a three-member in-house enquiry committee submitted its report to the CJI confirming that cash was indeed found",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9964371919631958,
+    "topic_overlap": 0.9803921568627451
+  },
+  {
+    "id": 35,
+    "source_excerpt": "Metals and Minerals Trading Corporation (MMTC) has clocked a sales turnover of Rs 68,800 crore in 2010-11,a top company official said.MMTC chief general manager Ashish Majumdar said the the contribution of precious metals division in achieving the turnover was Rs 50,680 crore.He was speaking to reporters on the sidelines of inaugurating a jewellery exhibition organised by the PSU here.Stating that the MMTC is a major gold importer,he said the company handles 245 tonne of gold and 880 tonne of si",
+    "reference": "Metals and Minerals Trading Corporation (MMTC) reported a sales turnover of Rs 68,800 crore for the fiscal year 2010-11, with the precious metals division contributing Rs 50,680 crore. MMTC Chief General Manager Ashish Majumdar highlighted the company's significant role as a gold importer, managing 245 tonnes of gold and 880 tonnes of silver, which constitutes 25% of India's gold imports. India, a major gold consumer, imports approximately 960 tonnes annually, representing about 35% of global mine production. Initially focused on exporting minerals, MMTC diversified into the marketing of gold and silver products in 1999 and operates an in-house mint in Delhi for producing gold and silver medallions.",
+    "generated": "Metals and Minerals Trading Corporation (MMTC) has achieved a sales turnover of Rs 68,800 crore in 2010-11, according to a top company official. MMTC chief general manager Ashish Majumdar stated that the contribution of the precious metals division in achieving the turnover was Rs 50,680 crore. He was speaking to reporters on the sidelines of inaugurating a jewellery exhibition organised by the PSU here. He said MMTC,Visakhaptnam was initially engaged in exporting various minerals besides import of coal,fertilisers,metals,Palmolive and subsequently diversified into marketing of",
+    "entity_precision": 0.75,
+    "hallucinated_entities": [
+      "2010-11"
+    ],
+    "entailment": 0.9965665340423584,
+    "topic_overlap": 0.8541666666666666
+  },
+  {
+    "id": 36,
+    "source_excerpt": "Amarnath Yatra 2025: The annual Amarnath Yatra started Thursday with the first batch of pilgrims starting off from the Baltal and Nunwan base camps, and the second batch setting off from Jammu. A total of 5,880 pilgrims are expected to be visiting the shrine as part of the first batch. The 38-day pilgrimage to the 3,880-metre shrine in the south Kashmir Himalayas began from both the traditional 48-km Nunwan-Pahalgam route in Anantnag district as well as the 14-km, but steeper, Baltal route in Ga",
+    "reference": "Amarnath Yatra 2025: The annual Amarnath Yatra started Thursday with the first batch of pilgrims starting off from the Baltal and Nunwan base camps, and the second batch setting off from Jammu. The 38-day pilgrimage to the 3,880-metre shrine in the south Kashmir Himalayas began from both the traditional 48-km Nunwan-Pahalgam route in Anantnag district as well as the 14-km, but steeper, Baltal route in Ganderbal district. The batches of pilgrims left from the Nunwan base camp in Pahalgam, in south Kashmir’s Anantnag, and Baltal base camp in Sonamarg area of central Kashmir’s Ganderbal at the first light of the day, the officials said. The pilgrims reached the Kashmir Valley in the afternoon and received a rousing welcome from the administration and locals. “The yatra is being monitored 24×7 from the Integrated Command and Control Centre at Raj Bhawan and the Police Control Room, while an RFID-based tracking system has also been put in place to monitor movement of yatris and their convoy on a real time basis,” officials had told The Indian Express.",
+    "generated": "The annual Amarnath Yatra commenced with the first batch of pilgrims from the Baltal and Nunwan base camps, and the second batch from Jammu. The 38-day pilgrimage to the 3,880-metre shrine in the south Kashmir Himalayas began from both the traditional 48-km Nunwan-Pahalgam route in Anantnag district as well as the 14-km, but steeper, Baltal route in Ganderbal district. The first batch, comprising 5,892 yatris, was flagged off from the yatra base camp in Jammu’s Bh",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9941224455833435,
+    "topic_overlap": 0.9
+  },
+  {
+    "id": 37,
+    "source_excerpt": "Tripura Chief Minister Manik Saha is likely to expand the Cabinet Thursday, in the second term of the Bharatiya Janata Party-Tipra Motha-Indigenous People’s Front of Tripura coalition government. According to the Department of Information and Cultural Affairs, the swearing-in ceremony is scheduled to be held at the Durbar Hall of Raj Bhawan in Agartala in the afternoon, where a minister or ministers will be sworn into the cabinet headed by Chief Minister Manik Saha. No confirmation was available",
+    "reference": "Tripura Chief Minister Manik Saha is likely to expand the Cabinet Thursday, in the second term of the Bharatiya Janata Party-Tipra Motha-Indigenous People’s Front of Tripura coalition government. According to the Department of Information and Cultural Affairs, the swearing-in ceremony is scheduled to be held at the Durbar Hall of Raj Bhawan in Agartala in the afternoon, where a minister or ministers will be sworn into the cabinet headed by Chief Minister Manik Saha. No confirmation was available from the Assembly secretariat on the issue, but a letter from the joint secretary to the House secretary sought the ceremonial mace in connection with the swearing-in ceremony at the Durbar Hall of Raj Bhawan. The current Cabinet comprises 10 members, including eight ministers from the BJP, one from the IPFT, one from Tipra Motha, and one minister of state from the same party. Stay updated with the latest - Click here to follow us on Instagram You May Like India on Wednesday expressed deep concern over abduction of three Indian nationals in Mali amid a series of terrorist attacks in various parts of the West African country.",
+    "generated": "Tripura Chief Minister Manik Saha is likely to expand the Cabinet Thursday, in the second term of the Bharatiya Janata Party-Tipra Motha-Indigenous People’s Front of Tripura coalition government. According to the Department of Information and Cultural Affairs, the swearing-in ceremony is scheduled to be held at the Durbar Hall of Raj Bhawan in Agartala in the afternoon, where a minister or ministers will be sworn into the cabinet headed by Chief Minister. No confirmation was available from the Assembly secretariat on the issue, but a letter from the joint secretary to the House",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.5831035375595093,
+    "topic_overlap": 0.9795918367346939
+  },
+  {
+    "id": 38,
+    "source_excerpt": "New Delhi : Frequent, slow-moving western disturbances — essentially, cyclones originating in the Mediterranean Sea and moving east — in the first week of May have resulted in an unusually cool, rainy start to what is usually the peak summer month for northwest India. It has also led to relatively cleaner air in May with all days in “moderate” category so far except one when it dropped to “poor.” ow, it emerges that the region may be in for a longer respite: The India Meteorological Department’s",
+    "reference": "Frequent western disturbances, which are slow-moving cyclones from the Mediterranean, have caused an unusually cool and rainy start to May in northwest India. This weather pattern has also improved air quality, keeping it mostly in the \"moderate\" category. The India Meteorological Department (IMD) forecasts cooler-than-normal temperatures and above-average rainfall across northwest and central India until at least May 15. Nearly 90% of the region recorded temperatures at least 1°C below the long-term average during the first week of May, with continued rain, thunderstorms, and lightning expected in the coming days.",
+    "generated": "The India Meteorological Department's extended range forecast indicates that most of northwest and central India will be cooler than normal until May 15, and will receive more rainfall than usual. During the first week of May, nearly 90% of northwest India (Gujarat, Rajasthan, Punjab, Haryana, Himachal Pradesh, Uttar Pradesh, Delhi, and Uttarakhand) recorded maximum temperatures that were at least 1 degree C cooler than usual (1981-2010 average).",
+    "entity_precision": 0.9090909090909091,
+    "hallucinated_entities": [
+      "the india meteorological department's"
+    ],
+    "entailment": 0.9969437718391418,
+    "topic_overlap": 0.9024390243902439
+  },
+  {
+    "id": 39,
+    "source_excerpt": "IN his first Assembly elections in 2009,Jhina Hikaka,contesting on a BJD ticket,managed to wrest the Congress stronghold of Laxmipur in Koraput despite having joined politics just a few years back. Known to be among the few tribal politicians popular with their electorate,Hikaka was earlier a contractual employee with the state water resources department.Hikaka was also among the few tribal politicians who stood up to the Maoists in the red corridor of Koraput-Malkangiri-Rayagada. Narayanpatna b",
+    "reference": "Jhina Hikaka, a tribal politician from the BJD, won the Laxmipur Assembly seat in Koraput during the 2009 elections, marking his entry into politics. Previously a contractual employee in the state’s water resources department, Hikaka gained popularity for his stance against Maoists in the Koraput-Malkangiri-Rayagada region. His political career was marked by tensions with the Chasi Mulia Adivasi Sangh (CMAS) and its leader Nachika Linga, who sought to undermine him. Hikaka received a personal security officer due to threats from CMAS, and he was recognized for his support of police and district administration initiatives, distinguishing himself from other politicians accused of corruption. A law graduate, he actively engages in social work and promotes tribal culture. His contributions have made him a significant figure in local politics, particularly in advocating for tribal rights and development.",
+    "generated": "Jhina Hikaka, a BJD candidate in the 2009 Assembly elections, managed to secure the Congress stronghold of Laxmipur in Koraput despite joining politics just a few years ago. Hikaka was previously a contractual employee with the state water resources department. He was also among the few tribal politicians who stood up to the Maoists in the red corridor of KorapUT-Malkangiri-Rayagada. The Narayanpatna block, a forested area with hilly terrain in Kolkata district, became a new Maoist hub soon after the 2009 assembly elections,falls under L",
+    "entity_precision": 0.6666666666666666,
+    "hallucinated_entities": [
+      "jhina hikaka",
+      "kolkata",
+      "just a few years ago",
+      "narayanpatna"
+    ],
+    "entailment": 0.9971605539321899,
+    "topic_overlap": 0.75
+  },
+  {
+    "id": 40,
+    "source_excerpt": "New Delhi : The government is still assessing the damages inflicted on Pakistan by Operation Sindoor but at least 100 terrorists were killed in the ongoing operation, Union defence minister Rajnath Singh told an all-party meeting on Thursday, said people aware of details. His comments mark the first estimation of the casualties from the precision strikes",
+    "reference": "The Indian government is still evaluating the full extent of damage caused to Pakistan by Operation Sindoor. However, Union Defence Minister Rajnath Singh informed an all-party meeting that at least 100 terrorists have been killed during the operation. This statement is the first official estimate of casualties resulting from the precision strikes.",
+    "generated": "The Indian government is still assessing the damages inflicted on Pakistan by Operation Sindoor but at least 100 terrorists were killed in the ongoing operation, Union defence minister Rajnath Singh told an all-party meeting on Thursday, said people aware of details. His comments mark the first estimation of the casualties from the precision strikes",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9757163524627686,
+    "topic_overlap": 0.9705882352941176
+  },
+  {
+    "id": 41,
+    "source_excerpt": "EVEN as negotiations were on to secure the release of the two Italians abducted in Kandhamal 10 days back,the Maoists struck again in Koraput early on Saturday morning,abducting BJD legislator Jhina Hikaka,a first-time tribal MLA from Koya community representing Laxmipur constituency which includes the Maoist bastion of Narayanpatna.Following the incident,the two interlocutors picked by the Maoists,B D Sharma and Dandapani Mohanty,today suspended their negotiations with the state government. Say",
+    "reference": "Maoists abducted Jhina Hikaka, a first-time tribal MLA from the BJD representing Laxmipur in Koraput, early Saturday morning, marking a significant escalation in violence amid ongoing negotiations for the release of two Italian hostages taken in Kandhamal. The abduction occurred as Hikaka was traveling home, with around 100 Maoists stopping his vehicle, releasing the driver and personal security officer but taking Hikaka into the forest. The Maoists left leaflets demanding that the government fulfill their 13 conditions for the release of the Italian hostages. Following this incident, the two interlocutors representing the Maoists suspended their negotiations with the state government, criticizing the abduction as a violation of the ceasefire agreement. Political opposition leaders accused the BJD government of collusion with the Maoists, citing recent electoral support for BJD candidates by Maoist-backed representatives.",
+    "generated": "The Maoists abducted BJD legislator Jhina Hikaka, a first-time tribal MLA from Koya community in Laxmipur constituency, in Koraput, Andhra Pradesh. The two interlocutors picked by the Maoists,B D Sharma and Dandapani Mohanty, suspended negotiations with the state government. The Maoists accused the BJD government of working hand-in-hand with Maoists. BJP leader Jaynarayan Mishra alleged an understanding between the government and Maoists in the recent zilla parishadelections. The abduction was seen as a mockery of the peaceful talks",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9952061772346497,
+    "topic_overlap": 0.7674418604651163
+  },
+  {
+    "id": 42,
+    "source_excerpt": "A day after the 14th Dalai Lama ended speculations on his successor, India Thursday said that the next leader would be “chosen only by the present one and with the established conventions”. On Wednesday, the 14th Dalai Lama had said that the centuries-old institution of the Dalai Lama would continue, and the Gaden Phodrang Trust – a non-profit organisation that his office set up in 2011 — would have the “sole authority” to recognise his reincarnation. New Delhi also said that Union Ministers Kir",
+    "reference": "A day after the 14th Dalai Lama ended speculations on his successor, India Thursday said that the next leader would be “chosen only by the present one and with the established conventions”. On Wednesday, the 14th Dalai Lama had said that the centuries-old institution of the Dalai Lama would continue, and the Gaden Phodrang Trust – a non-profit organisation that his office set up in 2011 — would have the “sole authority” to recognise his reincarnation. India makes it clear that a successor to the 14th Dalai Lama could be chosen only by the present one and with the established conventions @IndianExpress — Liz Mathew July 3, 2025 The Centre’s statement also comes a day after China rejected the succession plan and reiterated that any future heir must receive its seal of approval. No one else has any such authority to interfere in this matter.” Reacting to the news, Sikyong Penpa Tsering, leader of the Central Tibetan Administration headquartered in McLeodganj, had said: “There are three registered institutions that are related to His Holiness: the Gaden Phodrang Trust, which is a registered body in India and operates from the office of His Holiness; the Dalai Lama Trust, which is a non-profit organisation; and the Gaden Phodrang Foundation, which is registered in Zurich. Stay updated with the latest - Click here to follow us on Instagram You May Like The Quad, made up of India, Australia, Japan, and the United States, has launched the Quad Critical Minerals Initiative to address concerns about China's dominance over the production of critical minerals.",
+    "generated": "India has announced that the 14th Dalai Lama's successor, the Gaden Phodrang Trust, will have the sole authority to recognize his reincarnation. This comes a day after China rejected the succession plan and reiterated that any future heir must receive its seal of approval. The Dalai Lama had previously said that the centuries-old institution of the Dalai Lama would continue, and the Gaden Phhodrang Trust – a non-profit organisation that his office set up in 2011 — would have the “sole authority” to recognise him. The move follows China's rejection of the succession plans and China's approval of the",
+    "entity_precision": 0.8571428571428571,
+    "hallucinated_entities": [
+      "the gaden phhodrang trust"
+    ],
+    "entailment": 0.9725354909896851,
+    "topic_overlap": 0.78
+  },
+  {
+    "id": 43,
+    "source_excerpt": "Operation Sindoor conveyed to the world with great clarity that India will act against terrorism, External Affairs Minister S Jaishankar said in a statement in line with the UN Security Council calling for those responsible for the Pahalgam attacks to be brought to justice. “What is important for us in the Quad statement, as also the statement that the Security Council had issued on April 25, is that the perpetrators of terrorism must be held accountable. They must be brought to justice,” Jaisha",
+    "reference": "Operation Sindoor conveyed to the world with great clarity that India will act against terrorism, External Affairs Minister S Jaishankar said in a statement in line with the UN Security Council calling for those responsible for the Pahalgam attacks to be brought to justice. “What is important for us in the Quad statement, as also the statement that the Security Council had issued on April 25, is that the perpetrators of terrorism must be held accountable. “We call for the perpetrators, organisers, and financiers of this reprehensible act to be brought to justice without any delay and urge all UN member states, in accordance with their obligations under international law and relevant UNSCRs (UN Security Council resolutions), to cooperate actively with all relevant authorities in this regard,” the joint statement said. The UN Security Council press statement condemned the Pahalgam attack, with members of the Security Council underlining the need to hold perpetrators, organisers, financiers and sponsors of this reprehensible act of terrorism accountable and bring them to justice. Jaishankar said he shared with his counterparts, in the Quad as well as globally, the nature of the terrorism challenge that India faces and has confronted over multiple decades, and “that we are very resolved today to respond to it very firmly and that we have the right to defend ourselves”.",
+    "generated": "India's External Affairs Minister, S Jaishankar, stated that Operation Sindoor conveyed to the world that India will act against terrorism, aligning with the UN Security Council's call for those responsible for the Pahalgam attacks to be brought to justice. The Quad Foreign Ministers condemned all acts of terrorism and violent extremism in all their forms and manifestations, including cross-border terrorism. They called for the perpetrators, organisers, financiers, and sponsors of this reprehensible act of terrorism accountable and bring them to justice without any delay. The joint statement condemned the April 22 terrorist attack, with members of the Security Council",
+    "entity_precision": 0.75,
+    "hallucinated_entities": [
+      "the un security council's",
+      "the quad foreign ministers"
+    ],
+    "entailment": 0.0010245135053992271,
+    "topic_overlap": 0.8793103448275862
+  },
+  {
+    "id": 44,
+    "source_excerpt": "Amarnath Yatra 2025: The annual Amarnath Yatra started Thursday with the first batch of pilgrims starting off from the Baltal and Nunwan base camps, and the second batch setting off from Jammu. A total of 5,880 pilgrims are expected to be visiting the shrine as part of the first batch. The 38-day pilgrimage to the 3,880-metre shrine in the south Kashmir Himalayas began from both the traditional 48-km Nunwan-Pahalgam route in Anantnag district as well as the 14-km, but steeper, Baltal route in Ga",
+    "reference": "Amarnath Yatra 2025: The annual Amarnath Yatra started Thursday with the first batch of pilgrims starting off from the Baltal and Nunwan base camps, and the second batch setting off from Jammu. The 38-day pilgrimage to the 3,880-metre shrine in the south Kashmir Himalayas began from both the traditional 48-km Nunwan-Pahalgam route in Anantnag district as well as the 14-km, but steeper, Baltal route in Ganderbal district. The batches of pilgrims left from the Nunwan base camp in Pahalgam, in south Kashmir’s Anantnag, and Baltal base camp in Sonamarg area of central Kashmir’s Ganderbal at the first light of the day, the officials said. The pilgrims reached the Kashmir Valley in the afternoon and received a rousing welcome from the administration and locals. “The yatra is being monitored 24×7 from the Integrated Command and Control Centre at Raj Bhawan and the Police Control Room, while an RFID-based tracking system has also been put in place to monitor movement of yatris and their convoy on a real time basis,” officials had told The Indian Express.",
+    "generated": "The annual Amarnath Yatra commenced with the first batch of pilgrims from the Baltal and Nunwan base camps, and the second batch from Jammu. The 38-day pilgrimage to the 3,880-metre shrine in the south Kashmir Himalayas began from both the traditional 48-km Nunwan-Pahalgam route in Anantnag district as well as the 14-km, but steeper, Baltal route in Ganderbal district. The first batch, comprising 5,892 yatris, was flagged off from the yatra base camp in Jammu’s Bh",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.9941224455833435,
+    "topic_overlap": 0.9
+  },
+  {
+    "id": 45,
+    "source_excerpt": "ON June 9 last year,soon after Byari was released in two theatres in Mangalore,an SMS went out among the Beary community members not to watch what was the first film ever made in the Beary dialect. Orthodox Bearys campaigned that the film dealing with the misuse of talaq was anti-Islamic and watching it would be haraam (sin).The film,with just two prints,ran for two weeks. Earlier this month,Byari won the national award for best feature film. However,for the Muslim community it is based on,resid",
+    "reference": "The film \"Byari,\" the first ever made in the Beary dialect, faced backlash from orthodox members of the Beary community shortly after its release on June 9 last year. Critics labeled it anti-Islamic, urging community members not to watch it, which resulted in the film running for only two weeks. Despite this, \"Byari\" recently won the national award for best feature film. Althaf Hussain, a Beary producer and lead actor, expressed disappointment that the community did not support the film, which addresses the misuse of talaq and features community members in its production. The Beary community, numbering around 1.5 million, has a rich cultural history and is experiencing a cultural awakening, particularly among women. While many Beary women are eager to view the film, they face religious restrictions. Hussain hopes the national award will lead to greater acceptance and plans for future film projects in Mangalore.",
+    "generated": "On June 9 last year,soon after Byari was released in two theatres in Mangalore,an SMS went out among the Beary community members not to watch what was the first film ever made in the beary dialect. Orthodox Bearys campaigned that the film dealing with the misuse of talaq was anti-Islamic and watching it would be haraam (sin).The film,with just two prints,ran for two weeks. Earlier this month,Byari won the national award for best feature film. However,for the Muslim community it is based on,residing in the coastal areas of Kasargode in",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.995598554611206,
+    "topic_overlap": 1.0
+  },
+  {
+    "id": 46,
+    "source_excerpt": "New Delhi : External affairs minister S Jaishankar on Thursday night spoke to US secretary of state Marco Rubio and said India will firmly counter attempts by Pakistan to escalate the situation. He underlined India’s targeted and measured response to cross-border terrorism. “Deeply appreciate US commitment to work with India in the fight against terrorism... Underlined India’s targeted and measured response to cross-border terrorism. Will firmly counter any attempts at escalation,” he said on X.",
+    "reference": "External Affairs Minister S. Jaishankar spoke with US Secretary of State Marco Rubio, emphasizing that India will firmly counter any attempts by Pakistan to escalate tensions. He highlighted India’s targeted and measured response to cross-border terrorism and expressed appreciation for the US commitment to collaborate with India in combating terrorism",
+    "generated": "External Affairs Minister S Jaishankar met with US Secretary of State Marco Rubio and assured India that it would firmly counter attempts by Pakistan to escalate the situation. He emphasized India's targeted and measured response to cross-border terrorism, stating that the country will firmly counter any attempts at escalation. The minister highlighted India's commitment to work with the US in the fight against terrorism and emphasized its commitment to countering any attempts to escalate.",
+    "entity_precision": 0.8333333333333334,
+    "hallucinated_entities": [
+      "state"
+    ],
+    "entailment": 0.9886934161186218,
+    "topic_overlap": 0.6666666666666666
+  },
+  {
+    "id": 47,
+    "source_excerpt": "Tripura Chief Minister Manik Saha is likely to expand the Cabinet Thursday, in the second term of the Bharatiya Janata Party-Tipra Motha-Indigenous People’s Front of Tripura coalition government. According to the Department of Information and Cultural Affairs, the swearing-in ceremony is scheduled to be held at the Durbar Hall of Raj Bhawan in Agartala in the afternoon, where a minister or ministers will be sworn into the cabinet headed by Chief Minister Manik Saha. No confirmation was available",
+    "reference": "Tripura Chief Minister Manik Saha is likely to expand the Cabinet Thursday, in the second term of the Bharatiya Janata Party-Tipra Motha-Indigenous People’s Front of Tripura coalition government. According to the Department of Information and Cultural Affairs, the swearing-in ceremony is scheduled to be held at the Durbar Hall of Raj Bhawan in Agartala in the afternoon, where a minister or ministers will be sworn into the cabinet headed by Chief Minister Manik Saha. No confirmation was available from the Assembly secretariat on the issue, but a letter from the joint secretary to the House secretary sought the ceremonial mace in connection with the swearing-in ceremony at the Durbar Hall of Raj Bhawan. The current Cabinet comprises 10 members, including eight ministers from the BJP, one from the IPFT, one from Tipra Motha, and one minister of state from the same party. Stay updated with the latest - Click here to follow us on Instagram You May Like India on Wednesday expressed deep concern over abduction of three Indian nationals in Mali amid a series of terrorist attacks in various parts of the West African country.",
+    "generated": "Tripura Chief Minister Manik Saha is likely to expand the Cabinet Thursday, in the second term of the Bharatiya Janata Party-Tipra Motha-Indigenous People’s Front of Tripura coalition government. According to the Department of Information and Cultural Affairs, the swearing-in ceremony is scheduled to be held at the Durbar Hall of Raj Bhawan in Agartala in the afternoon, where a minister or ministers will be sworn into the cabinet headed by Chief Minister. No confirmation was available from the Assembly secretariat on the issue, but a letter from the joint secretary to the House",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.5831035375595093,
+    "topic_overlap": 0.9795918367346939
+  },
+  {
+    "id": 48,
+    "source_excerpt": "Prime Minister Narendra Modi was conferred with ‘The Officer of the Order of the Star of Ghana’, the country’s national honour, for his “distinguished statesmanship and influential global leadership”. Modi received the award on Wednesday from the Ghanaian President John Dramani Mahama. “Honoured to be conferred with ‘The Officer of the Order of the Star of Ghana’,” the prime minister said in an X post. In his acceptance speech, Modi said the award was a matter of great pride and honour for him. ",
+    "reference": "“Honoured to be conferred with ‘The Officer of the Order of the Star of Ghana’,” the prime minister said in an X post. “I humbly accept the award on behalf of the 140 crore Indians,” he said, dedicating it to the aspirations and bright future of the youth of the two countries, the historical ties between Ghana and India, and their rich cultural traditions and diversity. I thank the people and Government of Ghana for conferring ‘The Officer of the Order of the Star of Ghana’ upon me. Thanking the people and government of Ghana for the special gesture, the prime minister noted that the “shared democratic values and traditions of the two countries would continue to nurture the partnership”. He said the award “further deepens the friendship between the two countries and places new responsibility on him to embrace and advance bilateral ties.” Modi asserted his confidence that his “historic” state visit to Ghana would impart a new momentum to India-Ghana ties, according to the MEA.",
+    "generated": "Prime Minister Narendra Modi was conferred with 'The Officer of the Order of the Star of Ghana', the country's national honour, for his “distinguished statesmanship and influential global leadership”. Modi received the award on Wednesday from the Ghanaian President John Dramani Mahama. In his acceptance speech, Modi said the award was a matter of great pride and honour for him. He thanked the people and Government of Ghana for conferring ‘The Officer",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.0063692317344248295,
+    "topic_overlap": 0.9
+  },
+  {
+    "id": 49,
+    "source_excerpt": "REFERRING to rising crude prices,Finance Minister Pranab Mukherjee said here today that the government will be forced to take some important,but difficult decisions in the coming months. This remark comes amid growing criticism over the governments policy freeze,the state of its finances and retrograde taxation provisions in the Budget Mukherjee presented.Mukherjee echoed Prime Minister Manmohan Singh who said on Budget day that the government would have to bite the (subsidy) bullet.Mukherjee al",
+    "reference": "Finance Minister Pranab Mukherjee announced that the Indian government will need to make \"important, but difficult decisions\" due to rising crude oil prices, which are currently around $125 per barrel. This statement aligns with Prime Minister Manmohan Singh's earlier comments about addressing subsidy challenges. Mukherjee acknowledged the criticism regarding the government's fiscal policies and the Budget's retrogressive taxation provisions. He indicated that while interest rate cuts may be on the horizon, escalating crude prices could influence the extent of these cuts. He emphasized the need for actionable decisions rather than mere announcements, reflecting a commitment to addressing the economic realities. Additionally, Mukherjee discussed the draft CAG report on coal block allocations, noting that most issues raised have been dismissed after ministry reviews, reiterating the CAG's role in identifying government faults.",
+    "generated": "Finance Minister Pranab Mukherjee has stated that the Indian government will need to take significant decisions in the coming months due to rising crude prices. He expressed concern over the government's policy freeze, the state of its finances, and retrograde taxation provisions in the Budget presented by the government. He emphasized that while an easing of interest rates is on the cards,rising prices of crude could impact the quantum of the rate cut by the central bank. He highlighted the need for the government to take and implement difficult decisions, emphasizing the need to address the challenges posed by rising crude oil prices. The \"Big, Beautiful bill",
+    "entity_precision": 1.0,
+    "hallucinated_entities": [],
+    "entailment": 0.0989845022559166,
+    "topic_overlap": 0.6363636363636364
+  }
+]

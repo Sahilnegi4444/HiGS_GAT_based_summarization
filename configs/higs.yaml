@@ -1,4 +1,4 @@
-# HiGS Model Configuration
+# HiGS Model Configuration (Dual-Encoder Fusion Architecture)
 
 model_name: higs
 run_name: higs
@@ -15,16 +15,21 @@ gat_hidden_dim: 512
 dropout: 0.2
 label_smoothing: 0.1
 
-# Phase 1: Full training
+# Phase 1: Train the Graph (BERT + GAT + Projection)
+# BART encoder and decoder are frozen
 phase1_lr: 3e-5
-phase1_epochs: 2
+phase1_epochs: 20
 
-# Phase 2: Decoder fine-tuning (encoder/GAT frozen)
+# Phase 2: Align the Decoder (unfreeze BART decoder)
+# BERT + GAT + projection are frozen
 phase2_lr: 1e-5
-phase2_epochs: 1
+phase2_epochs: 10
 
 # Training
 batch_size: 2
+gradient_accumulation_steps: 4
 max_grad_norm: 1.0
-save_steps: 5000
+warmup_steps: 200
+weight_decay: 0.01
+save_steps: 2500
 seed: 42

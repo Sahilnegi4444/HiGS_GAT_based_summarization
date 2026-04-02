@@ -1,0 +1,20 @@
+{
+  "model": "higs",
+  "params_total": 249954048,
+  "params_m": 250,
+  "model_type": "higs",
+  "inference": {
+    "num_samples": 30,
+    "mean_latency_sec": 1.3873,
+    "median_latency_sec": 1.3652,
+    "p95_latency_sec": 1.8733,
+    "throughput_samples_per_sec": 0.7208,
+    "tokens_per_sec": 72.7,
+    "avg_output_tokens": 100.9
+  },
+  "system": {
+    "gpu": "Tesla T4",
+    "peak_vram_gb": 3.25,
+    "ram_gb": 12.7
+  }
+}

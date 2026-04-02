@@ -1,0 +1,20 @@
+{
+  "model": "primera",
+  "params_total": 601636864,
+  "params_m": 150,
+  "model_type": "seq2seq",
+  "inference": {
+    "num_samples": 30,
+    "mean_latency_sec": 2.4498,
+    "median_latency_sec": 2.1588,
+    "p95_latency_sec": 3.0206,
+    "throughput_samples_per_sec": 0.4082,
+    "tokens_per_sec": 48.2,
+    "avg_output_tokens": 118.0
+  },
+  "system": {
+    "gpu": "Tesla T4",
+    "peak_vram_gb": 2.71,
+    "ram_gb": 12.7
+  }
+}

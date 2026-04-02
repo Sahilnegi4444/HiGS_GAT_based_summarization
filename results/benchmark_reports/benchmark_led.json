@@ -1,0 +1,20 @@
+{
+  "model": "led",
+  "params_total": 277655040,
+  "params_m": 162,
+  "model_type": "seq2seq",
+  "inference": {
+    "num_samples": 30,
+    "mean_latency_sec": 1.2006,
+    "median_latency_sec": 1.1632,
+    "p95_latency_sec": 1.4854,
+    "throughput_samples_per_sec": 0.8329,
+    "tokens_per_sec": 103.1,
+    "avg_output_tokens": 123.8
+  },
+  "system": {
+    "gpu": "Tesla T4",
+    "peak_vram_gb": 3.48,
+    "ram_gb": 12.7
+  }
+}

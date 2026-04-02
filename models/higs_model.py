@@ -79,7 +79,7 @@ def build_adjacency_matrix(
                     adj[i, j] = 1.0
                     adj[j, i] = 1.0
 
-    adj.fill_diagonal_(0)
+    adj.fill_diagonal_(1.0)
     return adj
 
 
@@ -159,10 +159,17 @@ class HiGraphSum(nn.Module):
         # Decoder
         self.decoder = BartForConditionalGeneration.from_pretrained("facebook/bart-base")
         bart_hidden_dim = self.decoder.config.d_model
-        self.projection = nn.Linear(gat_hidden_dim, bart_hidden_dim)
-
-        # Tokenizer (for adjacency matrix building)
+        
+        # Projection: GAT (512-dim) -> BART space (768-dim)
+        self.projection = nn.Sequential(
+            nn.Linear(gat_hidden_dim, bart_hidden_dim),
+            nn.GELU(),
+            nn.LayerNorm(bart_hidden_dim)
+        )
+        
+        # Tokenizers
         self.bert_tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+        self.bart_tokenizer = BartTokenizer.from_pretrained("facebook/bart-base")
 
         # Loss
         self.label_smoothing = label_smoothing
@@ -174,22 +181,30 @@ class HiGraphSum(nn.Module):
         self,
         sent_input_ids: torch.Tensor,
         sent_attention_mask: torch.Tensor,
-    ) -> torch.Tensor:
+    ):
         """
-        Encode each sentence independently with BERT and extract [CLS] embeddings.
+        Encode each sentence independently with BERT and extract [CLS] and word embeddings.
 
         Args:
             sent_input_ids:      (batch, num_sents, max_sent_len)
             sent_attention_mask: (batch, num_sents, max_sent_len)
         Returns:
-            sent_embeddings: (batch, num_sents, bert_hidden_dim)
+            sent_embeddings: (batch, num_sents, bert_hidden_dim) - the [CLS] tokens
+            word_embeddings: (batch, num_sents * max_sent_len, bert_hidden_dim) - all tokens
         """
         B, S, L = sent_input_ids.size()
         flat_ids = sent_input_ids.view(-1, L)
         flat_mask = sent_attention_mask.view(-1, L)
         outputs = self.sentence_encoder(input_ids=flat_ids, attention_mask=flat_mask)
+        
+        # [CLS] is the first token of each sentence
         cls = outputs.last_hidden_state[:, 0, :]
-        return cls.view(B, S, -1)
+        sent_embeddings = cls.view(B, S, -1)
+        
+        # All word tokens
+        word_embeddings = outputs.last_hidden_state.view(B, S * L, -1)
+        
+        return sent_embeddings, word_embeddings
 
     def forward(self, batch: dict) -> torch.Tensor:
         """
@@ -207,8 +222,8 @@ class HiGraphSum(nn.Module):
         raw = batch["sentences_raw"]
         B = sent_ids.size(0)
 
-        # Encode sentences
-        node_features = self.encode_sentences(sent_ids, sent_mask)
+        # Encode sentences and words
+        node_features, word_features = self.encode_sentences(sent_ids, sent_mask)
 
         # Build adjacency matrices
         adj_list = []
@@ -223,8 +238,39 @@ class HiGraphSum(nn.Module):
             h = F.relu(gat(h, adj))
             h = self.gat_dropout(h)
 
-        # Project to BART hidden dim
-        encoder_hidden = self.projection(h)
+        # Project sentence nodes (GAT 512-dim -> BART 768-dim)
+        sentence_hidden = self.projection(h)
+        
+        # ── THE FIX: Native BART Word Tokens ──
+        # Instead of feeding incompatible BERT words, we use BART's own encoder
+        # to generate flawless, native token embeddings that the decoder natively understands.
+        source_texts = [s.replace("|||", " ") for s in raw]
+        bart_inputs = self.bart_tokenizer(
+            source_texts, 
+            padding=True, 
+            truncation=True, 
+            max_length=1024, 
+            return_tensors="pt"
+        ).to(sentence_hidden.device)
+        
+        # Get perfect BART word representations from the frozen proper encoder
+        bart_encoder_outputs = self.decoder.model.encoder(
+            input_ids=bart_inputs.input_ids,
+            attention_mask=bart_inputs.attention_mask,
+            return_dict=True
+        ).last_hidden_state
+        
+        # Concatenate native BART words + mapped GAT sentences
+        encoder_hidden = torch.cat([bart_encoder_outputs, sentence_hidden], dim=1)
+
+        # Build attention masks
+        sent_enc_mask = torch.zeros(B, h.size(1), dtype=torch.long, device=h.device)
+        for i in range(B):
+            sents_i = raw[i].split("|||") if isinstance(raw[i], str) else list(raw[i])
+            n_real = len([s for s in sents_i if s.strip()])
+            sent_enc_mask[i, :n_real] = 1
+            
+        enc_mask = torch.cat([bart_inputs.attention_mask, sent_enc_mask], dim=1)
 
         # Decoder
         labels = batch["summary_input_ids"].clone()
@@ -232,7 +278,7 @@ class HiGraphSum(nn.Module):
 
         outputs = self.decoder(
             encoder_outputs=(encoder_hidden,),
-            attention_mask=torch.ones(B, h.size(1)).to(encoder_hidden.device),
+            attention_mask=enc_mask,
             labels=labels,
             decoder_attention_mask=batch["summary_attention_mask"],
         )
@@ -260,7 +306,7 @@ class HiGraphSum(nn.Module):
         raw = batch["sentences_raw"]
         B = sent_ids.size(0)
 
-        node_features = self.encode_sentences(sent_ids, sent_mask)
+        node_features, word_features = self.encode_sentences(sent_ids, sent_mask)
 
         adj_list = []
         for i in range(B):
@@ -273,8 +319,29 @@ class HiGraphSum(nn.Module):
             h = F.relu(gat(h, adj))
             h = self.gat_dropout(h)
 
-        encoder_hidden = self.projection(h)
-        enc_mask = torch.ones(B, h.size(1)).to(encoder_hidden.device)
+        sentence_hidden = self.projection(h)
+        
+        source_texts = [s.replace("|||", " ") for s in raw]
+        bart_inputs = self.bart_tokenizer(
+            source_texts, padding=True, truncation=True, max_length=1024, return_tensors="pt"
+        ).to(sentence_hidden.device)
+        
+        bart_encoder_outputs = self.decoder.model.encoder(
+            input_ids=bart_inputs.input_ids,
+            attention_mask=bart_inputs.attention_mask,
+            return_dict=True
+        ).last_hidden_state
+        
+        encoder_hidden = torch.cat([bart_encoder_outputs, sentence_hidden], dim=1)
+        
+        sent_enc_mask = torch.zeros(B, h.size(1), dtype=torch.long, device=h.device)
+        for i in range(B):
+            sents_i = raw[i].split("|||") if isinstance(raw[i], str) else list(raw[i])
+            n_real = len([s for s in sents_i if s.strip()])
+            sent_enc_mask[i, :n_real] = 1
+            
+        enc_mask = torch.cat([bart_inputs.attention_mask, sent_enc_mask], dim=1)
+        
         encoder_outputs = BaseModelOutput(last_hidden_state=encoder_hidden)
 
         return self.decoder.generate(

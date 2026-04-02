@@ -4,10 +4,6 @@ __pycache__/
 *.egg-info/
 dist/
 build/
-train_higs_colab.py
-train_higs_kaggle.py
-eval_higs_quick.py
-
 
 # Virtual environments
 .venv/
@@ -21,7 +17,7 @@ env/
 *.csv
 !results/benchmark_table.csv
 
-# Model checkpoints (too large for git)
+# Model checkpoints (too large for git — download separately)
 *.pt
 *.pth
 *.bin
@@ -41,7 +37,15 @@ Thumbs.db
 # Jupyter
 .ipynb_checkpoints/
 
-# Logs
+# Logs & Runs
 *.log
 wandb/
 runs/
+
+# Research paper (private)
+research_paper_updated.pdf
+research_paper_additions.txt
+
+# Debugging artifacts
+mds_test_output.txt
+scripts/out.txt

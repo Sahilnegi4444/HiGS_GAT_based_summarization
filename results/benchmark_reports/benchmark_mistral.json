@@ -1,0 +1,20 @@
+{
+  "model": "mistral",
+  "params_total": 3758362624,
+  "params_m": 7000,
+  "model_type": "causal_lm",
+  "inference": {
+    "num_samples": 30,
+    "mean_latency_sec": 14.3285,
+    "median_latency_sec": 13.8286,
+    "p95_latency_sec": 21.2546,
+    "throughput_samples_per_sec": 0.0698,
+    "tokens_per_sec": 8.3,
+    "avg_output_tokens": 118.9
+  },
+  "system": {
+    "gpu": "Tesla T4",
+    "peak_vram_gb": 4.21,
+    "ram_gb": 12.7
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "model": "qwen2",
+  "params_total": 4352972288,
+  "params_m": 7000,
+  "model_type": "causal_lm",
+  "inference": {
+    "num_samples": 30,
+    "mean_latency_sec": 12.1557,
+    "median_latency_sec": 11.9087,
+    "p95_latency_sec": 15.34,
+    "throughput_samples_per_sec": 0.0823,
+    "tokens_per_sec": 10.3,
+    "avg_output_tokens": 124.9
+  },
+  "system": {
+    "gpu": "Tesla T4",
+    "peak_vram_gb": 5.54,
+    "ram_gb": 12.7
+  }
+}

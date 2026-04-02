@@ -1,0 +1,121 @@
+{
+  "model": "flan_t5_xl",
+  "hf_id": "google/flan-t5-xl",
+  "architecture": "seq2seq",
+  "training_strategy": "lora",
+  "total_params": 1751898112,
+  "trainable_params": 9437184,
+  "training": {
+    "train_samples": 1000,
+    "epochs": 1,
+    "batch_size": 1,
+    "grad_accum": 4,
+    "learning_rate": 0.0002,
+    "total_steps": 250,
+    "training_time_sec": 2942.2,
+    "training_time_min": 49.0,
+    "loss_log": [
+      {
+        "step": 200,
+        "loss": 7.7922
+      },
+      {
+        "step": 212,
+        "loss": 7.7486
+      },
+      {
+        "step": 225,
+        "loss": 7.7707
+      },
+      {
+        "step": 237,
+        "loss": 7.6793
+      },
+      {
+        "step": 250,
+        "loss": 7.676
+      }
+    ]
+  },
+  "evaluation": {
+    "eval_samples": 100,
+    "rouge1": 0.2768,
+    "rouge2": 0.1475,
+    "rougeL": 0.251,
+    "bertscore_f1": 0.8476
+  },
+  "inference": {
+    "mean_latency_sec": 19.8602,
+    "median_latency_sec": 19.556,
+    "throughput_samples_per_sec": 0.0504
+  },
+  "system": {
+    "gpu": "Tesla T4",
+    "gpu_vram_gb": 14.6,
+    "peak_vram_train_gb": 5.32,
+    "peak_vram_infer_gb": 5.02,
+    "ram_gb": 31.4
+  },
+  "sample_outputs": [
+    {
+      "index": 0,
+      "reference": "Mufti Shehzad, a member of the Popular Front of India (PFI) and a key figure in the anti-CAA protests in Meerut on December 20, 2023, was arrested by the Anti-Terrorist Squad (ATS) at his residence in Muradnagar. Shehzad, who had been on the run since an FIR was filed against him and his accomplice Parvez, was taken into custody following violent protests that resulted in six deaths and over sixty injuries. Shehzad and Parvez had reportedly operated a PFI office in Meerut's Shastri Nagar, where police found inflammatory materials during a raid. Shehzad has been handed over to the Nauchandi police for further interrogation. Authorities are now searching for Parvez, who remains at large. **Category:** Crime",
+      "generated": "Shehzad, a member, and the main accused in the anti-CAA protests, was arrested. He has been given to the Nauchandi police and the ATS sleuths, for further investigation.",
+      "bertscore_f1": 0.8813
+    },
+    {
+      "index": 1,
+      "reference": "The Trinamool Congress (TMC) has emerged victorious in the West Bengal assembly polls, securing 214 out of 292 seats. Despite an aggressive campaign by the Bharatiya Janata Party (BJP), led by Prime Minister Narendra Modi, the TMC retained its stronghold in the state. However, Mamata Banerjee, the chief minister of West Bengal and TMC leader, lost her seat in Nandigram to her former aide-turned-BJP leader Suvendu Adhikari. The BJP, while making significant gains compared to the 2016 elections, fell short of its projected claim of winning 200 seats. The Left parties and the Congress failed to win a single seat.",
+      "generated": "Baratiya Janata Party (BJP), and in a major setback to the Bharatiia Janta Party in India, and to the BJP in India — and in the state - a landslide victory - in the West Bengal - for the third time - and the TMC - as the CM, - to retake CM — in the first state election, in the acm - with a, and if, cm, the TM - on a mix of",
+      "bertscore_f1": 0.8085
+    },
+    {
+      "index": 2,
+      "reference": "The Times Food and Nightlife Awards 2010 at Hotel Westin promises an unforgettable extravaganza, known as the Oscars of food. Pune's diverse restaurant scene will be honored in categories like Best North Indian, Best Coffee Bar, and Best Ambience. Celebrities like Randhir Kapoor and Mugdha Godse will grace the event, with Siddhartha Kanan as emcee. Sponsored by Seagrams Blenders Pride, supported by Kingfisher and Fantasie fine chocolates, and hosted by The Westin, Koregaon Park, the awards celebrate the culinary excellence of dim sums, kebabs, dosas, and more. To get the Times Food Guide 2010, SMS TGBOOKS to 58888.",
+      "generated": "The The Times Food and Nightlife awards will be held in the city for the third time. The awards are called as the Oscars of food, and are known as the The Times, The Times and The Nightlife, and The Times. In the af, he will go home, a proud person, while emcee Siddhartha Kanan will keep the spirit high all through the night.",
+      "bertscore_f1": 0.8486
+    },
+    {
+      "index": 3,
+      "reference": "US President Joe Biden has said that he is convinced that one of the reasons why Hamas launched a terrorist attack on Israel was because of the recent announcement during the G-20 Summit in New Delhi on the ambitious India-Middle East-Europe Economic Corridor that integrates the entire region with a network of railroad. Israel has launched a massive counter-offensive against Hamas after unprecedented attacks by the militant group on October 7 killed more than 1,400 people. We can’t leave that work behind,” Biden said. This is the second time in less than a week that Biden has mentioned the India-Middle East-Europe Economic Corridor (IMEEC) as a potential reason for the terrorist attack by Hamas. The corridor comprises an eastern corridor connecting India to the Gulf region and a northern corridor connecting the Gulf region to Europe.",
+      "generated": "S Somath said that the government's recent orders to  'showcase' the achievements of the last nine years, was 'politise' of the government. He also said that a commandant of the Assam Rifles and other security officers held a series of talks and the issue has to be addressed, and he also referred to another order of the Ministry of Defense on a day after a low-intensity cyclonic storm. Under the system's, he said, a man in Manipur's Moreh",
+      "bertscore_f1": 0.816
+    },
+    {
+      "index": 4,
+      "reference": "In 2022, volatile international oil prices led to the reinstatement of indirect fuel subsidies in India, marking a setback to ongoing reforms. Despite global fluctuations, India strategically continued to procure oil from the most cost-effective sources, resisting external pressures. The nation, heavily reliant on oil imports, faced challenges such as inflationary pressures and disruptions to economic recovery. State-owned fuel retailers, recognizing the impact on consumers, froze petrol and diesel prices for an extended period, marking a departure from their usual daily price revisions. This move aimed to mitigate the effects of soaring oil prices on inflation and economic stability, reflecting the delicate balance between economic interests and global energy dynamics",
+      "generated": "A wild swing in international oil prices in 2022 and s ww w s in 2021, and the nation won in a setback to reforms, but the nation failed in the economic recovery from the pandemi in the last two years. In a sw , in the first, the pdema d die into a negative zone in the , while the government ed a part of a tax hike it had e eded during a pandeim to take a new, a",
+      "bertscore_f1": 0.8297
+    },
+    {
+      "index": 5,
+      "reference": "Bairagarh police have arrested accused who raped a minor girl, accused was nabbed near Bairagarh bus stand while trying to flee to village. A case was registered against him on Friday under the POCSO Act, including rape and obscene acts. On Saturday, the accused youth was produced in the court and",
+      "generated": "A case was registered against him on Friday under the POCSO Act. A case has been registered against he, and a case has also been registered in the court. On Saturday, the accused was produced in a court, and sent to jail. The police have a raped a minor girl. The accused was nabed, while he was afee to the village, and in the case, the ob and o oseiah was r aped, and the ap reped. The",
+      "bertscore_f1": 0.885
+    },
+    {
+      "index": 6,
+      "reference": "In Lucknow, the 43rd batch of the School of Nursing at Command Hospital, Central Command, saw 10 nursing cadets commissioned by Maj Gen AK Bakshi. Lt Neelam Mahar and Lt Annu Gaharwar received academic honors, while Lt PR Krishna Kala was recognized as the best cadet. Additionally, a polyclinic was inaugurated at the Base Hospital's OPD by Maj Gen KC Vig.",
+      "generated": ", the school of nursing, Command Hospital, Central Command, was commissioned, while Lt Neelam Mahar and Lt Anu Gaharwar were awarded the gold medal, and lt PR Krishna Kala , a cadet in the military nursing service (MNS, MNS, ,, and, .,  , in the opd, odd., and in the school, was awarded a silver medal for being the best in the batch.",
+      "bertscore_f1": 0.8721
+    },
+    {
+      "index": 7,
+      "reference": "A devastating classroom ceiling collapse at a government upper primary school in Piplodi village, Jhalawar district, claimed the lives of seven children and injured over 20 others on Friday morning. The tragedy occurred despite prior warnings from students about falling debris, which were reportedly ignored by teachers. Eyewitnesses described scenes of panic, with villagers rushing in to rescue children from the rubble. The absence of timely medical assistance worsened the situation, as injured students were transported on motorcycles due to a 45-minute delay in ambulance arrival. Officials blamed recent rainfall for weakening the structure, but locals allege long-standing neglect of the 30-year-old building. The incident has exposed critical gaps in rural school infrastructure and emergency preparedness. Five staff members, including the principal, have been suspended, and a high-level investigation has been ordered.",
+      "generated": "The screams and cries as the school was shattered in Pipdi, Jalawar, causing seven young lives to be lost and over 20 others to be injured. According to students, the teachers, the sarpanch and the school s sarpanch, had to at the scene with his JCB machine. \"The s, c, and  c , he said, in a fa,te 20-minute rescue operation. The f o ma, a",
+      "bertscore_f1": 0.8358
+    },
+    {
+      "index": 8,
+      "reference": "The Aam Aadmi Party (AAP) has demanded that the Delhi Police Commissioner investigate allegations that Union Minister Smriti Irani has a fake degree, in the wake of criticism over AAP's former law minister Jitender Singh Tomar's alleged fake law degree. AAP leader Sanjay Singh said the party will probe Tomar's case through an internal Lokpal, but also urged the police to investigate charges against Irani and another minister, Ram Shankar Katheria. Singh warned of an all-India campaign against Irani and Katheria, saying the party is collecting legal evidence. He argued the law cannot be applied selectively and that action is needed against questionable appointments in the Modi government. Singh claimed AAP set an example by having Tomar resign before the police inquiry concluded, and the same principle should apply to others. However, he denied reports that AAP planned to expel Tomar from the party, saying internal investigations will be done by a Lokpal committee. Meanwhile, Delhi Police took Tomar to Bihar, from where he claimed to have his law degree.",
+      "generated": "The AAP has sought to at a news conference on Friday, and the AAP said that it would also apt if he was taken to Faisabad in UP, and he had a fake law degree, as the AP he aye he, a, he said he would resign in the Aap, if the government ac e id ie . The AP said the AP would conduct an all-India campaign against Irani and the government, and",
+      "bertscore_f1": 0.8319
+    },
+    {
+      "index": 9,
+      "reference": "Delhi Chief Minister Arvind Kejriwal, Deputy CM Manish Sisodia, Prashant Bhushan, and former AAP member Shazia Ilmi appeared in court on Saturday over a criminal defamation case filed by Amit Sibal, son of former union minister Kapil Sibal. The case concerns remarks made against Amit Sibal during a press conference. Metropolitan Magistrate Sunil Kumar Sharma recorded Sibal’s statement as part of the ongoing trial involving all four accused.",
+      "generated": "Kejriwal, Sisodia, and Prashant Bhushan, who has quit the Aam Aadmi Party, appeared in a court there in the case in which all four of them are facing trial. Kejjiwal and Sisoa, a noted advocate Prashan Bhushan and Shaia Ilmi, who had quit the aam aadmi Party in the Am Aim Party, have a criminal defamation case in the matter in which a redmaamation case was filed against them.",
+      "bertscore_f1": 0.8571
+    }
+  ]
+}
