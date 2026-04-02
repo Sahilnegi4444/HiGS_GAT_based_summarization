@@ -55,7 +55,7 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 
 # 2. Evaluate the model (scores, factual consistency, inference costs)
-python scripts/evaluate_higs.py --model model/higs_model.pt
+python scripts/evaluate_higs.py --model data/HiGS/higs_model.pt
 
 # 3. Generate a multi-document summary
 python scripts/generate_mds.py
@@ -175,14 +175,6 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 ```
 
-### Download Data & Model
-
-| Asset | Link | Place In |
-|-------|------|----------|
-| Cleaned Dataset | [Google Drive](https://drive.google.com/drive/folders/1l_5WC5gacZAnCjZCgcSC6ZvNc4Sa2Igc?usp=sharing) | `data/newssumm_cleaned.parquet` |
-| HiGS Checkpoint | [Google Drive](https://drive.google.com/drive/folders/1hqYPvjdl443WFcgfs9OA-73p0U5Nusbm?usp=sharing) | `model/higs_model.pt` |
-
----
 
 ## Data Pipeline
 
@@ -246,7 +238,7 @@ python scripts/train_higs.py --config configs/higs.yaml --phase 2 \
 ### HiGS Model (Scores + Factual Consistency + Inference Costs)
 
 ```bash
-python scripts/evaluate_higs.py --model model/higs_model.pt --samples 50
+python scripts/evaluate_higs.py --model data/HiGS/higs_model.pt --samples 50
 ```
 
 Reports:

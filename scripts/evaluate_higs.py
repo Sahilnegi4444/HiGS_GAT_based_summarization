@@ -11,7 +11,7 @@ Evaluates the HiGS model on the test split and reports:
 
 Usage:
     python scripts/evaluate_higs.py
-    python scripts/evaluate_higs.py --model model/higs_model.pt --samples 100
+    python scripts/evaluate_higs.py --model data/HiGS/higs_model.pt --samples 100
 """
 
 import os
@@ -51,8 +51,8 @@ def main():
     import evaluate as hf_evaluate
 
     parser = argparse.ArgumentParser(description="Evaluate HiGS model")
-    parser.add_argument("--model", default="model/higs_model.pt",
-                        help="Path to model checkpoint (default: model/higs_model.pt)")
+    parser.add_argument("--model", default="data/HiGS/higs_model.pt",
+                        help="Path to model checkpoint (default: data/HiGS/higs_model.pt)")
     parser.add_argument("--data", default="data/newssumm_cleaned.parquet",
                         help="Path to cleaned dataset")
     parser.add_argument("--samples", type=int, default=50,
