@@ -12,10 +12,13 @@ pandas
 numpy
 scipy
 openpyxl
+pyarrow
+fastparquet
 
 # Evaluation
 rouge-score
 bert-score
+sacrebleu
 evaluate
 
 # Training / LoRA

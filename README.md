@@ -47,20 +47,46 @@ These metrics measure whether the generated summaries are **factually faithful**
 
 ---
 
-## Quick Start (For Supervisors)
+## Quick Start (For Supervisors / Evaluators)
+
+Follow these explicit steps to instantly set up the repository and evaluate the HiGS model:
+
+### Step 1: Clone and Setup Environment
+```bash
+# 1. Clone the repository
+git clone https://github.com/Sahilnegi4444/HiGS_GAT_based_summarization.git
+cd HiGS_Multi_document_abstract_summarization_in_Indian_English
+
+# 2. Create a fresh Python virtual environment (ensures no dependency conflicts)
+python -m venv venv
+
+# 3. Activate the virtual environment
+# On Windows:
+venv\Scripts\activate
+# On Linux/Mac:
+source venv/bin/activate
+```
+
+### Step 2: Install Required Dependencies
+```bash
+# Install core packages (requires active virtual environment)
+pip install -r requirements.txt
+
+# Download required spaCy NLP language model
+python -m spacy download en_core_web_sm
+```
+
+### Step 3: Evaluate and Check Results
+Ensure you have the heavy data/model files (see 'Download Data & Model' section below) before running these!
 
 ```bash
-# 1. Install dependencies
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
-
-# 2. Evaluate the model (scores, factual consistency, inference costs)
+# Evaluate the HiGS Model (Generates ROUGE, BERTScore, Latency metrics)
 python scripts/evaluate_higs.py --model data/HiGS/higs_model.pt
 
-# 3. Generate a multi-document summary
+# Generate a qualitative multi-document summary from existing articles
 python scripts/generate_mds.py
 
-# 4. Run full factual consistency check (entity + NLI + topic)
+# Run a strict factual consistency check across all predictions
 python scripts/run_local_consistency_check.py
 ```
 
@@ -162,18 +188,7 @@ See [docs/architecture.md](docs/architecture.md) for the full mathematical formu
 - 16 GB VRAM (GPU video memory, for training) / 8 GB VRAM (for inference only)
 - **spaCy** (`en_core_web_sm`) — NLP library used for sentence splitting and named entity extraction
 
-### Installation
 
-```bash
-git clone https://github.com/Sahilnegi4444/HiGS_GAT_based_summarization.git
-cd HiGS_Multi_document_abstract_summarization_in_Indian_English
-
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
-```
 
 ### Download Data & Model
 
