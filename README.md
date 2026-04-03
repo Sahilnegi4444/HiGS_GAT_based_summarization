@@ -175,6 +175,14 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 ```
 
+### Download Data & Model
+
+| Asset | Link | Expected Path |
+|-------|------|----------|
+| Cleaned Dataset | [Google Drive](https://drive.google.com/drive/folders/1l_5WC5gacZAnCjZCgcSC6ZvNc4Sa2Igc?usp=drive_link) | `data/newssumm_cleaned.parquet` |
+| HiGS Model Checkpoint | [Google Drive](https://drive.google.com/drive/folders/1hqYPvjdl443WFcgfs9OA-73p0U5Nusbm?usp=drive_link) | `data/HiGS/higs_model.pt` |
+
+---
 
 ## Data Pipeline
 
