@@ -20,10 +20,21 @@ import json
 import os
 import sys
 
-# ── CONFIG ──────────────────────────────────────────────────────────
-BASE_DIR = r"C:\Shuvidha Foundation\HiGS_Multi_document_abstract_summarization_in_Indian_English"
-DATA_PATH = os.path.join(BASE_DIR, "data", "newssumm_cleaned.parquet")
-CKPT_PATH = os.path.join(BASE_DIR, "model", "higs_model.pt")
+# ── CONFIG (auto-discovered — no path editing needed) ───────────────
+from pathlib import Path as _Path
+BASE_DIR = str(_Path(__file__).resolve().parent.parent)
+sys.path.insert(0, BASE_DIR)
+
+def _find_file(relative_candidates):
+    """Search multiple candidate relative paths and return the first that exists."""
+    for rel in relative_candidates:
+        full = os.path.join(BASE_DIR, rel)
+        if os.path.exists(full):
+            return full
+    return os.path.join(BASE_DIR, relative_candidates[0])
+
+DATA_PATH = _find_file(["data/newssumm_cleaned.parquet", "data/processed/newssumm_cleaned.parquet"])
+CKPT_PATH = _find_file(["model/higs_model.pt", "data/HiGS/higs_model.pt"])
 SAVE_PATH = os.path.join(BASE_DIR, "results", "factual_consistency_report.json")
 SAMPLES_PATH = os.path.join(BASE_DIR, "results", "generated_samples.json")
 
@@ -258,7 +269,7 @@ print("📝 GENERATED SAMPLES (first 10)")
 print(f"{'='*60}")
 
 samples_for_json = []
-for i in range(min(10, len(predictions))):
+for i in range(min(30, len(predictions))):
     print(f"\n{'─'*60}")
     print(f"  SAMPLE {i+1}")
     print(f"  SRC: {sources[i][:300]}...")

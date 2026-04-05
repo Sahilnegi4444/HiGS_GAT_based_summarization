@@ -1,0 +1,9 @@
+Model Name,Parameters,Architecture,Infer Latency (sec),Infer Throughput (tokens/s),Peak VRAM Infer (GB)
+flan_t5_xl,~3000M,seq2seq,2.0142,12.7,14.06
+higs,~250M,higs,1.3873,72.7,3.25
+led,~162M,seq2seq,1.2006,103.1,3.48
+llama3,~8000M,causal_lm,12.9371,9.8,5.64
+longt5,~248M,seq2seq,2.5833,39.2,3.71
+mistral,~7000M,causal_lm,14.3285,8.3,4.21
+primera,~150M,seq2seq,2.4498,48.2,2.71
+qwen2,~7000M,causal_lm,12.1557,10.3,5.54

@@ -47,48 +47,110 @@ These metrics measure whether the generated summaries are **factually faithful**
 
 ---
 
-## Quick Start (For Supervisors / Evaluators)
+## Quick Start — Step-by-Step Guide
 
-Follow these explicit steps to instantly set up the repository and evaluate the HiGS model:
+> **Goal:** Clone the repo, download the model, and run evaluation in under 5 minutes.
+> All scripts auto-detect file paths — **you never need to edit any code or copy-paste paths.**
 
-### Step 1: Clone and Setup Environment
+### Step 1: Clone the Repository
+
 ```bash
-# 1. Clone the repository
 git clone https://github.com/Sahilnegi4444/HiGS_GAT_based_summarization.git
 cd HiGS_Multi_document_abstract_summarization_in_Indian_English
+```
 
-# 2. Create a fresh Python virtual environment (ensures no dependency conflicts)
+### Step 2: Create and Activate a Virtual Environment
+
+A virtual environment ensures our dependencies don't conflict with your system packages.
+
+**On Windows:**
+```bash
 python -m venv venv
-
-# 3. Activate the virtual environment
-# On Windows:
 venv\Scripts\activate
-# On Linux/Mac:
+```
+
+**On Linux / Mac:**
+```bash
+python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Step 2: Install Required Dependencies
-```bash
-# Install core packages (requires active virtual environment)
-pip install -r requirements.txt
+> After activation, your terminal prompt should show `(venv)` at the beginning.
 
-# Download required spaCy NLP language model
+### Step 3: Install Dependencies
+
+```bash
+pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 ```
 
-### Step 3: Evaluate and Check Results
-Ensure you have the heavy data/model files (see 'Download Data & Model' section below) before running these!
+### Step 4: Download Model Weights and Dataset
+
+Download these two files and place them in the exact paths shown:
+
+| File | Download Link | Place it here |
+|------|--------------|---------------|
+| **HiGS Model** (~1.4 GB) | [Google Drive](https://drive.google.com/drive/folders/1hqYPvjdl443WFcgfs9OA-73p0U5Nusbm?usp=drive_link) | `model/higs_model.pt` |
+| **Cleaned Dataset** (~548 MB) | [Google Drive](https://drive.google.com/drive/folders/1l_5WC5gacZAnCjZCgcSC6ZvNc4Sa2Igc?usp=drive_link) | `data/newssumm_cleaned.parquet` |
+
+Your folder should look like this after downloading:
+```
+HiGS_Multi_document_abstract_summarization_in_Indian_English/
+├── model/
+│   └── higs_model.pt          ← downloaded checkpoint
+├── data/
+│   └── newssumm_cleaned.parquet  ← downloaded dataset
+├── scripts/
+│   └── ...
+└── ...
+```
+
+> **Note:** The `model/` and `data/` folders already exist in the repository. You just need to place the downloaded files inside them.
+
+### Step 5: Run Evaluation (ROUGE, BERTScore, Factual Consistency, Inference Cost)
 
 ```bash
-# Evaluate the HiGS Model (Generates ROUGE, BERTScore, Latency metrics)
-python scripts/evaluate_higs.py --model data/HiGS/higs_model.pt
+python scripts/evaluate_higs.py
+```
 
-# Generate a qualitative multi-document summary from existing articles
+That's it — **no arguments needed.** The script automatically finds the model at `model/higs_model.pt` and the dataset at `data/newssumm_cleaned.parquet`.
+
+**What this reports:**
+- ROUGE-1, ROUGE-2, ROUGE-L scores
+- SacreBLEU score
+- BERTScore F1
+- Entity Precision & Hallucination Rate
+- Inference latency (seconds/summary), throughput (tokens/sec), and peak VRAM usage
+
+The full report is saved to `results/evaluation_report.json`.
+
+**Optional:** To evaluate with fewer samples (faster):
+```bash
+python scripts/evaluate_higs.py --samples 10
+```
+
+### Step 6: Generate a Multi-Document Summary
+
+```bash
 python scripts/generate_mds.py
+```
 
-# Run a strict factual consistency check across all predictions
+This generates a summary from 3 sample articles about Tata Motors. It also runs a quick fact-check showing entity precision.
+
+**To test with your own articles:** Edit the `ARTICLE_1`, `ARTICLE_2`, `ARTICLE_3` variables inside `scripts/generate_mds.py`.
+
+### Step 7: Run Full Factual Consistency Check (Entity + NLI + Topic)
+
+```bash
 python scripts/run_local_consistency_check.py
 ```
+
+This runs the complete three-part factual consistency analysis:
+1. **Entity-Based** — Checks if named entities in the summary exist in the source articles (using spaCy NER)
+2. **NLI-Based** — Uses a DeBERTa Natural Language Inference model to check if each generated sentence is logically entailed, neutral, or contradicted by the source
+3. **Topic Consistency** — Measures keyword overlap to ensure the summary stays on-topic
+
+Results are saved to `results/factual_consistency_report.json`.
 
 ---
 
@@ -145,10 +207,9 @@ See [docs/architecture.md](docs/architecture.md) for the full mathematical formu
 │   ├── flan_t5_xl.yaml
 │   └── llm_lora.yaml
 ├── data/
-│   ├── README.md
-│   └── newssumm_cleaned.parquet    # (download separately)
+│   └── newssumm_cleaned.parquet    # Cleaned dataset (download from Google Drive)
 ├── model/
-│   └── higs_model.pt              # Trained checkpoint (download separately)
+│   └── higs_model.pt              # Trained checkpoint (download from Google Drive)
 ├── models/
 │   ├── higs_model.py              # HiGS architecture (Dual-Encoder Fusion)
 │   ├── baselines.py               # Encoder-decoder baseline loader
@@ -157,7 +218,7 @@ See [docs/architecture.md](docs/architecture.md) for the full mathematical formu
 │   ├── prepare_data.py            # Data cleaning, splitting, and EDA stats
 │   ├── train_higs.py              # HiGS two-phase training pipeline
 │   ├── train_baselines.py         # Unified baseline training (enc-dec & LLM LoRA)
-│   ├── evaluate_higs.py           # HiGS evaluation (scores + consistency metrics)
+│   ├── evaluate_higs.py           # HiGS evaluation (scores + consistency + cost)
 │   ├── run_local_consistency_check.py  # Full factual consistency pipeline
 │   └── generate_mds.py            # Multi-document summary generation
 ├── notebooks/
@@ -178,24 +239,13 @@ See [docs/architecture.md](docs/architecture.md) for the full mathematical formu
 
 ---
 
-## Setup
-
-### Requirements
+## Requirements
 
 - Python 3.10+
-- CUDA 11.8+ (NVIDIA's GPU computing toolkit, required for GPU-accelerated training)
+- CUDA 11.8+ (NVIDIA's GPU computing toolkit, required for GPU training)
 - PyTorch 2.0+ (deep learning framework)
-- 16 GB VRAM (GPU video memory, for training) / 8 GB VRAM (for inference only)
-- **spaCy** (`en_core_web_sm`) — NLP library used for sentence splitting and named entity extraction
-
-
-
-### Download Data & Model
-
-| Asset | Link | Expected Path |
-|-------|------|----------|
-| Cleaned Dataset | [Google Drive](https://drive.google.com/drive/folders/1l_5WC5gacZAnCjZCgcSC6ZvNc4Sa2Igc?usp=drive_link) | `data/newssumm_cleaned.parquet` |
-| HiGS Model Checkpoint | [Google Drive](https://drive.google.com/drive/folders/1hqYPvjdl443WFcgfs9OA-73p0U5Nusbm?usp=drive_link) | `data/HiGS/higs_model.pt` |
+- 16 GB VRAM (for training) / 8 GB VRAM (for inference only)
+- **spaCy** (`en_core_web_sm`) — NLP library for sentence splitting and named entity extraction
 
 ---
 
@@ -253,44 +303,6 @@ If training is interrupted, resume from any saved checkpoint:
 python scripts/train_higs.py --config configs/higs.yaml --phase 2 \
     --checkpoint results/higs/checkpoint_step10000.pt --resume
 ```
-
----
-
-## Evaluation
-
-### HiGS Model (Scores + Factual Consistency + Inference Costs)
-
-```bash
-python scripts/evaluate_higs.py --model data/HiGS/higs_model.pt --samples 50
-```
-
-Reports:
-- **Text Quality:** ROUGE-1/2/L (n-gram overlap), SacreBLEU (translation-style precision metric), BERTScore (semantic similarity)
-- **Factual Consistency:** Entity Precision (are the names/places in the summary real?), Hallucination Rate (% of fabricated entities)
-- **Inference Costs:** Latency (seconds per summary), Throughput (tokens per second), Peak VRAM (GPU memory used)
-
-### Full Factual Consistency Check
-
-```bash
-python scripts/run_local_consistency_check.py
-```
-
-Runs a three-part analysis:
-1. **Entity-Based** — Checks if named entities in the summary exist in the source articles (using spaCy NER)
-2. **NLI-Based** — Uses a DeBERTa Natural Language Inference model to check if each generated sentence is logically entailed, neutral, or contradicted by the source
-3. **Topic Consistency** — Measures keyword overlap to ensure the summary stays on-topic
-
----
-
-## Multi-Document Inference
-
-Generate a summary from multiple articles on the same topic:
-
-```bash
-python scripts/generate_mds.py
-```
-
-Edit the `ARTICLE_1`, `ARTICLE_2`, `ARTICLE_3` variables in the script to test with your own articles.
 
 ---
 

@@ -11,7 +11,7 @@ Evaluates the HiGS model on the test split and reports:
 
 Usage:
     python scripts/evaluate_higs.py
-    python scripts/evaluate_higs.py --model data/HiGS/higs_model.pt --samples 100
+    python scripts/evaluate_higs.py --model model/higs_model.pt --samples 100
 """
 
 import os
@@ -27,8 +27,35 @@ from tqdm.auto import tqdm
 from transformers import AutoTokenizer, BartTokenizer
 
 # Ensure project imports work
-sys.path.insert(0, str(Path(__file__).parent.parent))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 from models.higs_model import HiGraphSum, split_into_sentences, extract_entities
+
+
+# ── AUTO-DISCOVER PATHS ────────────────────────────────────────────
+def find_model_checkpoint():
+    """Search common locations for the HiGS model checkpoint."""
+    candidates = [
+        PROJECT_ROOT / "model" / "higs_model.pt",
+        PROJECT_ROOT / "data" / "HiGS" / "higs_model.pt",
+        PROJECT_ROOT / "higs_model.pt",
+    ]
+    for p in candidates:
+        if p.exists():
+            return str(p)
+    return str(candidates[0])  # default even if missing
+
+
+def find_dataset():
+    """Search common locations for the cleaned dataset."""
+    candidates = [
+        PROJECT_ROOT / "data" / "newssumm_cleaned.parquet",
+        PROJECT_ROOT / "data" / "processed" / "newssumm_cleaned.parquet",
+    ]
+    for p in candidates:
+        if p.exists():
+            return str(p)
+    return str(candidates[0])
 
 # ── CHECKPOINT KEY REMAPPING ────────────────────────────────────────
 def remap_checkpoint_keys(state_dict):
@@ -51,10 +78,10 @@ def main():
     import evaluate as hf_evaluate
 
     parser = argparse.ArgumentParser(description="Evaluate HiGS model")
-    parser.add_argument("--model", default="data/HiGS/higs_model.pt",
-                        help="Path to model checkpoint (default: data/HiGS/higs_model.pt)")
-    parser.add_argument("--data", default="data/newssumm_cleaned.parquet",
-                        help="Path to cleaned dataset")
+    parser.add_argument("--model", default=None,
+                        help="Path to model checkpoint (auto-detected if not specified)")
+    parser.add_argument("--data", default=None,
+                        help="Path to cleaned dataset (auto-detected if not specified)")
     parser.add_argument("--samples", type=int, default=50,
                         help="Number of test samples to evaluate")
     parser.add_argument("--output", default="results/evaluation_report.json",
@@ -64,6 +91,12 @@ def main():
     parser.add_argument("--max-summary-len", type=int, default=128)
     parser.add_argument("--num-beams", type=int, default=4)
     args = parser.parse_args()
+
+    # Auto-discover paths if not explicitly provided
+    if args.model is None:
+        args.model = find_model_checkpoint()
+    if args.data is None:
+        args.data = find_dataset()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")

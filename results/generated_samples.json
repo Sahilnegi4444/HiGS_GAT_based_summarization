@@ -6,9 +6,9 @@
     "generated": "Bajaj Hindusthan, the country's largest sugar maker, has approved a modification in the draft merger scheme, excluding Bajaj Eco-Tec Products from the proposed amalgamation scheme. The proposed merger excludes Bajj Aviation from the scheme. Last month, the board had announced amalgamation of Baju Eco-tec Products (a wholly-owned subsidiary of the company) and Baj",
     "entity_precision": 0.5,
     "hallucinated_entities": [
-      "bajj aviation",
+      "baj",
       "baju eco-tec",
-      "baj"
+      "bajj aviation"
     ],
     "entailment": 0.9806493520736694,
     "topic_overlap": 0.6785714285714286
@@ -78,9 +78,9 @@
     "generated": "The Reserve Bank of India (RBI) has set the quantum of intervention through the Market Stabilisation Scheme (MSS) at Rs 50,000 crore. Under the MSS, the government absorbs excess liquidity by issuing Treasury Bills and/or dated securities. The MSS ceiling is the same as was fixed for the previous fiscal year, and will be reviewed when the outstanding balance reaches the threshold limit of Rs 35,000 crores. The government launched MSS in consultation with RBI in 2004 with the objective to absorb excess liquidity,arising out of significant foreign exchange inflows,by issuing treasury bills or dated securities",
     "entity_precision": 0.5714285714285714,
     "hallucinated_entities": [
-      "the market stabilisation scheme",
       "the previous fiscal year",
-      "the reserve bank of india"
+      "the reserve bank of india",
+      "the market stabilisation scheme"
     ],
     "entailment": 0.9947184324264526,
     "topic_overlap": 0.8269230769230769
@@ -92,8 +92,8 @@
     "generated": "In the domestic bullion market, gold prices recovered moderately due to renewed demand from stockists and investors amidst good jewellery offtake. In contrast, silver prices fell due to speculative selling and reduced industrial demand. Standard gold of 99.5% purity climbed by Rs 90 to finish at Rs 27,985 per 10 grams from last Saturday’s closing level of INR 27,895.Pure gold, 99.9% purity, also rose by Rs 95 to close at INR 28,115.Silver ready (.999 fineness) dropped by Rs 45 per kg to end at Rs 56,230 as against",
     "entity_precision": 0.3333333333333333,
     "hallucinated_entities": [
-      "inr",
-      "inr 28,115.silver"
+      "inr 28,115.silver",
+      "inr"
     ],
     "entailment": 0.9962641596794128,
     "topic_overlap": 0.75
@@ -252,9 +252,9 @@
     "generated": "The Karnataka High Court's verdict quashing the FIR registered by the state Lok Ayukta against former Chief Minister B S Yeddyurappa was challenged before the Supreme Court. The appeal against the high court’s order was filed by original complainant Srijan Basha,who had earlier approached the state Supreme Court for the case. In his Special Leave Petition (SLP),filed through counsel Prashant Kumar,Basha submitted that he was not made a party to the Yeddyuapa’S plea to the High court against the Lok AyUKta decision and the high Court passed its judgement on",
     "entity_precision": 0.6666666666666666,
     "hallucinated_entities": [
-      "yeddyuapa",
-      "supreme court",
       "court",
+      "supreme court",
+      "yeddyuapa",
       "lok"
     ],
     "entailment": 0.9917470216751099,
@@ -359,8 +359,8 @@
     "generated": "Foreign fund house Copthall Mauritius Investments today bought 1.6 crore shares of LIC Housing Finance from the open market for about Rs 410 crore. Foreign investor CLSA (Mauritius Ltd),one of the shareholders of LIC housing Finance,offloaded 16,039,061 shares of the housing finance to Copanthall Mauritios Investments,according to block deal data available on the stock exchanges. Copthalls Mauritius is the largest shareholder in LIC Housing finance with 36.54 per cent stake. Shares of",
     "entity_precision": 0.7777777777777778,
     "hallucinated_entities": [
-      "copanthall mauritios investments",
-      "copthalls mauritius"
+      "copthalls mauritius",
+      "copanthall mauritios investments"
     ],
     "entailment": 0.975797712802887,
     "topic_overlap": 0.8421052631578947
@@ -438,10 +438,10 @@
     "generated": "Jhina Hikaka, a BJD candidate in the 2009 Assembly elections, managed to secure the Congress stronghold of Laxmipur in Koraput despite joining politics just a few years ago. Hikaka was previously a contractual employee with the state water resources department. He was also among the few tribal politicians who stood up to the Maoists in the red corridor of KorapUT-Malkangiri-Rayagada. The Narayanpatna block, a forested area with hilly terrain in Kolkata district, became a new Maoist hub soon after the 2009 assembly elections,falls under L",
     "entity_precision": 0.6666666666666666,
     "hallucinated_entities": [
-      "jhina hikaka",
-      "kolkata",
       "just a few years ago",
-      "narayanpatna"
+      "narayanpatna",
+      "jhina hikaka",
+      "kolkata"
     ],
     "entailment": 0.9971605539321899,
     "topic_overlap": 0.75

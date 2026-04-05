@@ -16,6 +16,7 @@ env/
 *.xls
 *.csv
 !results/benchmark_table.csv
+!results/comprehensive_model_comparison.csv
 
 # Model checkpoints (too large for git — download separately)
 *.pt
